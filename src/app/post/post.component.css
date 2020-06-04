@@ -1,3 +1,7 @@
+/*
+  Main component container
+ */
+
 .post-card {
   font-family: 'Poppins', sans-serif;
   flex-direction: row;
@@ -6,6 +10,10 @@
   width: 460px;
   padding: 5px;
 }
+
+/*
+  Left side container
+ */
 
 .post-author {
   flex-direction: column;
@@ -24,6 +32,15 @@
   font-size: 12px;
   color: #878787;
 }
+
+.post-date {
+  font-size: 9px;
+  color: #878787;
+}
+
+/*
+  Right side container
+ */
 
 .post-content {
   flex-direction: column;
@@ -59,9 +76,4 @@
 
 .read-post-btn:hover {
   color: #00baff;
-}
-
-.post-date {
-  font-size: 9px;
-  color: #878787;
 }
