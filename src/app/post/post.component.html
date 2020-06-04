@@ -1,0 +1,16 @@
+<div class="post-card">
+  <div class="post-author">
+    <div class="author-image"></div>
+    <div class="author-name">{{author.username}}</div>
+    <div class="post-date">dd.mm.yyyy</div>
+  </div>
+  <div class="post-content">
+    <div class="post-title">{{post.title}}</div>
+    <div class="post-description">{{post.description}}</div>
+    <div class="post-footer">
+      <a class="read-post-btn" routerLink="/post/{{post.id}}">
+        Read post...
+      </a>
+    </div>
+  </div>
+</div>
