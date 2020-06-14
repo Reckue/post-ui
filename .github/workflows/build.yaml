@@ -12,7 +12,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: npm ci and npm run build
+      - name: Build project
         run: |
-          npm ci
-          npm run build:ci
+          npm install
+          npm run-script build --prod
