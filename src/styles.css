@@ -4,5 +4,10 @@ body {
 }
 
 div {
+  outline: none;
   display: flex;
+}
+
+div:hover {
+  outline: none;
 }
