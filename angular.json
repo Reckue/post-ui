@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "post-service-ui": {
+    "post-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/post-service-ui",
+            "outputPath": "dist/post-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "post-service-ui:build"
+            "browserTarget": "post-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "post-service-ui:build:production"
+              "browserTarget": "post-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "post-service-ui:build"
+            "browserTarget": "post-ui:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "post-service-ui:serve"
+            "devServerTarget": "post-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "post-service-ui:serve:production"
+              "devServerTarget": "post-ui:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "post-service-ui"
+  "defaultProject": "post-ui"
 }
