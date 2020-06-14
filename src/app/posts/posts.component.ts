@@ -10,7 +10,7 @@ export class PostsComponent implements OnInit {
   post = {
     id: 'FGU438jdfk48932fdsg23',
     title: 'This is default title for post.',
-    description: 'This is default description for post.'
+    description: 'Continuous delivery results out of the agile movement. Iterative feedback is at its core. Learning from hands-on experiences and incorporating that feedback is essential.'
   };
 
   author = {
