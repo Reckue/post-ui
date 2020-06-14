@@ -1,0 +1,41 @@
+.main {
+  height: 100%;
+}
+.main .wrapper {
+  margin: 20px auto;
+  width: 1000px;
+  min-height: 100px;
+}
+
+
+/* post */
+.main .wrapper .post {
+  margin: 0 auto;
+  width: 640px;
+  border-radius: 3px;
+}
+.main .wrapper .post .content {
+  padding: 10px 20px;
+  line-height: 1.8;
+}
+
+.main .wrapper .post .content a {
+  text-decoration: none;
+}
+.main .wrapper .post .content a:hover {
+  text-decoration: underline;
+}
+
+
+/* sidebar */
+/*.main .wrapper .sidebar {*/
+/*  margin: 0 10px;*/
+/*  width: 340px;*/
+/*  float: left;*/
+/*  border-radius: 3px;*/
+/*  background-color: #fff;*/
+/*}*/
+/*.main .wrapper .sidebar .content{*/
+/*  padding: 10px 20px;*/
+/*  line-height: 1.8;*/
+/*}*/

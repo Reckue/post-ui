@@ -1,0 +1,29 @@
+.content {
+  margin: 10px;
+  line-height: 1.8;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,.03);
+}
+
+.content .main {
+  width: 600px;
+  min-height: 100px;
+  padding: 10px;
+}
+.content .bottom {
+  width: 600px;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 10px;
+}
+
+.content a {
+  color: #333;
+  /*font-weight: bold;*/
+  font-size: 18px;
+  text-decoration: none;
+}
+.content a:hover {
+  text-decoration: underline;
+}
