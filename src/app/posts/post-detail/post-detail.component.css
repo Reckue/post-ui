@@ -1,0 +1,15 @@
+.content {
+  padding: 10px 20px;
+  line-height: 1.8;
+  height: 1200px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,.03);
+}
+
+.content a {
+  text-decoration: none;
+}
+.content a:hover {
+  text-decoration: underline;
+}
