@@ -1,16 +1,25 @@
 <div class="post-card">
-  <div class="post-author">
-    <div class="author-image"></div>
-    <div class="author-name">{{author.username}}</div>
-    <div class="post-date">dd.mm.yyyy</div>
+  <div class="post-header">
+    <div class="post-author" routerLink="/profile/{{author.username}}">
+      <div class="author-image"></div>
+      <div class="author-name">
+        {{author.username}}
+      </div>
+    </div>
+    <div class="post-info">
+      <div class="post-title" routerLink="/post/{{post.id}}">
+        {{post.title}}
+      </div>
+      <div class="info-footer">
+        <div class="info-item">21.06.2020</div>
+        <div class="info-item">1000 views</div>
+        <div class="info-item">23 likes</div>
+      </div>
+    </div>
   </div>
-  <div class="post-content">
-    <div class="post-title">{{post.title}}</div>
-    <div class="post-description">{{post.description}}</div>
-    <div class="post-footer">
-      <a class="read-post-btn" routerLink="/post/{{post.id}}">
-        Read post...
-      </a>
+  <div class="post-content" routerLink="/post/{{post.id}}">
+    <div class="post-description">
+      {{post.description}}
     </div>
   </div>
 </div>
