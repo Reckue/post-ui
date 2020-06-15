@@ -14,6 +14,10 @@ import {PostDetailComponent} from './posts/post-detail/post-detail.component';
 import {PostComponent} from './posts/post/post.component';
 import {FormsModule} from "@angular/forms";
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { TextComponent } from './nodes/text/text.component';
+import { ImageComponent } from './nodes/image/image.component';
+import { VideoComponent } from './nodes/video/video.component';
+import { CodeComponent } from './nodes/code/code.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -38,7 +42,11 @@ const routes: Routes = [
     PostEditComponent,
     PostDetailComponent,
     PostComponent,
-    PostListComponent
+    PostListComponent,
+    TextComponent,
+    ImageComponent,
+    VideoComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
