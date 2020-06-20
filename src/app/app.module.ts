@@ -4,20 +4,20 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {PostsComponent} from './posts/posts.component';
-import {NotFoundComponent} from './not-found/not-found.component';
-import {HeaderComponent} from './header/header.component';
-import {PostAddComponent} from './posts/post-add/post-add.component';
-import {PostEditComponent} from './posts/post-edit/post-edit.component';
-import {PostDetailComponent} from './posts/post-detail/post-detail.component';
-import {PostComponent} from './posts/post/post.component';
+import {HomeComponent} from './pages/home/home.component';
+import {PostsComponent} from './pages/posts/posts.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
+import {HeaderComponent} from './components/header/header.component';
+import {PostAddComponent} from './pages/posts/post-add/post-add.component';
+import {PostEditComponent} from './pages/posts/post-edit/post-edit.component';
+import {PostDetailComponent} from './pages/posts/post-detail/post-detail.component';
+import {PostComponent} from './components/post/post.component';
 import {FormsModule} from "@angular/forms";
-import { PostListComponent } from './posts/post-list/post-list.component';
-import { TextComponent } from './nodes/text/text.component';
-import { ImageComponent } from './nodes/image/image.component';
-import { VideoComponent } from './nodes/video/video.component';
-import { CodeComponent } from './nodes/code/code.component';
+import { PostListComponent } from './pages/posts/post-list/post-list.component';
+import { TextComponent } from './components/nodes/text/text.component';
+import { ImageComponent } from './components/nodes/image/image.component';
+import { VideoComponent } from './components/nodes/video/video.component';
+import { CodeComponent } from './components/nodes/code/code.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
