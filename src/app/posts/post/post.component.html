@@ -1,8 +1,13 @@
-<div class="content">
+<div class="post block content">
   <div class="main">
     <a [routerLink]="['/posts/', id]"><h2>{{title}}</h2></a>
   </div>
   <div class="bottom">
-    ...
+    <div class="author">
+      <div class="avatar">{{symbol}}</div>
+      <div class="username">
+        <a [routerLink]="['/@', id]">{{username}}</a>
+      </div>
+    </div>
   </div>
 </div>

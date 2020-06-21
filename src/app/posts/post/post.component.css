@@ -1,17 +1,26 @@
+.post {
+  border-bottom: 1px solid #e5e5e5;
+}
 .content {
-  margin: 10px;
+  margin: 20px;
   padding: 0 10px;
   line-height: 1.8;
+  border-top: solid #fff;
+  border-left: solid #fff;
+  border-right: solid #fff;
   border-radius: 3px;
+}
+.block:hover {
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,.03);
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.1);
+  border-radius: 6px;
 }
 
-.content .main {
-  min-height: 100px;
+.main {
+  min-height: 50px;
   padding: 10px;
 }
-.content .main h2 {
+.main h2 {
   font-size: 20px;
   line-height: 1.8em;
   margin-block-start: 0;
@@ -20,10 +29,36 @@
   margin-inline-end: 0;
 }
 .content .bottom {
-  width: 600px;
+  width: calc(100% - 20px);
   height: 56px;
   line-height: 56px;
   padding: 0 10px;
+}
+.content .bottom .author {
+  height: 56px;
+  font-size: 14px;
+}
+.content .bottom .author a {
+  font-size: 14px;
+}
+.content .bottom .author .avatar {
+  float: left;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  margin: 15px 15px 0 0;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: lightsteelblue;
+}
+.content .bottom .author .username {
+  height: 56px;
+  float: left;
+  max-width: 240px;
+  border-radius: 18px;
+  text-align: left;
+  display: block;
 }
 
 .content a {

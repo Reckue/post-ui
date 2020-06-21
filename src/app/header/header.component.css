@@ -4,6 +4,8 @@
   height: 56px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  position: fixed;
+  top: 0;
 }
 .header .wrapper {
   width: 1000px;
@@ -57,9 +59,13 @@
   outline: none;
   border-radius: 18px;
   padding: 0 20px;
-  background-color: #f2f2f2;
+  background-color: #e9e9e9;
 }
-
+::placeholder {
+  font-family: "Roboto Thin", sans-serif;
+  font-weight: 100;
+  color: #737373;
+}
 
 /* profile */
 .header .wrapper .profile {
@@ -73,7 +79,7 @@
   width: 36px;
   height: 36px;
   margin: 10px;
-  background-color: #758c9c;
+  background-color: #E2B9AF;
   text-align: center;
   line-height: 36px;
   color: #fff;
@@ -85,7 +91,7 @@
   width: 28px;
   height: 28px;
   margin: 15px;
-  background-color: #adc6d2;
+  background-color: #e9e9e9;
   text-align: center;
   line-height: 28px;
   color: #fff;
