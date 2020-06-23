@@ -47,10 +47,11 @@
   height: inherit;
 }
 .header .wrapper .search input {
-  float: left;
-  width: 620px;
+  display: flex;
+  justify-content: center;
+  width: 320px;
   height: 36px;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 16px;
   border: 0;
   outline: none;
@@ -65,4 +66,28 @@
   float: left;
   width: 180px;
   height: inherit;
+}
+
+.header .wrapper .profile .user {
+  float: right;
+  width: 36px;
+  height: 36px;
+  margin: 10px;
+  background-color: #758c9c;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  border-radius: 18px;
+}
+
+.header .wrapper .profile .notify {
+  float: right;
+  width: 28px;
+  height: 28px;
+  margin: 15px;
+  background-color: #adc6d2;
+  text-align: center;
+  line-height: 28px;
+  color: #fff;
+  border-radius: 14px;
 }

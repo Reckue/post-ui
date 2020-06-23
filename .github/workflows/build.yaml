@@ -31,13 +31,4 @@ jobs:
         run: |
           npm install
           npm run-script build --prod
-
-      - name: Show files
-        run: ls -la
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/post-ui
-          publish_branch: master  # deploying branch
+          ll
