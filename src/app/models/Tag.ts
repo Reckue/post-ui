@@ -4,6 +4,6 @@ export class Tag {
 
   constructor(id: string, name: string) {
     this.id = id;
-    this.name = title;
+    this.name = name;
   }
 }
