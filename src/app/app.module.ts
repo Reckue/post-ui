@@ -22,10 +22,10 @@ import { CodeComponent } from './components/nodes/code/code.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'posts', component: PostsComponent, children: [
-      {path: ':id', component: PostDetailComponent},
       {path: '', component: PostListComponent},
       {path: 'add', component: PostAddComponent},
-      {path: 'edit', component: PostEditComponent}
+      {path: 'edit', component: PostEditComponent},
+      {path: ':id', component: PostDetailComponent}
     ]
   },
   {path: '**', component: NotFoundComponent}
