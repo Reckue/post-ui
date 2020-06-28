@@ -18,13 +18,20 @@ export class Post {
   constructor(id: string = null,
               title: string = null,
               nodes: Node[] = [],
-              source: string = '',
-              userId: string = '',
+              source: string = null,
+              userId: string = null,
               tags: Tag[] = [],
               published: number = Date.now(),
               changed: number = Date.now(),
               status: StatusType = StatusType.ACTIVE) {
     this.id = id;
     this.title = title;
+    this.nodes = nodes;
+    this.source = source;
+    this.userId = userId;
+    this.tags = tags;
+    this.published = published;
+    this.changed = changed;
+    this.status = status;
   }
 }
