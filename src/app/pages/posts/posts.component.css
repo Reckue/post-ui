@@ -9,23 +9,23 @@
 
 
 /* post */
-.main .wrapper .post {
+.main .wrapper .posts {
   margin: 0 auto;
   width: 500px;
   border-radius: 3px;
 }
-.main .wrapper .post .content {
+.main .wrapper .posts .content {
   padding: 10px 20px;
   line-height: 1.8;
 }
 
-.main .wrapper .post .content a {
+.main .wrapper .posts .content a {
   text-decoration: none;
 }
-.main .wrapper .post .content a:hover {
+
+.main .wrapper .posts .content a:hover {
   text-decoration: underline;
 }
-
 
 /* sidebar */
 /*.main .wrapper .sidebar {*/

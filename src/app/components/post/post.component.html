@@ -1,7 +1,6 @@
-<div class="content">
-  <div class="main">
-    <a [routerLink]="['/posts/', id]"><h2>{{title}}</h2></a>
-  </div>
+<div class="post">
+  <a class="title" [routerLink]="['/posts/', id]"> {{title}} </a>
+  <div class="content"></div>
   <div class="bottom">
     ...
   </div>
