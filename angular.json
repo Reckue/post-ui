@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "post-ui"
+    }
+  },
+  "defaultProject": "post-ui",
+  "cli": {
+    "analytics": false
+  }
 }
