@@ -1,11 +1,14 @@
-export class CodeNode {
-   id: string;
-   language: string;
-   content: string;
+import {NodeContent} from './NodeContent';
+import {LangType} from './LangType';
 
-  constructor(id: string, language: string, content: string) {
-    this.id = id;
-    this.language = language;
+export class CodeNode implements NodeContent {
+
+  content: string;
+  language: LangType;
+
+  constructor(content: string = null,
+              language: LangType = LangType.NONE) {
     this.content = content;
+    this.language = language;
   }
 }

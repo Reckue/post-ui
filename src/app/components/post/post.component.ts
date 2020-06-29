@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NodeService} from '../../services/NodeService';
-import {Node} from '../../models/Node';
+import {Post} from '../../models/Post';
+import {TextNode} from '../../models/TextNode';
 
 @Component({
   selector: 'app-post',
@@ -9,16 +9,16 @@ import {Node} from '../../models/Node';
 })
 export class PostComponent implements OnInit {
 
-  @Input() id: string;
-  @Input() title: string;
+  @Input() post: Post;
+  description = '';
 
-  nodes: Node[];
-
-  constructor(private nodeService: NodeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.nodeService.getAllNodes().then(response => {
-      this.nodes = response;
-    });
+    const nodes = this.post.nodes;
+    if (nodes.length > 0) {
+      const node = nodes[0].content as TextNode;
+      this.description = node.content;
+    }
   }
 }
