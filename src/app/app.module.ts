@@ -12,7 +12,7 @@ import {PostAddComponent} from './pages/posts/post-add/post-add.component';
 import {PostEditComponent} from './pages/posts/post-edit/post-edit.component';
 import {PostDetailComponent} from './pages/posts/post-detail/post-detail.component';
 import {PostComponent} from './components/post/post.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 import { PostListComponent } from './pages/posts/post-list/post-list.component';
 import { TextComponent } from './components/nodes/text/text.component';
 import { ImageComponent } from './components/nodes/image/image.component';

@@ -11,5 +11,4 @@ export class CodeNode implements NodeContent {
     this.content = content;
     this.language = language;
   }
-
 }

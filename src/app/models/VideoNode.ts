@@ -7,5 +7,4 @@ export class VideoNode implements NodeContent {
   constructor(videoUrl: string = null) {
     this.videoUrl = videoUrl;
   }
-
 }

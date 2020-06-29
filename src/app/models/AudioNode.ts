@@ -7,5 +7,4 @@ export class AudioNode implements NodeContent {
   constructor(audioUrl: string = null) {
     this.audioUrl = audioUrl;
   }
-
 }
