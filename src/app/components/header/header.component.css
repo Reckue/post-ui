@@ -91,3 +91,16 @@
   color: #fff;
   border-radius: 14px;
 }
+
+.header .wrapper .profile .profile-window {
+  /*display: none;*/
+  display: block;
+  background-color: blue;
+  position: relative;
+  margin-top: 50px;
+}
+
+.profile-window:active {
+  display: block;
+  background-color: blue;
+}
