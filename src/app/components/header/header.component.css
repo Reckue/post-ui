@@ -93,14 +93,28 @@
 }
 
 .header .wrapper .profile .profile-window {
-  /*display: none;*/
   display: block;
-  background-color: blue;
-  position: relative;
-  margin-top: 50px;
+  visibility: visible;
+  background-color: lightblue;
+  position: absolute;
+  margin-top: 60px;
+  padding: 0;
+  align-items: center;
+  min-width: 180px;
+  max-width: 200px;
+  width: auto;
+}
+.header .wrapper .profile .profile-window ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.profile-window:active {
-  display: block;
-  background-color: blue;
+.header .wrapper .profile .profile-window ul li {
+  height: 30px;
+  line-height: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
