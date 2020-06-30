@@ -1,6 +1,9 @@
 <div class="header">
   <div class="wrapper">
-    <div class="logo">Reckue</div>
+    <a class="logo" [routerLink]="['/']">
+      <img src="../../../assets/logo.png"/>
+      <div>eckue</div>
+    </a>
     <div class="menu">
       <div>
         <a class="link" routerLink="/">Home</a>
@@ -18,12 +21,13 @@
       </label>
     </div>
     <div class="profile">
-      <div class="user">S</div>
-        <div class="profile-window">
+      <div class="user" (click)="addBackground()">S</div>
+        <div class="profile-background" [style]="backgroundVisible" (click)="removeBackground()" ></div>
+        <div class="profile-menu" [style]="backgroundVisible">
           <ul>
-            <li>avatar</li>
-            <li>settings</li>
-            <li>exit</li>
+            <li>Profile</li>
+            <li>Settings</li>
+            <li>Sign-out</li>
           </ul>
         </div>
       <div class="notify">!</div>
