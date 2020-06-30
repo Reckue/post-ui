@@ -7,18 +7,9 @@ import {TextNode} from '../../models/TextNode';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
 
   @Input() post: Post;
-  description = '';
 
   constructor() { }
-
-  ngOnInit(): void {
-    const nodes = this.post.nodes;
-    if (nodes.length > 0) {
-      const node = nodes[0].content as TextNode;
-      this.description = node.content;
-    }
-  }
 }

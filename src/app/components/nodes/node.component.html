@@ -1,0 +1,12 @@
+<div *ngIf="node.type === Type.TEXT">
+  <app-text [content]="node.content"></app-text>
+</div>
+<div *ngIf="node.type === Type.CODE">
+  <app-text></app-text>
+</div>
+<div *ngIf="node.type === Type.VIDEO">
+  <app-text></app-text>
+</div>
+<div *ngIf="node.type === Type.IMAGE">
+  <app-text></app-text>
+</div>

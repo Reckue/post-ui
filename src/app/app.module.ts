@@ -18,6 +18,7 @@ import { TextComponent } from './components/nodes/text/text.component';
 import { ImageComponent } from './components/nodes/image/image.component';
 import { VideoComponent } from './components/nodes/video/video.component';
 import { CodeComponent } from './components/nodes/code/code.component';
+import {NodeComponent} from './components/nodes/node.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -46,7 +47,8 @@ const routes: Routes = [
     TextComponent,
     ImageComponent,
     VideoComponent,
-    CodeComponent
+    CodeComponent,
+    NodeComponent
   ],
   imports: [
     BrowserModule,

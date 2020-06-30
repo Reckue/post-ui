@@ -1,9 +1,7 @@
 <div class="post">
   <a class="title" [routerLink]="['/posts/', post.id]"> {{post.title}} </a>
-  <div class="content">
-    <div class="text-node">
-      {{description}}
-    </div>
+  <div *ngIf="post.nodes.length > 0" class="content">
+    <app-node [node]="post.nodes[0]"></app-node>
   </div>
   <div class="bottom">
     ...
