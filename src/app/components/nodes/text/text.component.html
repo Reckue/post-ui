@@ -1,1 +1,4 @@
-<div class="text-node">{{text}}</div>
+<div *ngIf="isInput === false" class="text-node">{{text}}</div>
+<div *ngIf="isInput === true" class="text-node">
+  <input [value]="text" (change)="onChange($event, id)">
+</div>

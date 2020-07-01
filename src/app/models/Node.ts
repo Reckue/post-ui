@@ -7,7 +7,7 @@ export class Node {
 
   id: string;
   type: NodeType;
-  content: NodeContent;
+  node: NodeContent;
   source: string;
   username: string;
   published: number;
@@ -22,7 +22,7 @@ export class Node {
               status: StatusType = StatusType.ACTIVE) {
     this.id = id;
     this.type = type;
-    this.content = content;
+    this.node = content;
     this.source = source;
     this.username = username;
     this.published = published;

@@ -7,5 +7,4 @@ export class TextNode implements NodeContent {
   constructor(content: string = null) {
     this.content = content;
   }
-
 }

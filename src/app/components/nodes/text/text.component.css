@@ -1,0 +1,8 @@
+.text-node input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 12px;
+  color: #696969;
+  margin: 5px 0;
+}
