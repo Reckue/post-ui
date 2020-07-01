@@ -1,3 +1,11 @@
 <div class="content">
-  Add a post.
+  <input class="title" placeholder="Edit title..." (change)="editTitle($event)">
+  <div *ngFor="let node of nodes">
+    <app-node [node]="node" [isInput]="true" [onChange]="editNode.bind(nodes)"></app-node>
+  </div>
+  <input class="node" placeholder="Write post..." (change)="addNode($event)">
+  <button class="create" (click)="createPost()">
+    <div class="text">Create post</div>
+    <div class="image"></div>
+  </button>
 </div>
