@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../models/Post';
-import {TextNode} from '../../models/TextNode';
 
 @Component({
   selector: 'app-post',
