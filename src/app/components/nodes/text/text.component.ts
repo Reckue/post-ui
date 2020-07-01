@@ -9,7 +9,10 @@ import {NodeContent} from '../../../models/NodeContent';
 })
 export class TextComponent implements OnInit {
 
+  @Input() id: string;
   @Input() content: NodeContent;
+  @Input() isInput: boolean;
+  @Input() onChange: (event: any, id: string) => void;
   text: string;
 
   constructor() { }
