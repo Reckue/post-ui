@@ -11,6 +11,7 @@ export class NodeComponent implements OnInit {
   @Input() node: Node;
   @Input() isInput = false;
   @Input() onChange: (event: any, id: string) => void;
+  @Input() onDelete: (id: string) => void;
   public Type = NodeType;
 
   constructor() { }
