@@ -1,9 +1,12 @@
 <div class="content">
-  <input class="title" placeholder="Edit title..." (change)="editTitle($event)">
-  <div *ngFor="let node of nodes">
-    <app-node [node]="node" [isInput]="true" [onChange]="editNode.bind(nodes)"></app-node>
+  <input class="title" placeholder="Edit title..." (change)="editTitle($event)" [value]="title">
+  <div class="node" *ngFor="let node of nodes">
+    <app-node [node]="node" [isInput]="true" [onChange]="editNode" [onDelete]="deleteNode"></app-node>
   </div>
-  <input class="node" placeholder="Write post..." (change)="addNode($event)">
+  <div class="node">
+    <app-selector></app-selector>
+    <input class="new-node" placeholder="Write post..." (change)="addNode($event)">
+  </div>
   <button class="create" (click)="createPost()">
     <div class="text">Create post</div>
     <div class="image"></div>
