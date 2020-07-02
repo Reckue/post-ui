@@ -13,6 +13,7 @@ export class TextComponent implements OnInit {
   @Input() content: NodeContent;
   @Input() isInput: boolean;
   @Input() onChange: (event: any, id: string) => void;
+  @Input() onDelete: (id: string) => void;
   text: string;
 
   constructor() { }
