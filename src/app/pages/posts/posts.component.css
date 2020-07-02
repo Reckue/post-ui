@@ -1,12 +1,15 @@
 .main {
   height: 100%;
 }
-.main .wrapper {
-  margin: 20px auto;
-  width: 1000px;
-  min-height: 100px;
-}
 
+.main .wrapper {
+  border-radius: 4px;
+  border: #e1e1e1 1px solid;
+  margin: 20px auto;
+  width: 600px;
+  background: #fbfbfb;
+  padding: 10px;
+}
 
 /* post */
 .main .wrapper .posts {
@@ -14,6 +17,7 @@
   width: 500px;
   border-radius: 3px;
 }
+
 .main .wrapper .posts .content {
   padding: 10px 20px;
   line-height: 1.8;
