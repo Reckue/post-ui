@@ -2,7 +2,7 @@
   padding: 10px 20px;
   margin: 0 10px;
   line-height: 1.8;
-  height: 1200px;
+  /*height: 1200px;*/
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,.03);
@@ -13,4 +13,12 @@
 }
 .content a:hover {
   text-decoration: underline;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.node {
+  font-size: 14px;
 }

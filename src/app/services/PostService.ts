@@ -14,6 +14,11 @@ export class PostService {
     return response.data;
   }
 
+  async getPostById(id: string) {
+    const response = await axios.get('http://post-reckue.apps.us-east-1.starter.openshift-online.com/posts/' + id);
+    return response.data;
+  }
+
   async createPost(post: Post) {
     const response = await axios.post('http://post-reckue.apps.us-east-1.starter.openshift-online.com/posts', post);
     return response.data;
