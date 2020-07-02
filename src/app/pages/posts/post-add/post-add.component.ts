@@ -14,7 +14,7 @@ export class PostAddComponent implements OnInit {
 
   public post: Post;
 
-  public title: string;
+  public title = '';
 
   public nodes: Node[] = [];
 
@@ -27,8 +27,13 @@ export class PostAddComponent implements OnInit {
   createPost() {
     this.post.nodes = this.nodes;
     this.post.title = this.title;
-    this.postService.createPost(this.post)
-      .then(created => console.log(created))
+    this.postService
+      .createPost(this.post)
+      .then(created => {
+        this.title = '';
+        this.nodes = [];
+        console.log(created);
+      })
       .catch(ignore => console.log(this.post));
   }
 
@@ -52,5 +57,9 @@ export class PostAddComponent implements OnInit {
     } else {
       this.nodes.splice(id, 1);
     }
+  }
+
+  deleteNode = (id): void => {
+    this.nodes.splice(id, 1);
   }
 }

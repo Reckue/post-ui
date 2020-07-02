@@ -2,14 +2,17 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin: 30px 0;
   padding: 10px 20px;
   line-height: 1.8;
   background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,.03);
 }
 
 .content a {
   text-decoration: none;
 }
+
 .content a:hover {
   text-decoration: underline;
 }
@@ -24,12 +27,18 @@
 }
 
 .content .node {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.content .new-node {
   font-size: 14px;
   color: #696969;
   background: none;
   border: none;
   outline: none;
-  margin: 5px 0;
 }
 
 .content .create {

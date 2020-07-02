@@ -1,0 +1,15 @@
+.type-selector .image {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background: url("../../../assets/more.png") no-repeat;
+  background-size: cover;
+  margin: 0 5px;
+  opacity: 0.8;
+}
+
+.type-selector .image:hover {
+  opacity: 0.5;
+}
+
+
