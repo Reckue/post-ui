@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {PostService} from '../../../services/PostService';
 import {Post} from '../../../models/Post';
 import {Node} from '../../../models/Node';
 import {NodeType} from '../../../models/NodeType';
 import {TextNode} from '../../../models/TextNode';
+import {PopupWindowComponent} from '../../../components/window/popup/popup-window.component';
 
 @Component({
   selector: 'app-post-add',
@@ -11,6 +12,8 @@ import {TextNode} from '../../../models/TextNode';
   styleUrls: ['./post-add.component.css']
 })
 export class PostAddComponent implements OnInit {
+
+  @ViewChild(PopupWindowComponent) popup: PopupWindowComponent;
 
   public post: Post;
 
@@ -33,8 +36,9 @@ export class PostAddComponent implements OnInit {
         this.title = '';
         this.nodes = [];
         console.log(created);
+        this.popup.display('Post successfully created!');
       })
-      .catch(ignore => console.log(this.post));
+      .catch(ignore => this.popup.display('Warring! Something went wrong and post wasn\'t created.'));
   }
 
   addNode(event) {
@@ -43,11 +47,12 @@ export class PostAddComponent implements OnInit {
     const node = new Node(index, NodeType.TEXT, textContent, null, '1');
     this.nodes.push(node);
     event.target.value = '';
-    console.log(this.nodes);
+    this.popup.display('Node has been created!');
   }
 
   editTitle(event) {
     this.title = event.target.value;
+    this.popup.display('Title has been changed!');
   }
 
   editNode = (event, id): void => {
@@ -57,9 +62,11 @@ export class PostAddComponent implements OnInit {
     } else {
       this.nodes.splice(id, 1);
     }
+    this.popup.display('Node has been changed!');
   }
 
   deleteNode = (id): void => {
     this.nodes.splice(id, 1);
+    this.popup.display('Node has been deleted!');
   }
 }
