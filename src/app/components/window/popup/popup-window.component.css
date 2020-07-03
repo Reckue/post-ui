@@ -1,0 +1,28 @@
+.popup-window {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 0;
+  align-items: center;
+}
+
+.popup-window .message {
+  background: #ffffff;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.03);
+  margin: 0 4px;
+  border: #f2f2f2 1px solid;
+}
+
+.popup-window button {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background: url("../../../../assets/close.png") no-repeat;
+  background-size: cover;
+  outline: none;
+}

@@ -20,6 +20,7 @@ import { VideoComponent } from './components/nodes/video/video.component';
 import { CodeComponent } from './components/nodes/code/code.component';
 import {NodeComponent} from './components/nodes/node.component';
 import {TypeSelectorComponent} from './components/selector/type-selector.component';
+import {PopupWindowComponent} from './components/window/popup/popup-window.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -50,7 +51,8 @@ const routes: Routes = [
     VideoComponent,
     CodeComponent,
     NodeComponent,
-    TypeSelectorComponent
+    TypeSelectorComponent,
+    PopupWindowComponent
   ],
   imports: [
     BrowserModule,
