@@ -1,0 +1,54 @@
+name: build
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build project
+        run: |
+          npm install
+          npm run-script build --prod
+          ll
+
+      - name: Create a docker image
+        run: bash ./config/docker/create_image.sh
+
+      - name: Log into registry
+        run: docker login --username=reckue --password=${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker push
+        run: bash ./config/docker/push_image.sh
+
+      - name: Deploy
+        uses: redhat-developer/openshift-actions@v1.1
+        with:
+          version: 'latest'
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
+          parameters: '{"apitoken": "${{ secrets.API_TOKEN }}", "acceptUntrustedCerts": "true"}'
+          cmd: |
+            'version'
+            'delete -f ./config/k8s/deploy.yaml'
+            'create -f ./config/k8s/deploy.yaml'
