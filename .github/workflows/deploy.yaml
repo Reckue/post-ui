@@ -31,7 +31,7 @@ jobs:
         run: |
           npm install
           npm run-script build --prod
-          ll
+          ls -la
 
       - name: Create a docker image
         run: bash ./config/docker/create_image.sh
