@@ -31,12 +31,11 @@ export class PostListComponent implements OnInit {
 
   loadMore() {
     const filters = new Filters();
+    filters.limit = this.counter + 10;
     filters.offset = this.counter;
-    this.popup.display('loading!');
     this.postService.getAllPosts(filters)
       .then(response => {
         const posts: Post[] = response;
-        this.popup.close();
         this.posts.push(...posts);
         this.counter += 10;
         if (posts.length < 10) {

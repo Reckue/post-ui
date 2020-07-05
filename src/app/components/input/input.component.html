@@ -1,3 +1,9 @@
 <div>
-  <span class="text-input" role="textbox" (keydown.shift.enter)="change($event)" contenteditable>{{value}}</span>
+  <span
+    class="text-input"
+    role="textbox"
+    (keydown.shift.enter)="change($event)"
+    (focusout)="change($event)"
+    contenteditable
+  >{{value}}</span>
 </div>

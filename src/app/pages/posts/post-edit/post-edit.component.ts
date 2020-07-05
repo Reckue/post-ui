@@ -39,6 +39,7 @@ export class PostEditComponent implements OnInit {
   }
 
   addNode = (event) => {
+    event.preventDefault();
     if (event.target.innerText !== '') {
       const textContent = new TextNode(event.target.innerText);
       const node = new Node(null, NodeType.TEXT, textContent, null, '1');
@@ -55,8 +56,8 @@ export class PostEditComponent implements OnInit {
 
   editNode = (event, node): void => {
     const id = this.post.nodes.indexOf(node);
-    if (event.target.value !== '') {
-      const textContent = new TextNode(event.target.value);
+    if (event.target.innerText !== '') {
+      const textContent = new TextNode(event.target.innerText);
       this.post.nodes[id] = new Node(null, NodeType.TEXT, textContent, null, '1');
     } else {
       this.post.nodes.splice(id, 1);
