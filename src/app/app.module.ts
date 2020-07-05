@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {RouterModule, Routes} from '@angular/router';
 
+import {routes} from "../routes";
 import {AppComponent} from './app.component';
 import {HomeComponent} from './pages/home/home.component';
 import {PostsComponent} from './pages/posts/posts.component';
@@ -23,17 +24,6 @@ import {TypeSelectorComponent} from './components/selector/type-selector.compone
 import {PopupWindowComponent} from './components/window/popup/popup-window.component';
 import {InputComponent} from './components/input/input.component';
 
-const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'posts', component: PostsComponent, children: [
-      {path: '', component: PostListComponent},
-      {path: 'add', component: PostAddComponent},
-      {path: 'edit/:id', component: PostEditComponent},
-      {path: ':id', component: PostDetailComponent}
-    ]
-  },
-  {path: '**', component: NotFoundComponent}
-];
 
 @NgModule({
   declarations: [
