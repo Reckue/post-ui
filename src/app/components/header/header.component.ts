@@ -9,13 +9,19 @@ import {query} from '@angular/animations';
 export class HeaderComponent implements OnInit {
 
   backgroundVisible = 'visibility: hidden;';
+  searchVisible = document.body.clientWidth > 580;
   constructor() { }
 
   ngOnInit(): void {
+    window.onresize = () => {
+      this.searchVisible = document.body.clientWidth > 580;
+    };
   }
+
   removeBackground() {
     this.backgroundVisible = 'visibility: hidden;';
   }
+
   addBackground() {
     this.backgroundVisible = 'visibility: visible;';
   }

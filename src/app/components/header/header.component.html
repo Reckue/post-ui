@@ -15,7 +15,7 @@
         <a class="link" routerLink="/error">Error</a>
       </div>
     </div>
-    <div class="search">
+    <div *ngIf="searchVisible" class="search">
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>
