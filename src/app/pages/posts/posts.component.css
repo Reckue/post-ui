@@ -14,7 +14,8 @@
 /* post */
 .main .wrapper .posts {
   margin: 0 auto;
-  width: 500px;
+  min-width: 400px;
+  width: 25vw;
   border-radius: 3px;
 }
 

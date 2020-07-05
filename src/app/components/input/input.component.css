@@ -1,0 +1,14 @@
+textarea {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  font-size: 14px;
+  color: #000000;
+  background: none;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+  font-family: "Roboto Light", sans-serif;
+  resize: none;
+  align-items: center;
+}

@@ -21,13 +21,14 @@ import { CodeComponent } from './components/nodes/code/code.component';
 import {NodeComponent} from './components/nodes/node.component';
 import {TypeSelectorComponent} from './components/selector/type-selector.component';
 import {PopupWindowComponent} from './components/window/popup/popup-window.component';
+import {InputComponent} from './components/input/input.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'posts', component: PostsComponent, children: [
       {path: '', component: PostListComponent},
       {path: 'add', component: PostAddComponent},
-      {path: 'edit', component: PostEditComponent},
+      {path: 'edit/:id', component: PostEditComponent},
       {path: ':id', component: PostDetailComponent}
     ]
   },
@@ -52,7 +53,8 @@ const routes: Routes = [
     CodeComponent,
     NodeComponent,
     TypeSelectorComponent,
-    PopupWindowComponent
+    PopupWindowComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

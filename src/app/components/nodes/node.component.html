@@ -1,12 +1,10 @@
-<div *ngIf="node.type === Type.TEXT">
-  <app-text
-    [content]="node.node"
-    [isInput]="isInput"
-    [onChange]="onChange"
-    [id]="node.id"
-    [onDelete]="onDelete"
-  ></app-text>
-</div>
+<app-text *ngIf="node.type === Type.TEXT"
+  [content]="node.node"
+  [isInput]="isInput"
+  [onChange]="onChange"
+  [node]="node"
+  [onDelete]="onDelete"
+></app-text>
 <div *ngIf="node.type === Type.CODE">
   <app-text></app-text>
 </div>

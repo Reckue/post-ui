@@ -9,3 +9,22 @@
 .content a:hover {
   text-decoration: underline;
 }
+
+.show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 1;
+  width: 400px;
+  height: 20px;
+  align-items: center;
+  border-radius: 20px;
+  border: none;
+  background: #ebebeb;
+  outline: none;
+  margin: auto;
+}
+
+.show:hover {
+  background: #e6e6e6;
+}
