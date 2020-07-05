@@ -115,8 +115,9 @@
 }
 
 .header .wrapper .profile .user:hover {
-  background-color: rgba(0,0,0,0.1);
+  opacity: .8;
   z-index: 12;
+  cursor: pointer;
 }
 
 .header .wrapper .profile .notify {
@@ -142,7 +143,7 @@
 
 .header .wrapper .profile .profile-menu {
   display: block;
-  z-index: 10;
+  z-index: 13;
   visibility: visible;
   background-color: white;
   position: absolute;
@@ -152,8 +153,36 @@
   min-width: 180px;
   max-width: 200px;
   width: auto;
-  border-radius: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px -1px rgba(0, 0, 0, .5);
 }
+
+.header .wrapper .profile .profile-menu:before,
+.header .wrapper .profile .profile-menu:after {
+   content: "";
+   display: block;
+   height: 0;
+   left: 50%;
+   position: absolute;
+   width: 0;
+ }
+.header .wrapper .profile .profile-menu:before {
+   border-left: 12px solid transparent;
+   border-right: 12px solid transparent;
+   border-bottom: 14px solid #e6e6e6;
+   margin-left: 50px;
+   top: -14px;
+   z-index: 4;
+ }
+.header .wrapper .profile .profile-menu:after {
+   border-left: 11px solid transparent;
+   border-right: 11px solid transparent;
+   border-bottom: 13px solid #fff;
+   margin-left: 51px;
+   top: -13px;
+   z-index: 5;
+ }
+
 .header .wrapper .profile .profile-menu ul {
   display: flex;
   flex-direction: column;
@@ -165,6 +194,20 @@
 .header .wrapper .profile .profile-menu ul li {
   height: 30px;
   line-height: 30px;
+}
+.header .wrapper .profile .profile-menu ul li a {
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
   padding-right: 15px;
   padding-left: 15px;
+}
+.header .wrapper .profile .profile-menu ul li a:hover {
+  background-color: #eaf0f3;
+}
+.header .wrapper .profile .profile-menu ul li:nth-child(1) a:hover {
+  border-radius: 3px 3px 0 0;
+}
+.header .wrapper .profile .profile-menu ul li:nth-child(9) a:hover {
+  border-radius: 0 0 3px 3px;
 }
