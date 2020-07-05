@@ -2,7 +2,6 @@ import {Tag} from './Tag';
 import {Node} from './Node';
 import {StatusType} from './StatusType';
 
-
 export class Post {
 
   id: string;
@@ -16,7 +15,7 @@ export class Post {
   status: StatusType;
 
   constructor(id: string = null,
-              title: string = null,
+              title: string = '',
               nodes: Node[] = [],
               source: string = null,
               userId: string = null,
