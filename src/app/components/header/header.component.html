@@ -24,9 +24,15 @@
         <div class="profile-background" [style]="backgroundVisible" (click)="removeBackground()" ></div>
         <div class="profile-menu" [style]="backgroundVisible">
           <ul>
-            <li>Profile</li>
-            <li>Settings</li>
-            <li>Sign-out</li>
+            <li class="profile-menu-main"><a routerLink="/">Profile</a></li>
+            <li><a routerLink="/">Your posts</a></li>
+            <li><a routerLink="/">Your stars</a></li>
+            <li><a routerLink="/">Your followings</a></li>
+            <li><a routerLink="/">Feature preview</a></li>
+            <li><a routerLink="/">Settings</a></li>
+            <li><a routerLink="/">Security & Privacy</a></li>
+            <li><a routerLink="/">Help</a></li>
+            <li><a routerLink="/">Sign out</a></li>
           </ul>
         </div>
       <div class="notify">!</div>

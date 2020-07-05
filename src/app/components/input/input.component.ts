@@ -15,4 +15,13 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  toggleNodeCreated(obj, event) {
+    if (event.shiftKey) {
+      // do this
+      console.log(1);
+    } else {
+      // do that
+    }
+  }
 }
