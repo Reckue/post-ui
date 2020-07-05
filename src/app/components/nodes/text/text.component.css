@@ -1,14 +1,20 @@
 .text-node {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
   align-items: center;
 }
 
 .text-node input {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
   border: none;
   background: none;
   outline: none;
-  font-size: 12px;
-  color: #696969;
+  color: #000000;
   margin: 5px 0;
+  font-size: 14px;
 }
 
 .text-node button {
