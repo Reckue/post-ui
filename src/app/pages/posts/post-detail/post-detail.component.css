@@ -19,9 +19,10 @@
 .title {
   font-size: 20px;
   outline: none;
+  font-weight: bold;
 }
 
 .node {
   font-size: 16px;
-  margin: 2px 0;
+  margin: 8px 0;
 }

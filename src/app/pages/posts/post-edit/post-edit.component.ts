@@ -39,14 +39,14 @@ export class PostEditComponent implements OnInit {
   }
 
   addNode = (event) => {
-    if (event.target.value !== '') {
-      const textContent = new TextNode(event.target.value);
+    if (event.target.innerText !== '') {
+      const textContent = new TextNode(event.target.innerText);
       const node = new Node(null, NodeType.TEXT, textContent, null, '1');
       this.post.nodes.push(node);
-      event.target.value = '';
+      event.target.innerText = '';
       this.editPost();
     }
-  }
+  };
 
   editTitle(event) {
     this.post.title = event.target.value;

@@ -39,10 +39,6 @@
 }
 
 .content .node {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  align-items: center;
   font-size: 14px;
 }
 
