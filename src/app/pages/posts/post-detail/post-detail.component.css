@@ -1,9 +1,11 @@
 .content {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  width: 35vw;
   padding: 10px 20px;
   line-height: 1.8;
-  /*height: 1200px;*/
-  border-radius: 3px;
-  background-color: #fff;
+  background: white;
   box-shadow: 0 2px 5px rgba(0,0,0,.03);
 }
 
@@ -16,9 +18,10 @@
 
 .title {
   font-size: 20px;
+  outline: none;
 }
 
 .node {
-  font-size: 14px;
-  margin: 10px 0;
+  font-size: 16px;
+  margin: 2px 0;
 }
