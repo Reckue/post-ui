@@ -2,16 +2,15 @@
   margin: 10px;
   padding: 0 10px;
   line-height: 1.8;
-  border-radius: 3px;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,.03);
+  border-bottom: #e2e2e2 1px solid;
 }
 
 .title {
-  font-size: 16px;
+  font-size: 20px;
   color: #000000;
 }
 
 .content {
-  font-size: 12px;
+  font-size: 16px;
 }
