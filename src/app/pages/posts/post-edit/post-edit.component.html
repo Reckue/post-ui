@@ -4,8 +4,8 @@
     <app-node [node]="node" [isInput]="true" [onChange]="editNode" [onDelete]="deleteNode"></app-node>
   </div>
   <div class="node">
-    <app-selector></app-selector>
-    <app-input  id="new" placeholder="Write text..." [change]="addNode"></app-input>
+    <!--app-selector></app-selector-->
+    <app-input [change]="addNode"></app-input>
   </div>
   <app-popup-window></app-popup-window>
 </div>
