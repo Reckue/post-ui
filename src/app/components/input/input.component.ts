@@ -20,6 +20,7 @@ export class InputComponent implements OnInit {
     this.input.value = '';
     this.input.cols = 0;
     this.resize();
+
   }
 
   resize() {
@@ -30,5 +31,14 @@ export class InputComponent implements OnInit {
   onChange(event: Event) {
     this.resize();
     this.change(event);
+  }
+
+  toggleNodeCreated(obj, event) {
+    if (event.shiftKey) {
+      // do this
+      console.log(1);
+    } else {
+      // do that
+    }
   }
 }

@@ -1,14 +1,13 @@
-textarea {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  font-size: 14px;
-  color: #000000;
-  background: none;
-  border: none;
-  outline: none;
-  margin-top: 5px;
-  font-family: "Roboto Light", sans-serif;
+.text-input {
+  display: block;
+  overflow: hidden;
+  line-height: 20px;
+  font-size: 16px;
   resize: none;
-  align-items: center;
+  outline: none;
+  border: 0;
+}
+.text-input[contenteditable]:empty::before {
+  content: "Write text";
+  color: gray;
 }
