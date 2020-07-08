@@ -22,11 +22,11 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.postService.getAllPosts()
-      .then(response => {
-        this.posts = response;
-        this.popup.display('10 posts was loaded!');
-    });
+      this.postService.getAllPosts()
+          .then(response => {
+              this.posts = response;
+              this.popup.display('10 posts was loaded!');
+          });
   }
 
   loadMore() {

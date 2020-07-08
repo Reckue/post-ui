@@ -15,5 +15,6 @@ a:hover {
   text-decoration: underline;
 }
 div {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }

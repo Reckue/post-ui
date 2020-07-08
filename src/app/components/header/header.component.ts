@@ -8,8 +8,12 @@ import {query} from '@angular/animations';
 })
 export class HeaderComponent implements OnInit {
 
-  backgroundVisible = 'visibility: hidden;';
+  menuVisible = false;
+
   searchVisible = document.body.clientWidth > 580;
+
+  private wrapper: HTMLElement;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,11 +22,11 @@ export class HeaderComponent implements OnInit {
     };
   }
 
-  removeBackground() {
-    this.backgroundVisible = 'visibility: hidden;';
+  reverseMenuVisibility() {
+    this.menuVisible = !this.menuVisible;
   }
 
-  addBackground() {
-    this.backgroundVisible = 'visibility: visible;';
+  hideMenu() {
+    this.menuVisible = false;
   }
 }

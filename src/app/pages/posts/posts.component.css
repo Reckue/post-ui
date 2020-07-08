@@ -1,44 +1,4 @@
-.main {
-  height: 100%;
+.posts-wrapper {
+  margin: auto;
+  width: 50vw;
 }
-
-.main .wrapper {
-  border-radius: 3px;
-  margin: 20px auto;
-  width: min-content;
-  padding: 5px 10px;
-}
-
-/* post */
-.main .wrapper .posts {
-  margin: 0 auto;
-  min-width: 350px;
-  width: 25vw;
-  border-radius: 3px;
-}
-
-.main .wrapper .posts .content {
-  padding: 10px 20px;
-  line-height: 1.8;
-}
-
-.main .wrapper .posts .content a {
-  text-decoration: none;
-}
-
-.main .wrapper .posts .content a:hover {
-  text-decoration: underline;
-}
-
-/* sidebar */
-/*.main .wrapper .sidebar {*/
-/*  margin: 0 10px;*/
-/*  width: 340px;*/
-/*  float: left;*/
-/*  border-radius: 3px;*/
-/*  background-color: #fff;*/
-/*}*/
-/*.main .wrapper .sidebar .content{*/
-/*  padding: 10px 20px;*/
-/*  line-height: 1.8;*/
-/*}*/
