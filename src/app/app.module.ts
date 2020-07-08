@@ -23,6 +23,7 @@ import {NodeComponent} from './components/nodes/node.component';
 import {TypeSelectorComponent} from './components/selector/type-selector.component';
 import {PopupWindowComponent} from './components/window/popup/popup-window.component';
 import {InputComponent} from './components/input/input.component';
+import {AuthComponent} from './pages/auth/auth.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {InputComponent} from './components/input/input.component';
     NodeComponent,
     TypeSelectorComponent,
     PopupWindowComponent,
-    InputComponent
+    InputComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
