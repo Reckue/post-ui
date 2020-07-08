@@ -2,77 +2,41 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  font-size: 17px;
   height: 56px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  margin-bottom: 10px;
 }
 
 .header .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
   width: 1000px;
+  margin: auto;
   height: inherit;
-  margin: 0 auto;
 }
 
-/* logo */
+/*  logo  */
 .header .wrapper .logo {
-  font-family: 'Bungee', cursive;
   display: flex;
-  text-align: center;
-  align-items: flex-end;
-  float: left;
   flex-direction: row;
-  height: inherit;
-  text-decoration: none;
-  color: #5f5f5f;
-  font-size: 22px;
-  margin: 0 10px;
+  flex-grow: 1;
 }
 
 .header .wrapper .logo img {
   height: 36px;
-  margin: 10px 0px;
 }
 
-.header .wrapper .logo div {
-  margin-bottom: -3px;
-}
-
-/* menu */
-.header .wrapper .menu {
-  display: none;
-  float: left;
-  width: 400px;
-  height: inherit;
-}
-
-.header .wrapper .menu a.link {
-  float: left;
-  height: inherit;
-  padding: 0 15px;
-  line-height: 56px;
-  text-decoration: none;
-  color: #333;
-}
-.header .wrapper .menu a.link:hover {
-  text-decoration: none;
-  background-color: #f2f2f2;
-}
-
-
-/* search */
+/*  search  */
 .header .wrapper .search {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 320px;
   height: 36px;
-  margin: 10px auto;
   border-radius: 18px;
-  background-color: #f2f2f2;
+  background-color: #f5f5f5;
 }
 
 .header .wrapper .search .image {
@@ -93,43 +57,29 @@
   margin: 0 5px;
 }
 
-
-/* profile */
+/*  profile */
 .header .wrapper .profile {
   display: flex;
   flex-direction: row-reverse;
-  flex-wrap: nowrap;
+  flex-grow: 1;
 }
 
 .header .wrapper .profile .user {
-  float: right;
-  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 36px;
   height: 36px;
-  margin: 10px;
+  border-radius: 50%;
   background-color: #758c9c;
-  text-align: center;
-  line-height: 36px;
   color: #fff;
-  border-radius: 18px;
+  z-index: 12;
 }
 
 .header .wrapper .profile .user:hover {
   opacity: .8;
-  z-index: 12;
   cursor: pointer;
-}
-
-.header .wrapper .profile .notify {
-  float: right;
-  width: 28px;
-  height: 28px;
-  margin: 15px;
-  background-color: #adc6d2;
-  text-align: center;
-  line-height: 28px;
-  color: #fff;
-  border-radius: 14px;
 }
 
 .header .wrapper .profile .profile-background {
@@ -144,7 +94,6 @@
 .header .wrapper .profile .profile-menu {
   display: block;
   z-index: 13;
-  visibility: visible;
   background-color: white;
   position: absolute;
   margin-top: 60px;
@@ -159,29 +108,31 @@
 
 .header .wrapper .profile .profile-menu:before,
 .header .wrapper .profile .profile-menu:after {
-   content: "";
-   display: block;
-   height: 0;
-   left: 50%;
-   position: absolute;
-   width: 0;
- }
+  content: "";
+  display: block;
+  height: 0;
+  left: 50%;
+  position: absolute;
+  width: 0;
+}
+
 .header .wrapper .profile .profile-menu:before {
-   border-left: 12px solid transparent;
-   border-right: 12px solid transparent;
-   border-bottom: 14px solid #e6e6e6;
-   margin-left: 50px;
-   top: -14px;
-   z-index: 4;
- }
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 14px solid #e6e6e6;
+  margin-left: 50px;
+  top: -14px;
+  z-index: 4;
+}
+
 .header .wrapper .profile .profile-menu:after {
-   border-left: 11px solid transparent;
-   border-right: 11px solid transparent;
-   border-bottom: 13px solid #fff;
-   margin-left: 51px;
-   top: -13px;
-   z-index: 5;
- }
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 13px solid #fff;
+  margin-left: 51px;
+  top: -13px;
+  z-index: 5;
+}
 
 .header .wrapper .profile .profile-menu ul {
   display: flex;
@@ -195,6 +146,7 @@
   height: 30px;
   line-height: 30px;
 }
+
 .header .wrapper .profile .profile-menu ul li a {
   display: block;
   font-size: 14px;
@@ -202,12 +154,15 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
 .header .wrapper .profile .profile-menu ul li a:hover {
   background-color: #eaf0f3;
 }
+
 .header .wrapper .profile .profile-menu ul li:nth-child(1) a:hover {
   border-radius: 3px 3px 0 0;
 }
+
 .header .wrapper .profile .profile-menu ul li:nth-child(9) a:hover {
   border-radius: 0 0 3px 3px;
 }

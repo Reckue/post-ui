@@ -3,25 +3,14 @@
     <a class="logo" [routerLink]="['/']">
       <img src="../../../assets/logo.png"/>
     </a>
-    <div class="menu">
-      <div>
-        <a class="link" routerLink="/">Home</a>
-      </div>
-      <div>
-        <a class="link" routerLink="/posts">Posts</a>
-      </div>
-      <div>
-        <a class="link" routerLink="/error">Error</a>
-      </div>
-    </div>
     <div *ngIf="searchVisible" class="search">
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>
     <div class="profile">
-      <div class="user" (click)="addBackground()">S</div>
-        <div class="profile-background" [style]="backgroundVisible" (click)="removeBackground()" ></div>
-        <div class="profile-menu" [style]="backgroundVisible">
+      <div class="user" (click)="reverseMenuVisibility()">S</div>
+        <div class="profile-background" *ngIf="menuVisible" (click)="hideMenu()" ></div>
+        <div class="profile-menu" *ngIf="menuVisible">
           <ul>
             <li class="profile-menu-main"><a routerLink="/">Profile</a></li>
             <li><a routerLink="/">Your posts</a></li>
@@ -34,7 +23,6 @@
             <li><a routerLink="/">Sign out</a></li>
           </ul>
         </div>
-      <div class="notify">!</div>
     </div>
   </div>
 </div>

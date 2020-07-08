@@ -1,13 +1,7 @@
 .content {
-  padding: 10px 20px;
-  line-height: 1.8;
-}
-
-.content a {
-  text-decoration: none;
-}
-.content a:hover {
-  text-decoration: underline;
+  margin: auto;
+  width: 100%;
+  max-width: 520px;
 }
 
 .show {
