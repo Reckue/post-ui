@@ -1,8 +1,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  min-width: 500px;
-  width: 35vw;
+  min-width: 350px;
   padding: 10px 20px;
   line-height: 1.8;
   background: white;
