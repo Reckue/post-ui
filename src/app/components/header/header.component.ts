@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {query} from '@angular/animations';
+import {Action} from '../../redux/models/Action';
+import {ActionTypes} from '../../redux/models/ActionTypes';
+import {Store} from '@ngrx/store';
+import {AuthService} from '../../services/AuthService';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
   private wrapper: HTMLElement;
 
-  constructor() { }
+  constructor(private store: Store<any>, private authService: AuthService) { }
 
   ngOnInit(): void {
     window.onresize = () => {
@@ -28,5 +32,10 @@ export class HeaderComponent implements OnInit {
 
   hideMenu() {
     this.menuVisible = false;
+  }
+
+  unauthorized() {
+    this.authService.unauthorizedTokens();
+    this.store.dispatch(new Action(ActionTypes.UNAUTHORIZED));
   }
 }
