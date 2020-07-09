@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 
-import {routes} from "../routes";
+import {routes} from '../routes';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './pages/home/home.component';
 import {PostsComponent} from './pages/posts/posts.component';
@@ -24,7 +24,8 @@ import {TypeSelectorComponent} from './components/selector/type-selector.compone
 import {PopupWindowComponent} from './components/window/popup/popup-window.component';
 import {InputComponent} from './components/input/input.component';
 import {AuthComponent} from './pages/auth/auth.component';
-
+import {StoreModule} from '@ngrx/store';
+import {headerReducer} from './redux/reducers/HeaderReducer';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {AuthComponent} from './pages/auth/auth.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({header: headerReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

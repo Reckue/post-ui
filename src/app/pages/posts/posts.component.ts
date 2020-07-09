@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Action} from '../../redux/models/Action';
+import {ActionTypes} from '../../redux/models/ActionTypes';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-posts',
@@ -9,9 +12,10 @@ export class PostsComponent implements OnInit {
 
   private wrapper: HTMLElement;
 
-  constructor() { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(new Action(ActionTypes.SHOW_HEADER));
     this.wrapper = window.document.getElementById('posts-page-wrapper');
     this.adaptation();
     window.addEventListener('resize', () => {
