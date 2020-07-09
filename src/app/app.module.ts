@@ -26,6 +26,7 @@ import {InputComponent} from './components/input/input.component';
 import {AuthComponent} from './pages/auth/auth.component';
 import {StoreModule} from '@ngrx/store';
 import {headerReducer} from './redux/reducers/HeaderReducer';
+import {userReducer} from './redux/reducers/AuthReducer';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import {headerReducer} from './redux/reducers/HeaderReducer';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    StoreModule.forRoot({header: headerReducer})
+    StoreModule.forRoot({header: headerReducer, user: userReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

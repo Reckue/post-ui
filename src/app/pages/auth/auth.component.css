@@ -1,6 +1,28 @@
 .content {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100vw;
+  height: 100vh;
   background: white;
-  border: black 1px solid;
+}
+
+.auth-form {
+  width: 200px;
+  background: #ebebeb;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
+.auth-form input {
+  margin: 10px auto 10px auto;
+  border: none;
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  user-select: none;
+  outline: none;
 }

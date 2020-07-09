@@ -5,6 +5,9 @@ import {Tokens} from '../../models/Tokens';
 import {Store} from '@ngrx/store';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
+import {Router} from '@angular/router';
+import {Header} from '../../redux/models/Header';
+import {User} from '../../redux/models/User';
 
 @Component({
   selector: 'app-auth',
@@ -13,17 +16,34 @@ import {ActionTypes} from '../../redux/models/ActionTypes';
 })
 export class AuthComponent implements OnInit {
 
-  public tokens: Tokens = new Tokens();
-
   public authForm: AuthForm = new AuthForm();
 
-  constructor(private authService: AuthService, private store: Store<any>) { }
+  constructor(private authService: AuthService,
+              private store: Store<any>,
+              private router: Router) {
+    this.store.dispatch(new Action(ActionTypes.HIDE_HEADER));
+  }
 
   ngOnInit(): void {
-    this.store.dispatch(new Action(ActionTypes.HIDE_HEADER));
+    this.store.select('user')
+      .subscribe(store => {
+        const user: User = store;
+        if (user.isAuth) {
+          this.router.navigate(['posts']).then();
+        }
+      });
+  }
+
+  onChange = (event) => {
+    this.authForm[event.target.name] = event.target.value;
+  }
+
+  auth = () => {
     this.authService
-      .login(new AuthForm('hale@yahoo.com', '123123', 'elele'))
-      .then(tokens => this.tokens = tokens)
-      .catch();
+      .login(this.authForm)
+      .then(tokens => {
+        this.store.dispatch(new Action(ActionTypes.AUTHORIZED));
+        this.router.navigate(['posts']).then();
+      }).catch();
   }
 }

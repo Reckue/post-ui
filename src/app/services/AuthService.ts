@@ -12,6 +12,10 @@ export class AuthService {
 
   constructor() { }
 
+  unauthorizedTokens() {
+    window.localStorage.clear();
+  }
+
   saveTokens(tokens: Tokens) {
     window.localStorage.setItem('access_token', tokens.access_token);
     window.localStorage.setItem('refresh_token', tokens.refresh_token);
