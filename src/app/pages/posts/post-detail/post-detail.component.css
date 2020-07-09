@@ -1,11 +1,9 @@
 .content {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
+  flex-grow: 1;
   padding: 10px 20px;
-  line-height: 1.8;
   background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,.03);
 }
 
 .content a {
