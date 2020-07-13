@@ -23,7 +23,7 @@
 .header .wrapper .logo {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
+  margin-right: 20px;
 }
 
 .header .wrapper .logo img {
@@ -35,15 +35,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 320px;
-  height: 36px;
+  flex-grow: 1;
+  height: 30px;
   border-radius: 18px;
   background-color: #f5f5f5;
 }
 
 .header .wrapper .search .image {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   background: url("../../../assets/search.png");
   background-size: cover;
   margin: 0 10px;
@@ -61,9 +61,29 @@
 
 /*  profile */
 .header .wrapper .profile {
+  margin-left: auto;
   display: flex;
   flex-direction: row-reverse;
-  flex-grow: 1;
+  width: 100px;
+  align-items: center;
+}
+
+.header .wrapper .profile .add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  background: #52819c;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.header .wrapper .profile .add:hover {
+  text-decoration: none;
+  background: #2b82b9;
 }
 
 .header .wrapper .profile .user {
@@ -103,6 +123,7 @@
   z-index: 13;
   background-color: white;
   position: absolute;
+  top: 0px;
   margin-left: 10px;
   margin-top: 60px;
   padding: 0;

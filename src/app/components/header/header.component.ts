@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   menuVisible = false;
 
-  searchVisible = document.body.clientWidth > 580;
+  searchVisible = document.body.clientWidth > 490;
 
   user: ReduxUser;
 

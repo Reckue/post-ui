@@ -1,4 +1,4 @@
 <div class="user-image">
   <div *ngIf="url" class="image"></div>
-  <div *ngIf="!url" class="username">{{username.substring(0, 1)}}</div>
+  <div *ngIf="!url && username" class="username">{{username.substring(0, 1)}}</div>
 </div>
