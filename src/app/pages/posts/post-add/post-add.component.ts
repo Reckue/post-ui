@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PostService} from '../../../services/PostService';
 import {Post} from '../../../models/Post';
+import {Store} from '@ngrx/store';
+import {ReduxUser} from '../../../redux/models/ReduxUser';
 
 @Component({
   selector: 'app-post-add',
@@ -12,10 +14,21 @@ export class PostAddComponent implements OnInit {
 
   private post: Post;
 
-  constructor(private router: Router, private postService: PostService) { }
+  constructor(private router: Router,
+              private postService: PostService,
+              private store: Store<any>) { }
 
   ngOnInit(): void {
-    this.postService.createPost(new Post()).then(post => {
+    this.store.select('user')
+      .subscribe(user => {
+        if (!user.isAuth) {
+          this.router.navigate(['auth']).then();
+        } else {
+          this.post = new Post();
+          this.post.userId = user.info.id;
+        }
+      });
+    this.postService.createPost(this.post).then(post => {
       this.post = post;
       this.router.navigate(['posts', 'edit', this.post.id]).then();
     });

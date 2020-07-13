@@ -20,7 +20,7 @@ export class PostService {
   }
 
   async getPostById(id: string) {
-    const response = await axios.get(this.POST_URL + id);
+    const response = await axios.get(this.POST_URL + '/' + id);
     return response.data;
   }
 
@@ -30,7 +30,7 @@ export class PostService {
   }
 
   async editPost(id: string, post: Post) {
-    const response = await axios.put(this.POST_URL + id, post);
+    const response = await axios.put(this.POST_URL + '/' + id, post);
     return response.data;
   }
 }
