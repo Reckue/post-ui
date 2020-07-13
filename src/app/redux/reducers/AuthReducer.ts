@@ -1,15 +1,14 @@
-import {Header} from '../models/Header';
 import {ActionTypes} from '../models/ActionTypes';
-import {User} from '../models/User';
+import {ReduxUser} from '../models/ReduxUser';
 
-export const userReducer = (state = new User(false), action) => {
+export const userReducer = (state = new ReduxUser(false), action) => {
   switch (action.type) {
     case ActionTypes.AUTHORIZED:
       console.log(action);
-      return new User(true);
+      return {...state, ...{isAuth: true, info: action.payload}};
     case ActionTypes.UNAUTHORIZED:
       console.log(action);
-      return new User(false);
+      return {...state, ...{isAuth: false, info: null}};
     default:
       return state;
   }

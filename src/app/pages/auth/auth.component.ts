@@ -7,7 +7,7 @@ import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Router} from '@angular/router';
 import {Header} from '../../redux/models/Header';
-import {User} from '../../redux/models/User';
+import {ReduxUser} from '../../redux/models/ReduxUser';
 
 @Component({
   selector: 'app-auth',
@@ -27,7 +27,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     this.store.select('user')
       .subscribe(store => {
-        const user: User = store;
+        const user: ReduxUser = store;
         if (user.isAuth) {
           this.router.navigate(['posts']).then();
         }
@@ -42,8 +42,10 @@ export class AuthComponent implements OnInit {
     this.authService
       .login(this.authForm)
       .then(tokens => {
-        this.store.dispatch(new Action(ActionTypes.AUTHORIZED));
-        this.router.navigate(['posts']).then();
+        this.authService.info().then(info => {
+          this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
+          this.router.navigate(['posts']).then();
+        });
       }).catch();
   }
 }
