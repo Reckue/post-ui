@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Store} from '@ngrx/store';
-import {User} from '../../redux/models/User';
+import {ReduxUser} from '../../redux/models/ReduxUser';
 import {Router} from '@angular/router';
 
 @Component({
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
   checkAuth() {
     this.store.select('user')
       .subscribe(store => {
-        const user: User = store;
+        const user: ReduxUser = store;
         if (!user.isAuth) {
           this.router.navigate(['auth']).then();
         }

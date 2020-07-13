@@ -2,13 +2,15 @@ import {Injectable} from '@angular/core';
 import {AuthForm} from '../models/AuthForm';
 import axios from 'axios';
 import {Tokens} from '../models/Tokens';
+import {environment} from '../../environments/environment';
+import {User} from '../models/User';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
-  private AUTH_URL = 'http://account-reckue.apps.us-east-1.starter.openshift-online.com/auth/';
+  private AUTH_URL = environment.accountApi + '/auth';
 
   constructor() { }
 
@@ -23,7 +25,7 @@ export class AuthService {
     window.localStorage.setItem('token_type', tokens.token_type);
   }
 
-  getTokens() {
+  getTokens(): Tokens {
     // tslint:disable-next-line:variable-name
     const expires_in = window.localStorage.getItem('expires_in') as unknown as number;
     return new Tokens(
@@ -35,14 +37,24 @@ export class AuthService {
   }
 
   async register(registerForm: AuthForm) {
-    const response = await axios.post(this.AUTH_URL + 'register', registerForm);
+    const response = await axios.post(this.AUTH_URL + '/register', registerForm);
     this.saveTokens(response.data);
     return this.getTokens();
   }
 
   async login(loginForm: AuthForm) {
-    const response = await axios.post(this.AUTH_URL + 'login', loginForm);
+    const response = await axios.post(this.AUTH_URL + '/login', loginForm);
     this.saveTokens(response.data);
     return this.getTokens();
+  }
+
+  async info(): Promise<User> {
+    const tokens = this.getTokens();
+    const response = await axios.get(this.AUTH_URL + '/current_user', {
+      headers: {
+        Authorization: 'Bearer ' + tokens.access_token
+      }
+    });
+    return response.data;
   }
 }
