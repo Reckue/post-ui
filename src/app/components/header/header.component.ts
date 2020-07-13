@@ -4,6 +4,8 @@ import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Store} from '@ngrx/store';
 import {AuthService} from '../../services/AuthService';
+import {User} from '../../models/User';
+import {ReduxUser} from '../../redux/models/ReduxUser';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
   searchVisible = document.body.clientWidth > 580;
 
-  private wrapper: HTMLElement;
+  user: ReduxUser;
 
   constructor(private store: Store<any>, private authService: AuthService) { }
 
@@ -24,6 +26,7 @@ export class HeaderComponent implements OnInit {
     window.onresize = () => {
       this.searchVisible = document.body.clientWidth > 580;
     };
+    this.store.select('user').subscribe(store => this.user = store);
   }
 
   reverseMenuVisibility() {

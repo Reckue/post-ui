@@ -8,8 +8,10 @@
       <input placeholder="Post or profile" type="search"/>
     </div>
     <div class="profile">
-      <div class="user" (click)="reverseMenuVisibility()">S</div>
-        <div class="profile-background" *ngIf="menuVisible" (click)="hideMenu()" ></div>
+      <div class="user" (click)="reverseMenuVisibility()">
+        <app-user-image [username]="user.info.username"></app-user-image>
+      </div>
+        <div class="profile-background" *ngIf="menuVisible" (click)="hideMenu()"></div>
         <div class="profile-menu" *ngIf="menuVisible">
           <ul>
             <li class="profile-menu-main"><a routerLink="/">Profile</a></li>

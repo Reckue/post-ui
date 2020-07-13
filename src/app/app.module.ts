@@ -27,6 +27,7 @@ import {AuthComponent} from './pages/auth/auth.component';
 import {StoreModule} from '@ngrx/store';
 import {headerReducer} from './redux/reducers/HeaderReducer';
 import {userReducer} from './redux/reducers/AuthReducer';
+import {UserImageComponent} from './components/image/user-image.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {userReducer} from './redux/reducers/AuthReducer';
     TypeSelectorComponent,
     PopupWindowComponent,
     InputComponent,
-    AuthComponent
+    AuthComponent,
+    UserImageComponent
   ],
   imports: [
     BrowserModule,
