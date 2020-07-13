@@ -19,7 +19,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.getTokens().access_token) {
-      this.store.dispatch(new Action(ActionTypes.AUTHORIZED));
+      this.authService.info().then(info => {
+        this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
+      });
     }
     this.store.select('header')
       .subscribe(store => {

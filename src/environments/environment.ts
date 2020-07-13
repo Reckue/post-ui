@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  accountApi: 'http://account-reckue.apps.us-east-1.starter.openshift-online.com',
+  postApi: 'http://post-reckue.apps.us-east-1.starter.openshift-online.com'
 };
 
 /*
