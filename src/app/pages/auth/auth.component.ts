@@ -1,12 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/AuthService';
 import {AuthForm} from '../../models/AuthForm';
-import {Tokens} from '../../models/Tokens';
 import {Store} from '@ngrx/store';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Router} from '@angular/router';
-import {Header} from '../../redux/models/Header';
 import {ReduxUser} from '../../redux/models/ReduxUser';
 
 @Component({
@@ -15,6 +13,8 @@ import {ReduxUser} from '../../redux/models/ReduxUser';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+
+  registration = false;
 
   public authForm: AuthForm = new AuthForm();
 
@@ -47,5 +47,9 @@ export class AuthComponent implements OnInit {
           this.router.navigate(['posts']).then();
         });
       }).catch();
+  }
+
+  swap = () => {
+    this.registration = !this.registration;
   }
 }

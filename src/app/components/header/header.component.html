@@ -7,7 +7,7 @@
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>
-    <div class="profile">
+    <div *ngIf="user.isAuth" class="profile">
       <div class="user" (click)="reverseMenuVisibility()">
         <app-user-image [username]="user.info.username"></app-user-image>
       </div>
@@ -27,5 +27,6 @@
         </div>
       <a class="add" routerLink="/posts/add">+</a>
     </div>
+    <a routerLink="/auth" *ngIf="!user.isAuth" class="auth">Get auth</a>
   </div>
 </div>
