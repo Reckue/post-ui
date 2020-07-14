@@ -49,6 +49,17 @@ export class AuthComponent implements OnInit {
       }).catch();
   }
 
+  register = () => {
+    this.authService
+      .register(this.authForm)
+      .then(tokens => {
+        this.authService.info().then(info => {
+          this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
+          this.router.navigate(['posts']).then();
+        });
+      }).catch();
+  }
+
   swap = () => {
     this.registration = !this.registration;
   }
