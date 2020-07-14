@@ -1,7 +1,19 @@
 <div class="content">
-  <div class="auth-form">
-    <input placeholder="username" name="username" (change)="onChange($event)">
-    <input placeholder="password" name="password" type="password" (change)="onChange($event)">
-    <button (click)="auth()">Sign-in</button>
+  <div *ngIf="!registration" class="auth-form">
+    <input placeholder="Username..." name="username" (change)="onChange($event)">
+    <input placeholder="Password..." name="password" type="password" (change)="onChange($event)">
+    <div class="bottom">
+      <a (click)="swap()">Create account</a>
+      <button (click)="auth()">Get auth</button>
+    </div>
+  </div>
+  <div *ngIf="registration" class="auth-form">
+    <input placeholder="Email..." name="email" (change)="onChange($event)">
+    <input placeholder="Username..." name="username" (change)="onChange($event)">
+    <input placeholder="Password..." name="password" type="password" (change)="onChange($event)">
+    <div class="bottom">
+      <a (click)="swap()">I have account</a>
+      <button (click)="register()">Register</button>
+    </div>
   </div>
 </div>

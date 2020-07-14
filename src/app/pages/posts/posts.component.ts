@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Store} from '@ngrx/store';
@@ -17,7 +17,6 @@ export class PostsComponent implements OnInit {
   constructor(private store: Store<any>, private router: Router) { }
 
   ngOnInit(): void {
-    this.checkAuth();
     this.store.dispatch(new Action(ActionTypes.SHOW_HEADER));
     this.wrapper = window.document.getElementById('posts-page-wrapper');
     this.adaptation();
