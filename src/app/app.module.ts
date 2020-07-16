@@ -21,13 +21,14 @@ import { VideoComponent } from './components/nodes/video/video.component';
 import { CodeComponent } from './components/nodes/code/code.component';
 import {NodeComponent} from './components/nodes/node.component';
 import {TypeSelectorComponent} from './components/selector/type-selector.component';
-import {PopupWindowComponent} from './components/window/popup/popup-window.component';
+import {PopupNotificationComponent} from './components/notification/popup/popup-notification.component';
 import {InputComponent} from './components/input/input.component';
 import {AuthComponent} from './pages/auth/auth.component';
 import {StoreModule} from '@ngrx/store';
 import {headerReducer} from './redux/reducers/HeaderReducer';
 import {userReducer} from './redux/reducers/AuthReducer';
 import {UserImageComponent} from './components/image/user-image.component';
+import {LikeComponent} from './components/like/like.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +48,11 @@ import {UserImageComponent} from './components/image/user-image.component';
     CodeComponent,
     NodeComponent,
     TypeSelectorComponent,
-    PopupWindowComponent,
+    PopupNotificationComponent,
     InputComponent,
     AuthComponent,
-    UserImageComponent
+    UserImageComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
