@@ -2,10 +2,10 @@ import {Component, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-popup-window',
-  templateUrl: './popup-window.component.html',
-  styleUrls: ['./popup-window.component.css']
+  templateUrl: './popup-notification.component.html',
+  styleUrls: ['./popup-notification.component.css']
 })
-export class PopupWindowComponent {
+export class PopupNotificationComponent {
 
   message = 'default message...';
 

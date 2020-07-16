@@ -1,0 +1,24 @@
+.like {
+  margin: 0 4px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.like .count {
+  font-size: 12px;
+  margin: 4px;
+}
+
+.like .like-image {
+  width: 10px;
+  height: 10px;
+  background: url("../../../assets/like.png") no-repeat;
+  background-size: cover;
+  margin-top: -2px;
+  opacity: .8;
+}
+
+.like .like-image:hover {
+  opacity: .4;
+  cursor: pointer;
+}

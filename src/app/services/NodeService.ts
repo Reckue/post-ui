@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Node} from '../models/Node';
 import axios from 'axios';
 
 @Injectable({
