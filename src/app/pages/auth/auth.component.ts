@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../../services/AuthService';
 import {AuthForm} from '../../models/AuthForm';
 import {Store} from '@ngrx/store';
@@ -6,6 +6,7 @@ import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Router} from '@angular/router';
 import {ReduxUser} from '../../redux/models/ReduxUser';
+import {PopupNotificationComponent} from '../../components/notification/popup/popup-notification.component';
 
 @Component({
   selector: 'app-auth',
@@ -13,6 +14,8 @@ import {ReduxUser} from '../../redux/models/ReduxUser';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+
+  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
 
   registration = false;
 
@@ -46,7 +49,9 @@ export class AuthComponent implements OnInit {
           this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
           this.router.navigate(['posts']).then();
         });
-      }).catch();
+      }).catch(ignore => {
+        this.popup.display('Error! User can\'t be authorized!');
+      });
   }
 
   register = () => {

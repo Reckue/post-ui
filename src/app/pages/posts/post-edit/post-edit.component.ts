@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {PopupWindowComponent} from '../../../components/window/popup/popup-window.component';
+import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
 import {Post} from '../../../models/Post';
 import {Node} from '../../../models/Node';
 import {PostService} from '../../../services/PostService';
@@ -14,7 +14,7 @@ import {NodeType} from '../../../models/NodeType';
 })
 export class PostEditComponent implements OnInit {
 
-  @ViewChild(PopupWindowComponent) popup: PopupWindowComponent;
+  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
 
   public post = new Post();
 

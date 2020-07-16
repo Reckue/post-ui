@@ -1,8 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Post} from '../../../models/Post';
 import {PostService} from '../../../services/PostService';
-import {PopupWindowComponent} from '../../../components/window/popup/popup-window.component';
+import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
 import {Filters} from '../../../models/Filters';
+import {Store} from '@ngrx/store';
+import {RatingService} from '../../../services/RatingService';
+import {ReduxUser} from '../../../redux/models/ReduxUser';
 
 @Component({
   selector: 'app-post-list',
@@ -11,7 +14,7 @@ import {Filters} from '../../../models/Filters';
 })
 export class PostListComponent implements OnInit {
 
-  @ViewChild(PopupWindowComponent) popup: PopupWindowComponent;
+  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
 
   posts: Post[];
 
@@ -25,7 +28,7 @@ export class PostListComponent implements OnInit {
       this.postService.getAllPosts()
           .then(response => {
               this.posts = response;
-              this.popup.display('10 posts was loaded!');
+              this.popup.display('Posts was successfully loaded!');
           });
   }
 
