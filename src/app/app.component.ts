@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {Header} from './redux/models/Header';
-import {Tokens} from './models/Tokens';
+import {Tokens} from './models/common/Tokens';
 import {AuthService} from './services/AuthService';
 import {Action} from './redux/models/Action';
 import {ActionTypes} from './redux/models/ActionTypes';

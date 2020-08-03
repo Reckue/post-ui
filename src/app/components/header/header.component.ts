@@ -4,7 +4,7 @@ import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Store} from '@ngrx/store';
 import {AuthService} from '../../services/AuthService';
-import {User} from '../../models/User';
+import {User} from '../../models/common/User';
 import {ReduxUser} from '../../redux/models/ReduxUser';
 
 @Component({

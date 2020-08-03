@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../../services/AuthService';
-import {AuthForm} from '../../models/AuthForm';
+import {AuthForm} from '../../models/common/AuthForm';
 import {Store} from '@ngrx/store';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';

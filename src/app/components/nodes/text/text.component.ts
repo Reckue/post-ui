@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TextNode} from '../../../models/TextNode';
-import {NodeContent} from '../../../models/NodeContent';
-import {Node} from '../../../models/Node';
+import {TextNode} from '../../../models/common/TextNode';
+import {NodeContent} from '../../../models/common/NodeContent';
+import {Node} from '../../../models/common/Node';
 
 @Component({
   selector: 'app-text',

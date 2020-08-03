@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
-import {Post} from '../../../models/Post';
-import {Node} from '../../../models/Node';
+import {Post} from '../../../models/common/Post';
+import {Node} from '../../../models/common/Node';
 import {PostService} from '../../../services/PostService';
-import {TextNode} from '../../../models/TextNode';
-import {NodeType} from '../../../models/NodeType';
+import {TextNode} from '../../../models/common/TextNode';
+import {NodeType} from '../../../models/common/NodeType';
 
 @Component({
   selector: 'app-post-edit',

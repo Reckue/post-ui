@@ -1,11 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Post} from '../../../models/Post';
+import {Post} from '../../../models/common/Post';
 import {PostService} from '../../../services/PostService';
 import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
-import {Filters} from '../../../models/Filters';
-import {Store} from '@ngrx/store';
-import {RatingService} from '../../../services/RatingService';
-import {ReduxUser} from '../../../redux/models/ReduxUser';
+import {Filters} from '../../../models/common/Filters';
+import {UserService} from '../../../services/UserService';
+import {PostTransfer} from '../../../models/transfers/PostTransfer';
 
 @Component({
   selector: 'app-post-list',
@@ -16,18 +15,18 @@ export class PostListComponent implements OnInit {
 
   @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
 
-  posts: Post[];
+  posts: PostTransfer[];
 
   counter = 10;
 
   canLoad = true;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-      this.postService.getAllPosts()
-          .then(response => {
-              this.posts = response;
+      this.postService.getAllPostsWithUser()
+          .then(posts => {
+              this.posts = posts;
               this.popup.display('Posts was successfully loaded!');
           });
   }
@@ -36,9 +35,8 @@ export class PostListComponent implements OnInit {
     const filters = new Filters();
     filters.limit = this.counter + 10;
     filters.offset = this.counter;
-    this.postService.getAllPosts(filters)
-      .then(response => {
-        const posts: Post[] = response;
+    this.postService.getAllPostsWithUser(filters)
+      .then((posts: PostTransfer[]) => {
         this.posts.push(...posts);
         this.counter += 10;
         if (posts.length < 10) {

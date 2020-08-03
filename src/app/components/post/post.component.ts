@@ -1,11 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Post} from '../../models/Post';
-import {User} from '../../models/User';
-import {UserService} from '../../services/UserService';
-import {RatingService} from '../../services/RatingService';
-import {Rating} from '../../models/Rating';
-import {Store} from '@ngrx/store';
-import {ReduxUser} from '../../redux/models/ReduxUser';
+import {Post} from '../../models/common/Post';
+import {User} from '../../models/common/User';
+import {PostTransfer} from '../../models/transfers/PostTransfer';
 
 @Component({
   selector: 'app-post',
@@ -14,17 +10,16 @@ import {ReduxUser} from '../../redux/models/ReduxUser';
 })
 export class PostComponent implements OnInit {
 
-  @Input() post: Post;
+  @Input() transfer: PostTransfer;
 
+  post: Post;
   user: User;
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.userService.getUserById(this.post.userId)
-      .then(user => {
-        this.user = user;
-      })
-      .catch();
+    this.post = this.transfer.post;
+    this.user = this.transfer.user;
+    // this.userService.getUserById(this.post.userId).then(user => {this.user = user;}).catch();
   }
 }

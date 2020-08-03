@@ -1,6 +1,6 @@
 <div id="post-list-wrapper" class="content">
   <div *ngFor="let post of posts">
-    <app-post [post]="post"></app-post>
+    <app-post [transfer]="post"></app-post>
   </div>
   <button *ngIf="canLoad" class="show" (click)="loadMore()">Show more</button>
   <app-popup-window></app-popup-window>

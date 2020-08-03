@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PostService} from '../../../services/PostService';
-import {Post} from '../../../models/Post';
+import {Post} from '../../../models/common/Post';
 import {Store} from '@ngrx/store';
 import {ReduxUser} from '../../../redux/models/ReduxUser';
 

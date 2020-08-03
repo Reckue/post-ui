@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Node} from '../../models/Node';
-import {NodeType} from '../../models/NodeType';
+import {Node} from '../../models/common/Node';
+import {NodeType} from '../../models/common/NodeType';
 
 @Component({
   selector: 'app-node',
