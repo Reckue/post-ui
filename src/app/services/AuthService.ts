@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {AuthForm} from '../models/AuthForm';
+import {AuthForm} from '../models/common/AuthForm';
 import axios from 'axios';
-import {Tokens} from '../models/Tokens';
+import {Tokens} from '../models/common/Tokens';
 import {environment} from '../../environments/environment';
-import {User} from '../models/User';
+import {User} from '../models/common/User';
 
 @Injectable({
   providedIn: 'root',

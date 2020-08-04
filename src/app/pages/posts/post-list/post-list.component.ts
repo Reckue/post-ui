@@ -1,11 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Post} from '../../../models/Post';
+import {Component, OnInit} from '@angular/core';
 import {PostService} from '../../../services/PostService';
-import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
-import {Filters} from '../../../models/Filters';
-import {Store} from '@ngrx/store';
-import {RatingService} from '../../../services/RatingService';
-import {ReduxUser} from '../../../redux/models/ReduxUser';
+import {Filters} from '../../../models/common/Filters';
+import {PostTransfer} from '../../../models/transfers/PostTransfer';
+import {PopupNotificationService} from '../../../services/PopupNotificationService';
 
 @Component({
   selector: 'app-post-list',
@@ -14,21 +11,19 @@ import {ReduxUser} from '../../../redux/models/ReduxUser';
 })
 export class PostListComponent implements OnInit {
 
-  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
-
-  posts: Post[];
+  posts: PostTransfer[];
 
   counter = 10;
 
   canLoad = true;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
-      this.postService.getAllPosts()
-          .then(response => {
-              this.posts = response;
-              this.popup.display('Posts was successfully loaded!');
+      this.postService.getAllPostsWithUser()
+          .then(posts => {
+            this.posts = posts;
+            this.popupNotificationService.displayMessage('Posts was successfully loaded!');
           });
   }
 
@@ -36,9 +31,8 @@ export class PostListComponent implements OnInit {
     const filters = new Filters();
     filters.limit = this.counter + 10;
     filters.offset = this.counter;
-    this.postService.getAllPosts(filters)
-      .then(response => {
-        const posts: Post[] = response;
+    this.postService.getAllPostsWithUser(filters)
+      .then((posts: PostTransfer[]) => {
         this.posts.push(...posts);
         this.counter += 10;
         if (posts.length < 10) {

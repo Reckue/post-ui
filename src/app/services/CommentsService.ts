@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import {AuthService} from './AuthService';
-import {User} from '../models/User';
+import {User} from '../models/common/User';
 import axios from 'axios';
 
 @Injectable({

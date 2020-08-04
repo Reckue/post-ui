@@ -1,7 +1,7 @@
 import {Component, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-popup-window',
+  selector: 'app-popup-notification',
   templateUrl: './popup-notification.component.html',
   styleUrls: ['./popup-notification.component.css']
 })

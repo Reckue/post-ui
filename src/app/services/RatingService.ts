@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
 import axios from 'axios';
-import {Rating} from '../models/Rating';
+import {Rating} from '../models/common/Rating';
 
 class RatingRequest {
   postId: string;
