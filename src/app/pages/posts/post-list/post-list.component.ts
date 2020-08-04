@@ -1,10 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Post} from '../../../models/common/Post';
+import {Component, OnInit} from '@angular/core';
 import {PostService} from '../../../services/PostService';
-import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
 import {Filters} from '../../../models/common/Filters';
-import {UserService} from '../../../services/UserService';
 import {PostTransfer} from '../../../models/transfers/PostTransfer';
+import {PopupNotificationService} from '../../../services/PopupNotificationService';
 
 @Component({
   selector: 'app-post-list',
@@ -13,21 +11,19 @@ import {PostTransfer} from '../../../models/transfers/PostTransfer';
 })
 export class PostListComponent implements OnInit {
 
-  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
-
   posts: PostTransfer[];
 
   counter = 10;
 
   canLoad = true;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
       this.postService.getAllPostsWithUser()
           .then(posts => {
-              this.posts = posts;
-              this.popup.display('Posts was successfully loaded!');
+            this.posts = posts;
+            this.popupNotificationService.displayMessage('Posts was successfully loaded!');
           });
   }
 

@@ -6,6 +6,7 @@ import {Node} from '../../../models/common/Node';
 import {PostService} from '../../../services/PostService';
 import {TextNode} from '../../../models/common/TextNode';
 import {NodeType} from '../../../models/common/NodeType';
+import {PopupNotificationService} from '../../../services/PopupNotificationService';
 
 @Component({
   selector: 'app-post-edit',
@@ -14,11 +15,11 @@ import {NodeType} from '../../../models/common/NodeType';
 })
 export class PostEditComponent implements OnInit {
 
-  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
-
   public post = new Post();
 
-  constructor(private route: ActivatedRoute, private postService: PostService) { }
+  constructor(private route: ActivatedRoute,
+              private postService: PostService,
+              private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -33,9 +34,9 @@ export class PostEditComponent implements OnInit {
     this.postService
       .editPost(this.post.id, this.post)
       .then(created => {
-        this.popup.display('Post successfully edited!');
+        this.popupNotificationService.displayMessage('Post successfully edited!');
       })
-      .catch(ignore => this.popup.display('Warring! Something went wrong and post wasn\'t edited.'));
+      .catch(ignore => this.popupNotificationService.displayMessage('Warring! Something went wrong and post wasn\'t edited.'));
   }
 
   addNode = (event) => {

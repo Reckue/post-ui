@@ -1,21 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Store} from '@ngrx/store';
 import {Header} from './redux/models/Header';
-import {Tokens} from './models/common/Tokens';
 import {AuthService} from './services/AuthService';
 import {Action} from './redux/models/Action';
 import {ActionTypes} from './redux/models/ActionTypes';
+import {PopupNotificationComponent} from './components/notification/popup/popup-notification.component';
+import {PopupNotificationService} from './services/PopupNotificationService';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+
+  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
 
   hideHeader = false;
 
-  constructor(private store: Store<any>, private authService: AuthService) { }
+  constructor(private store: Store<any>,
+              private authService: AuthService,
+              private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
     if (this.authService.getTokens().access_token) {
@@ -28,5 +33,9 @@ export class AppComponent implements OnInit {
         const header: Header = store;
         this.hideHeader = header.hide;
       });
+  }
+
+  ngAfterViewInit(): void {
+    this.popupNotificationService.setPopup(this.popup);
   }
 }

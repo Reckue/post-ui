@@ -25,10 +25,10 @@ export class PostService {
   async getAllPostsWithUser(filters: Filters = new Filters()) {
     const posts: Post[] = await this.getAllPosts(filters);
     const transfers: PostTransfer[] = [];
-    posts.forEach(post => {
-      this.userService.getUserById(post.userId)
-        .then(user => transfers.push(new PostTransfer(post, user)));
-    });
+    for (const post of posts) {
+      const user = await this.userService.getUserById(post.userId);
+      transfers.push(new PostTransfer(post, user));
+    }
     return transfers;
   }
 
