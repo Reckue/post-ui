@@ -3,7 +3,7 @@
     <a class="logo" [routerLink]="['/']">
       <img src="../../../assets/logo.png"/>
     </a>
-    <div *ngIf="searchVisible" class="search">
+    <div *ngIf="headerService.getSearchVisible()" class="search">
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>

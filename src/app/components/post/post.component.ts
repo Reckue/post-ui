@@ -11,11 +11,12 @@ import {PostTransfer} from '../../models/transfers/PostTransfer';
 export class PostComponent implements OnInit {
 
   @Input() transfer: PostTransfer;
+  @Input() print: () => void;
 
   post: Post;
   user: User;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.post = this.transfer.post;

@@ -3,9 +3,10 @@ import {query} from '@angular/animations';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Store} from '@ngrx/store';
-import {AuthService} from '../../services/AuthService';
+import {AuthApiService} from '../../services/api/AuthApiService';
 import {User} from '../../models/common/User';
 import {ReduxUser} from '../../redux/models/ReduxUser';
+import {HeaderService} from '../../services/logic/HeaderService';
 
 @Component({
   selector: 'app-header',
@@ -16,16 +17,13 @@ export class HeaderComponent implements OnInit {
 
   menuVisible = false;
 
-  searchVisible = document.body.clientWidth > 490;
-
   user: ReduxUser;
 
-  constructor(private store: Store<any>, private authService: AuthService) { }
+  constructor(private store: Store<any>,
+              private authService: AuthApiService,
+              public headerService: HeaderService) { }
 
   ngOnInit(): void {
-    window.onresize = () => {
-      this.searchVisible = document.body.clientWidth > 580;
-    };
     this.store.select('user').subscribe(store => this.user = store);
   }
 

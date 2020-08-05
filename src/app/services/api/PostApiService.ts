@@ -1,24 +1,23 @@
 import {Injectable} from '@angular/core';
 import axios from 'axios';
-import {Post} from '../models/common/Post';
-import {Filters} from '../models/common/Filters';
-import {environment} from '../../environments/environment';
-import {UserService} from './UserService';
-import {PostTransfer} from '../models/transfers/PostTransfer';
-import {User} from '../models/common/User';
+import {Post} from '../../models/common/Post';
+import {Filters} from '../../models/common/Filters';
+import {environment} from '../../../environments/environment';
+import {UserApiService} from './UserApiService';
+import {PostTransfer} from '../../models/transfers/PostTransfer';
+
+const POST_URL = environment.postApi + '/posts';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PostService {
+export class PostApiService {
 
-  private POST_URL = environment.postApi + '/posts';
-
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserApiService) { }
 
   async getAllPosts(filters: Filters = new Filters()) {
     const params = '?desc=' + filters.desc + '&limit=' + filters.limit + '&offset=' + filters.offset;
-    const response = await axios.get(this.POST_URL + params);
+    const response = await axios.get(POST_URL + params);
     return response.data;
   }
 
@@ -33,17 +32,17 @@ export class PostService {
   }
 
   async getPostById(id: string) {
-    const response = await axios.get(this.POST_URL + '/' + id);
+    const response = await axios.get(POST_URL + '/' + id);
     return response.data;
   }
 
   async createPost(post: Post) {
-    const response = await axios.post(this.POST_URL, post);
+    const response = await axios.post(POST_URL, post);
     return response.data;
   }
 
   async editPost(id: string, post: Post) {
-    const response = await axios.put(this.POST_URL + '/' + id, post);
+    const response = await axios.put(POST_URL + '/' + id, post);
     return response.data;
   }
 }
