@@ -8,7 +8,6 @@ import {Component, Input, Output} from '@angular/core';
 export class PopupNotificationComponent {
 
   message = 'default message...';
-
   isVisible = false;
 
   constructor() {

@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Header} from './redux/models/Header';
-import {AuthService} from './services/AuthService';
+import {AuthApiService} from './services/api/AuthApiService';
 import {Action} from './redux/models/Action';
 import {ActionTypes} from './redux/models/ActionTypes';
 import {PopupNotificationComponent} from './components/notification/popup/popup-notification.component';
-import {PopupNotificationService} from './services/PopupNotificationService';
+import {PopupNotificationService} from './services/logic/PopupNotificationService';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +19,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   hideHeader = false;
 
   constructor(private store: Store<any>,
-              private authService: AuthService,
+              private authService: AuthApiService,
               private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
-    if (this.authService.getTokens().access_token) {
+    if (this.authService.getTokens().accessToken) {
       this.authService.info().then(info => {
         this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
       });

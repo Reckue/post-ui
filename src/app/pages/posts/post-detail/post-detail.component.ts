@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../../models/common/Post';
-import {PostService} from '../../../services/PostService';
+import {PostApiService} from '../../../services/api/PostApiService';
 import {ActivatedRoute} from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import {ActivatedRoute} from '@angular/router';
 export class PostDetailComponent implements OnInit {
 
   @Input() post: Post;
-  constructor(private postService: PostService, private route: ActivatedRoute) {}
+  constructor(private postService: PostApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.postService.getPostById(this.route.snapshot.paramMap.get('id'))

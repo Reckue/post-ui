@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {PostService} from '../../../services/PostService';
+import {PostApiService} from '../../../services/api/PostApiService';
 import {Post} from '../../../models/common/Post';
 import {Store} from '@ngrx/store';
 import {ReduxUser} from '../../../redux/models/ReduxUser';
@@ -15,7 +15,7 @@ export class PostAddComponent implements OnInit {
   private post: Post;
 
   constructor(private router: Router,
-              private postService: PostService,
+              private postService: PostApiService,
               private store: Store<any>) { }
 
   ngOnInit(): void {

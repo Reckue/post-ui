@@ -3,10 +3,10 @@ import {ActivatedRoute} from '@angular/router';
 import {PopupNotificationComponent} from '../../../components/notification/popup/popup-notification.component';
 import {Post} from '../../../models/common/Post';
 import {Node} from '../../../models/common/Node';
-import {PostService} from '../../../services/PostService';
+import {PostApiService} from '../../../services/api/PostApiService';
 import {TextNode} from '../../../models/common/TextNode';
 import {NodeType} from '../../../models/common/NodeType';
-import {PopupNotificationService} from '../../../services/PopupNotificationService';
+import {PopupNotificationService} from '../../../services/logic/PopupNotificationService';
 
 @Component({
   selector: 'app-post-edit',
@@ -18,7 +18,7 @@ export class PostEditComponent implements OnInit {
   public post = new Post();
 
   constructor(private route: ActivatedRoute,
-              private postService: PostService,
+              private postService: PostApiService,
               private popupNotificationService: PopupNotificationService) {}
 
   ngOnInit(): void {
