@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Post} from '../../models/common/Post';
 import {Filters} from '../../models/common/Filters';
 import {environment} from '../../../environments/environment';
-import {UserApiService} from './UserApiService';
+import {UserApiService} from './user-api.service';
 import {PostTransfer} from '../../models/transfers/PostTransfer';
 
 const POST_URL = environment.postApi + '/posts';

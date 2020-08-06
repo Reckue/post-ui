@@ -3,16 +3,16 @@
     <a class="logo" [routerLink]="['/']">
       <img src="../../../assets/logo.png"/>
     </a>
-    <div *ngIf="headerService.getSearchVisible()" class="search">
+    <div *ngIf="getSearchVisible()" class="search">
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>
-    <div *ngIf="user.isAuth" class="profile">
+    <div *ngIf="getUser()" class="profile">
       <div class="user" (click)="reverseMenuVisibility()">
-        <app-user-image [username]="user.info.username"></app-user-image>
+        <app-user-image [username]="getUser().info.username"></app-user-image>
       </div>
-        <div class="profile-background" *ngIf="menuVisible" (click)="hideMenu()"></div>
-        <div class="profile-menu" *ngIf="menuVisible">
+        <div class="profile-background" *ngIf="getMenuVisible()" (click)="hideMenu()"></div>
+        <div class="profile-menu" *ngIf="getMenuVisible()">
           <ul>
             <li class="profile-menu-main"><a routerLink="/">Profile</a></li>
             <li><a routerLink="/">Your posts</a></li>
@@ -22,11 +22,11 @@
             <li><a routerLink="/">Settings</a></li>
             <li><a routerLink="/">Security & Privacy</a></li>
             <li><a routerLink="/">Help</a></li>
-            <li><a routerLink="/auth" (click)="unauthorized()">Sign out</a></li>
+            <li><a routerLink="/auth" (click)="unauthorize()">Sign out</a></li>
           </ul>
         </div>
       <a class="add" routerLink="/posts/add">+</a>
     </div>
-    <a routerLink="/auth" *ngIf="!user.isAuth" class="auth">Get auth</a>
+    <a routerLink="/auth" *ngIf="!getUser().isAuth" class="auth">Get auth</a>
   </div>
 </div>

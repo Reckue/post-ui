@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {PostApiService} from '../../../services/api/PostApiService';
+import {PostApiService} from '../../../services/api/post-api.service';
 import {Post} from '../../../models/common/Post';
 import {Store} from '@ngrx/store';
 import {ReduxUser} from '../../../redux/models/ReduxUser';

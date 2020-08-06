@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AuthApiService} from '../../services/api/AuthApiService';
+import {AuthApiService} from '../../services/api/auth-api.service';
 import {AuthForm} from '../../models/common/AuthForm';
 import {Store} from '@ngrx/store';
 import {Action} from '../../redux/models/Action';
 import {ActionTypes} from '../../redux/models/ActionTypes';
 import {Router} from '@angular/router';
 import {ReduxUser} from '../../redux/models/ReduxUser';
-import {PopupNotificationService} from '../../services/logic/PopupNotificationService';
+import {PopupNotificationService} from '../../services/logic/popup-notification.service';
 
 @Component({
   selector: 'app-auth',

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {PostApiService} from '../../../services/api/PostApiService';
+import {PostApiService} from '../../../services/api/post-api.service';
 import {Filters} from '../../../models/common/Filters';
 import {PostTransfer} from '../../../models/transfers/PostTransfer';
-import {PopupNotificationService} from '../../../services/logic/PopupNotificationService';
+import {PopupNotificationService} from '../../../services/logic/popup-notification.service';
 import {Post} from '../../../models/common/Post';
 
 @Component({

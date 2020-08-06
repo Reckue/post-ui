@@ -5,17 +5,25 @@ import {Injectable} from '@angular/core';
 })
 export class HeaderService {
 
+  private menu = {visible: false};
   private search = {visible: false, minSize: 580};
 
   constructor() {
-    this.setSearchMinSize(580);
     this.changeSearchVisible();
     window.addEventListener('resize', this.changeSearchVisible);
   }
 
-  setSearchMinSize = (size: number) => this.search.minSize = size;
+  /* Search methods */
 
   changeSearchVisible = () => this.search.visible = document.body.clientWidth > this.search.minSize;
 
   getSearchVisible = (): boolean => this.search.visible;
+
+  /* Menu methods */
+
+  reverseMenuVisibility = () => this.menu.visible = !this.menu.visible;
+
+  hideMenu = () => this.menu.visible = false;
+
+  getMenuVisible = (): boolean => this.menu.visible;
 }

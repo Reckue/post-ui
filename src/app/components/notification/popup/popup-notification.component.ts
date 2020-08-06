@@ -13,13 +13,9 @@ export class PopupNotificationComponent {
   constructor() {
   }
 
-  close = () => {
-    this.isVisible = false;
-  }
+  close = () => this.isVisible = false;
 
-  display = (message: string) => {
-    this.message = message;
-    this.isVisible = true;
-    setTimeout(this.close, 5000);
-  }
+  display = () => this.isVisible = true;
+
+  changeMessage = (message: string) => this.message = message;
 }

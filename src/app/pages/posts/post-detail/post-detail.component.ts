@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../../models/common/Post';
-import {PostApiService} from '../../../services/api/PostApiService';
+import {PostApiService} from '../../../services/api/post-api.service';
 import {ActivatedRoute} from '@angular/router';
 
 

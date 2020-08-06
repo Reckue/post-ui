@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Header} from './redux/models/Header';
-import {AuthApiService} from './services/api/AuthApiService';
+import {AuthApiService} from './services/api/auth-api.service';
 import {Action} from './redux/models/Action';
 import {ActionTypes} from './redux/models/ActionTypes';
 import {PopupNotificationComponent} from './components/notification/popup/popup-notification.component';
-import {PopupNotificationService} from './services/logic/PopupNotificationService';
+import {PopupNotificationService} from './services/logic/popup-notification.service';
 
 @Component({
   selector: 'app-root',

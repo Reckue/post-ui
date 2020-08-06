@@ -13,7 +13,12 @@ export class PopupNotificationService {
 
   setPopup = (popup: PopupNotificationComponent) => this.popup = popup;
 
-  displayMessage = (message: string) => this.popup.display(message);
+  displayMessage = (message: string) => {
+    this.popup.changeMessage(message);
+    this.popup.display();
+  }
 
-  closePopup = () => this.popup.close();
+  closePopup = (ms: number = 0) => setTimeout(this.close, ms);
+
+  close = () => this.popup.close();
 }
