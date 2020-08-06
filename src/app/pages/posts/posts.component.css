@@ -1,4 +1,7 @@
 .posts-wrapper {
   margin: auto;
   width: 50vw;
+  position: relative; /*temporarily for not to forget about the button*/
+  top: 100px;
+  z-index: -1;
 }
