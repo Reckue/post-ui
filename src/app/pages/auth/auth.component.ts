@@ -27,7 +27,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.select('user')
+    this.store.select('auth')
       .subscribe(store => {
         const user: ReduxUser = store;
         if (user.isAuth) {
