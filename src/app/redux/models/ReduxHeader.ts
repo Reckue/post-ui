@@ -1,4 +1,4 @@
-export class Header {
+export class ReduxHeader {
 
   hide: boolean;
 

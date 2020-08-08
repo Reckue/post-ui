@@ -1,14 +1,14 @@
-import {Header} from '../models/Header';
+import {ReduxHeader} from '../models/ReduxHeader';
 import {ActionTypes} from '../models/ActionTypes';
 
-export const headerReducer = (state = new Header(false), action) => {
+export const headerReducer = (state = new ReduxHeader(false), action) => {
   switch (action.type) {
     case ActionTypes.HIDE_HEADER:
       console.log(action);
-      return new Header(true);
+      return new ReduxHeader(true);
     case ActionTypes.SHOW_HEADER:
       console.log(action);
-      return new Header(false);
+      return new ReduxHeader(false);
     default:
       return state;
   }

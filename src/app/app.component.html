@@ -1,5 +1,5 @@
 <div id="post-ui-wrapper" class="post-ui">
-  <app-header *ngIf="!hideHeader"></app-header>
+  <app-header *ngIf="!isHidden()"></app-header>
   <div class="router">
     <router-outlet></router-outlet>
     <app-popup-notification></app-popup-notification>

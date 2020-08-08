@@ -48,7 +48,7 @@ export class PostEditComponent implements OnInit {
       event.target.innerText = '';
       this.editPost();
     }
-  };
+  }
 
   editTitle(event) {
     this.post.title = event.target.value;

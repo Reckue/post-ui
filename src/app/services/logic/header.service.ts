@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import {HeaderStateService} from '../redux/header-state.service';
+import {ReduxHeader} from '../../redux/models/ReduxHeader';
 
 @Injectable({
   providedIn: 'root',
@@ -8,10 +10,12 @@ export class HeaderService {
   private menu = {visible: false};
   private search = {visible: false, minSize: 580};
 
-  constructor() {
+  constructor(private headerStateService: HeaderStateService) {
     this.changeSearchVisible();
     window.addEventListener('resize', this.changeSearchVisible);
   }
+
+  isHidden = (): boolean => this.headerStateService.getHeader().hide;
 
   /* Search methods */
 

@@ -16,11 +16,9 @@ export class AuthStateService {
     this.store.select('auth').subscribe(user => this.user = user);
   }
 
-  unauthorize() {
-    this.store.dispatch(new Action(ActionTypes.UNAUTHORIZED));
-  }
+  authorize = (info) => this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
 
-  getUser = (): ReduxUser => {
-    return this.user;
-  }
+  unauthorize = () => this.store.dispatch(new Action(ActionTypes.UNAUTHORIZED));
+
+  getUser = (): ReduxUser => this.user;
 }
