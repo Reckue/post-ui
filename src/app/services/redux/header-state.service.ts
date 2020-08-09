@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
-import {ReduxHeader} from '../../redux/models/ReduxHeader';
+import {ReduxHeader} from '../../models/redux/ReduxHeader';
 import {Store} from '@ngrx/store';
+import {Action} from '../../models/redux/Action';
+import {ActionTypes} from '../../models/redux/ActionTypes';
 
 @Injectable({
   providedIn: 'root',
@@ -14,4 +16,6 @@ export class HeaderStateService {
   }
 
   getHeader = (): ReduxHeader => this.header;
+
+  hideHeader = () => this.store.dispatch(new Action(ActionTypes.HIDE_HEADER));
 }

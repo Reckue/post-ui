@@ -1,4 +1,4 @@
-import {User} from '../../models/common/User';
+import {User} from '../common/User';
 
 export class ReduxUser {
 

@@ -7,7 +7,7 @@
       <div class="image"></div>
       <input placeholder="Post or profile" type="search"/>
     </div>
-    <div *ngIf="getUser()" class="profile">
+    <div *ngIf="getUser().isAuth" class="profile">
       <div class="user" (click)="reverseMenuVisibility()">
         <app-user-image [username]="getUser().info.username"></app-user-image>
       </div>

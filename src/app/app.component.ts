@@ -1,9 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {ReduxHeader} from './redux/models/ReduxHeader';
-import {AuthApiService} from './services/api/auth-api.service';
-import {Action} from './redux/models/Action';
-import {ActionTypes} from './redux/models/ActionTypes';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {PopupNotificationComponent} from './components/notification/popup/popup-notification.component';
 import {PopupNotificationService} from './services/logic/popup-notification.service';
 import {AuthService} from './services/logic/auth.service';
@@ -21,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   constructor(private authService: AuthService,
               private headerService: HeaderService,
               private popupNotificationService: PopupNotificationService) {
-    this.authService.tryAuth();
+    this.authService.tryTakeUserByToken();
   }
 
   isHidden = () => this.headerService.isHidden();

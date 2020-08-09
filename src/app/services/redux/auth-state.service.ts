@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {AuthApiService} from '../api/auth-api.service';
-import {Action} from '../../redux/models/Action';
-import {ActionTypes} from '../../redux/models/ActionTypes';
+import {Action} from '../../models/redux/Action';
+import {ActionTypes} from '../../models/redux/ActionTypes';
 import {Store} from '@ngrx/store';
-import {ReduxUser} from '../../redux/models/ReduxUser';
+import {ReduxUser} from '../../models/redux/ReduxUser';
 
 @Injectable({
   providedIn: 'root',

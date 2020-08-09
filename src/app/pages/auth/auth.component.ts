@@ -1,70 +1,34 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {AuthApiService} from '../../services/api/auth-api.service';
 import {AuthForm} from '../../models/common/AuthForm';
 import {Store} from '@ngrx/store';
-import {Action} from '../../redux/models/Action';
-import {ActionTypes} from '../../redux/models/ActionTypes';
+import {Action} from '../../models/redux/Action';
+import {ActionTypes} from '../../models/redux/ActionTypes';
 import {Router} from '@angular/router';
-import {ReduxUser} from '../../redux/models/ReduxUser';
+import {ReduxUser} from '../../models/redux/ReduxUser';
 import {PopupNotificationService} from '../../services/logic/popup-notification.service';
+import {AuthService} from '../../services/logic/auth.service';
+import {HeaderService} from '../../services/logic/header.service';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
   registration = false;
 
-  public authForm: AuthForm = new AuthForm();
-
-  constructor(private authService: AuthApiService,
-              private store: Store<any>,
-              private router: Router,
-              private popupNotificationService: PopupNotificationService) {
-    this.store.dispatch(new Action(ActionTypes.HIDE_HEADER));
+  constructor(private authService: AuthService, private headerService: HeaderService) {
+    this.authService.redirectAuthorizedUsers();
+    this.headerService.hideHeader();
   }
 
-  ngOnInit(): void {
-    this.store.select('auth')
-      .subscribe(store => {
-        const user: ReduxUser = store;
-        if (user.isAuth) {
-          this.router.navigate(['posts']).then();
-        }
-      });
-  }
+  onChange = (event) => this.authService.changeForm(event);
 
-  onChange = (event) => {
-    this.authForm[event.target.name] = event.target.value;
-  }
+  auth = () => this.authService.auth();
 
-  auth = () => {
-    this.authService
-      .login(this.authForm)
-      .then(tokens => {
-        this.authService.info().then(info => {
-          this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
-          this.router.navigate(['posts']).then();
-        });
-      }).catch(ignore => {
-        this.popupNotificationService.displayMessage('Error! User can\'t be authorized!');
-      });
-  }
+  register = () => this.authService.register();
 
-  register = () => {
-    this.authService
-      .register(this.authForm)
-      .then(tokens => {
-        this.authService.info().then(info => {
-          this.store.dispatch(new Action(ActionTypes.AUTHORIZED, info));
-          this.router.navigate(['posts']).then();
-        });
-      }).catch();
-  }
-
-  swap = () => {
-    this.registration = !this.registration;
-  }
+  swap = () => this.registration = !this.registration;
 }

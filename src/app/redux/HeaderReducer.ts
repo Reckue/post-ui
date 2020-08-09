@@ -1,5 +1,5 @@
-import {ReduxHeader} from '../models/ReduxHeader';
-import {ActionTypes} from '../models/ActionTypes';
+import {ReduxHeader} from '../models/redux/ReduxHeader';
+import {ActionTypes} from '../models/redux/ActionTypes';
 
 export const headerReducer = (state = new ReduxHeader(false), action) => {
   switch (action.type) {

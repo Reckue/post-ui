@@ -19,7 +19,7 @@ export class HeaderComponent {
 
   reverseMenuVisibility = () => this.headerService.reverseMenuVisibility();
 
-  getSearchVisible = () => this.headerService.changeSearchVisible();
+  getSearchVisible = () => this.headerService.getSearchVisible();
 
   hideMenu = () => this.headerService.hideMenu();
 }

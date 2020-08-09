@@ -25,8 +25,8 @@ import {PopupNotificationComponent} from './components/notification/popup/popup-
 import {InputComponent} from './components/input/input.component';
 import {AuthComponent} from './pages/auth/auth.component';
 import {StoreModule} from '@ngrx/store';
-import {headerReducer} from './redux/reducers/HeaderReducer';
-import {authReducer} from './redux/reducers/AuthReducer';
+import {headerReducer} from './redux/HeaderReducer';
+import {authReducer} from './redux/AuthReducer';
 import {UserImageComponent} from './components/user-image/user-image.component';
 import {LikeComponent} from './components/like/like.component';
 

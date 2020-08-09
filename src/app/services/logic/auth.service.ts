@@ -1,36 +1,76 @@
 import {Injectable} from '@angular/core';
 import {AuthApiService} from '../api/auth-api.service';
 import {AuthStateService} from '../redux/auth-state.service';
-import {ReduxUser} from '../../redux/models/ReduxUser';
-import {Action} from '../../redux/models/Action';
-import {ActionTypes} from '../../redux/models/ActionTypes';
-import {HeaderStateService} from '../redux/header-state.service';
+import {ReduxUser} from '../../models/redux/ReduxUser';
+import {Action} from '../../models/redux/Action';
+import {ActionTypes} from '../../models/redux/ActionTypes';
 import {PopupNotificationService} from './popup-notification.service';
+import {Router} from '@angular/router';
+import {AuthForm} from '../../models/common/AuthForm';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
 
-  constructor(private authApiService: AuthApiService, private authStateService: AuthStateService,
+  public authForm: AuthForm = new AuthForm();
+
+  constructor(private router: Router,
+              private authApiService: AuthApiService,
+              private authStateService: AuthStateService,
               private popupNotificationService: PopupNotificationService) {}
 
   unauthorize() {
-    this.authApiService.unauthorizedTokens();
+    this.authApiService.unauthorizeTokens();
     this.authStateService.unauthorize();
   }
 
+  displayMessage = (message) => this.popupNotificationService.displayMessage(message);
+
   getUser = (): ReduxUser => this.authStateService.getUser();
 
-  tryAuth = () => {
+  redirectAuthorizedUsers = () => {
+    const tokens = this.authApiService.getTokens();
+    if (tokens.accessToken) {
+      this.router.navigate(['posts']).then();
+    }
+  }
+
+  tryTakeUserByToken = () => {
     const haveToken = this.authApiService.getTokens().accessToken;
     if (haveToken) {
       this.authApiService.info()
         .then(info => {
           this.authStateService.authorize(info);
-          this.popupNotificationService.displayMessage('Successfully authorized!');
+          this.displayMessage('Successfully authorized!');
         })
-        .catch(cause => this.popupNotificationService.displayMessage(cause));
+        .catch(cause => this.displayMessage(cause));
     }
   }
+
+  auth = () => {
+    this.authApiService
+      .login(this.authForm)
+      .then(tokens => {
+        this.authApiService.info().then(info => {
+          this.authStateService.authorize(info);
+          this.router.navigate(['posts']).then();
+        });
+      }).catch(cause => this.displayMessage(cause));
+  }
+
+  register = () => {
+    this.authApiService
+      .register(this.authForm)
+      .then(tokens => {
+        this.authApiService.info()
+          .then(info => {
+            this.authStateService.authorize(info);
+            this.router.navigate(['posts']).then();
+          })
+          .catch(cause => this.displayMessage(cause));
+      }).catch(cause => this.displayMessage(cause));
+  }
+
+  changeForm = (event) => this.authForm[event.target.name] = event.target.value;
 }

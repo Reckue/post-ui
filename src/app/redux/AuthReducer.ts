@@ -1,5 +1,5 @@
-import {ActionTypes} from '../models/ActionTypes';
-import {ReduxUser} from '../models/ReduxUser';
+import {ActionTypes} from '../models/redux/ActionTypes';
+import {ReduxUser} from '../models/redux/ReduxUser';
 
 export const authReducer = (state = new ReduxUser(false), action) => {
   switch (action.type) {
