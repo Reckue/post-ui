@@ -42,6 +42,7 @@ export class PostApiService {
   }
 
   async editPost(id: string, post: Post) {
+    post.nodes.forEach(node => node.postId = post.id)
     const response = await axios.put(POST_URL + '/' + id, post);
     return response.data;
   }
