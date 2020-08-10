@@ -1,4 +1,11 @@
 // tslint:disable-next-line:no-empty-interface
-export interface NodeContent {
+import {NodeType} from "./NodeType";
 
+export class NodeContent {
+
+  type: NodeType;
+
+  constructor(type: NodeType = NodeType.TEXT) {
+    this.type = type;
+  }
 }
