@@ -10,7 +10,8 @@ export class Node {
   node: NodeContent;
   source: string;
   userId: string;
-  published: number;
+  createdDate: number;
+  modificationDate: number;
   status: StatusType;
   postId: string;
 
@@ -19,7 +20,8 @@ export class Node {
               content: NodeContent = new TextNode(),
               source: string = null,
               userId: string = null,
-              published: number = Date.now(),
+              createdDate: number = Date.now(),
+              modificationDate: number = Date.now(),
               status: StatusType = StatusType.ACTIVE,
               postId: string = null) {
     this.id = id;
@@ -27,7 +29,8 @@ export class Node {
     this.node = content;
     this.source = source;
     this.userId = userId;
-    this.published = published;
+    this.createdDate = createdDate;
+    this.modificationDate = modificationDate;
     this.status = status;
     this.postId = postId;
   }
