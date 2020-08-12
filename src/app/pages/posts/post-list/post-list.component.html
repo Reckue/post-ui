@@ -1,4 +1,7 @@
 <div id="post-list-wrapper" class="content">
+  <div *ngIf="!posts">
+    <app-loading [count]="4"></app-loading>
+  </div>
   <div *ngFor="let post of posts">
     <app-post [transfer]="post"></app-post>
   </div>
