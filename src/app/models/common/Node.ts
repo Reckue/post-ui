@@ -9,23 +9,29 @@ export class Node {
   type: NodeType;
   node: NodeContent;
   source: string;
-  username: string;
-  published: number;
+  userId: string;
+  createdDate: number;
+  modificationDate: number;
   status: StatusType;
+  postId: string;
 
   constructor(id: string = null,
               type: NodeType = NodeType.TEXT,
               content: NodeContent = new TextNode(),
               source: string = null,
-              username: string = null,
-              published: number = Date.now(),
-              status: StatusType = StatusType.ACTIVE) {
+              userId: string = null,
+              createdDate: number = Date.now(),
+              modificationDate: number = Date.now(),
+              status: StatusType = StatusType.ACTIVE,
+              postId: string = null) {
     this.id = id;
     this.type = type;
     this.node = content;
     this.source = source;
-    this.username = username;
-    this.published = published;
+    this.userId = userId;
+    this.createdDate = createdDate;
+    this.modificationDate = modificationDate;
     this.status = status;
+    this.postId = postId;
   }
 }

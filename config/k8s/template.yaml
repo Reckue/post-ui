@@ -20,7 +20,11 @@ spec:
       containers:
         - image: reckue/post-ui:latest
           name: post-ui
-          resources: {}
+          resources:
+            requests:
+              memory: 100Mi
+            limits:
+              memory: 100Mi
 status: {}
 ---
 apiVersion: v1

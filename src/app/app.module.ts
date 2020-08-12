@@ -29,6 +29,7 @@ import {headerReducer} from './redux/HeaderReducer';
 import {authReducer} from './redux/AuthReducer';
 import {UserImageComponent} from './components/user-image/user-image.component';
 import {LikeComponent} from './components/like/like.component';
+import {LoadingPageComponent} from './components/loading-page/loading-page.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {LikeComponent} from './components/like/like.component';
     InputComponent,
     AuthComponent,
     UserImageComponent,
-    LikeComponent
+    LikeComponent,
+    LoadingPageComponent
   ],
   imports: [
     BrowserModule,
