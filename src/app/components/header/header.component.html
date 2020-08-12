@@ -1,11 +1,13 @@
 <div class="header">
   <div class="wrapper">
     <a class="logo" [routerLink]="['/']">
-      <img src="../../../assets/logo.png"/>
+      <img src="../../../assets/logo.png" alt="logo"/>
     </a>
     <div *ngIf="headerService.getSearchVisible()" class="search">
       <div class="image"></div>
-      <input placeholder="Post or profile" type="search"/>
+      <label>
+        <input placeholder="Post or profile" type="search"/>
+      </label>
     </div>
     <div *ngIf="user.isAuth" class="profile">
       <div class="user" (click)="reverseMenuVisibility()">
