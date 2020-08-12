@@ -14,7 +14,7 @@ export class AuthApiService {
 
   constructor() { }
 
-  unauthorizedTokens() {
+  unauthorizeTokens() {
     window.localStorage.clear();
   }
 

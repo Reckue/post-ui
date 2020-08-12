@@ -2,7 +2,7 @@ import axios from 'axios';
 import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {User} from '../../models/common/User';
-import {AuthApiService} from './AuthApiService';
+import {AuthApiService} from './auth-api.service';
 
 const USER_URL = environment.accountApi + '/users';
 

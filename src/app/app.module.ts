@@ -25,9 +25,9 @@ import {PopupNotificationComponent} from './components/notification/popup/popup-
 import {InputComponent} from './components/input/input.component';
 import {AuthComponent} from './pages/auth/auth.component';
 import {StoreModule} from '@ngrx/store';
-import {headerReducer} from './redux/reducers/HeaderReducer';
-import {userReducer} from './redux/reducers/AuthReducer';
-import {UserImageComponent} from './components/image/user-image.component';
+import {headerReducer} from './redux/HeaderReducer';
+import {authReducer} from './redux/AuthReducer';
+import {UserImageComponent} from './components/user-image/user-image.component';
 import {LikeComponent} from './components/like/like.component';
 import {LoadingPageComponent} from './components/loading-page/loading-page.component';
 
@@ -60,7 +60,7 @@ import {LoadingPageComponent} from './components/loading-page/loading-page.compo
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    StoreModule.forRoot({header: headerReducer, user: userReducer})
+    StoreModule.forRoot({header: headerReducer, auth: authReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

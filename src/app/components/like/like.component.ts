@@ -2,10 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../models/common/Post';
 import {User} from '../../models/common/User';
 import {Rating} from '../../models/common/Rating';
-import {UserApiService} from '../../services/api/UserApiService';
-import {RatingApiService} from '../../services/api/RatingApiService';
+import {UserApiService} from '../../services/api/user-api.service';
+import {RatingApiService} from '../../services/api/rating-api.service';
 import {Store} from '@ngrx/store';
-import {ReduxUser} from '../../redux/models/ReduxUser';
+import {ReduxUser} from '../../models/redux/ReduxUser';
 
 @Component({
   selector: 'app-like',
