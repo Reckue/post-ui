@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {AuthApiService} from '../api/auth-api.service';
 import {AuthStateService} from '../redux/auth-state.service';
 import {ReduxUser} from '../../models/redux/ReduxUser';
-import {Action} from '../../models/redux/Action';
-import {ActionTypes} from '../../models/redux/ActionTypes';
 import {PopupNotificationService} from './popup-notification.service';
 import {Router} from '@angular/router';
 import {AuthForm} from '../../models/common/AuthForm';
@@ -29,47 +27,44 @@ export class AuthService {
 
   getUser = (): ReduxUser => this.authStateService.getUser();
 
-  redirectAuthorizedUsers = () => {
-    const tokens = this.authApiService.getTokens();
-    if (tokens.accessToken) {
-      this.router.navigate(['posts']).then();
+  checkTokenAndExecute = (func) => {
+    const haveToken = this.authApiService.getTokens().accessToken;
+    if (haveToken) {
+      func();
     }
   }
 
+  redirectAuthorizedUsers = () => {
+    this.router.navigate(['posts']).then();
+  }
+
   tryTakeUserByToken = () => {
-    const haveToken = this.authApiService.getTokens().accessToken;
-    if (haveToken) {
-      this.authApiService.info()
-        .then(info => {
-          this.authStateService.authorize(info);
-          this.displayMessage('Successfully authorized!');
-        })
-        .catch(cause => this.displayMessage(cause));
-    }
+    this.authApiService.info()
+      .then(info => {
+        this.authStateService.authorize(info);
+        this.displayMessage('Successfully authorized!');
+      })
+      .catch(cause => this.displayMessage(cause));
   }
 
   auth = () => {
     this.authApiService
       .login(this.authForm)
-      .then(tokens => {
-        this.authApiService.info().then(info => {
-          this.authStateService.authorize(info);
-          this.router.navigate(['posts']).then();
-        });
-      }).catch(cause => this.displayMessage(cause));
+      .then(ignore => {
+        this.checkTokenAndExecute(this.tryTakeUserByToken);
+        this.router.navigate(['posts']).then();
+      })
+      .catch(cause => this.displayMessage(cause));
   }
 
   register = () => {
     this.authApiService
       .register(this.authForm)
-      .then(tokens => {
-        this.authApiService.info()
-          .then(info => {
-            this.authStateService.authorize(info);
-            this.router.navigate(['posts']).then();
-          })
-          .catch(cause => this.displayMessage(cause));
-      }).catch(cause => this.displayMessage(cause));
+      .then(ignore => {
+        this.checkTokenAndExecute(this.tryTakeUserByToken);
+        this.router.navigate(['posts']).then();
+      })
+      .catch(cause => this.displayMessage(cause));
   }
 
   changeForm = (event) => this.authForm[event.target.name] = event.target.value;
