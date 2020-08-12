@@ -31,12 +31,11 @@ export class PostEditComponent implements OnInit {
   }
 
   editPost() {
-    this.postService
-      .editPost(this.post.id, this.post)
+    this.postService.editPost(this.post.id, this.post)
       .then(created => {
         this.popupNotificationService.displayMessage('Post successfully edited!');
       })
-      .catch(ignore => this.popupNotificationService.displayMessage('Warring! Something went wrong and post wasn\'t edited.'));
+      .catch(e => this.popupNotificationService.displayMessage(e));
   }
 
   addNode = (event) => {
