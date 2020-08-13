@@ -11,6 +11,7 @@ Service for publications, tutorials and articles.
 - Axios
 - Webpack
 - Docker
+- Redux
 
 ## Install
 Use `npm install`. If you have some problems wath our [introduction tutorial](https://github.com/Reckue/docs/blob/master/introduction/Frontend.md).
