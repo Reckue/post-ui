@@ -1,0 +1,60 @@
+/*
+ * header component
+ */
+
+// header component default variables
+$header-height: 56px
+$header-background: #fff
+$header-shadow: 0 1px 4px rgba(0,0,0,.1)
+
+.header
+  position: fixed
+  width: 100%
+  height: $header-height
+  background-color: $header-background
+  box-shadow: $header-shadow
+.header .content
+  margin: 0 auto
+  width: 1000px
+  line-height: $header-height
+.header .content .logotype
+  width: 250px
+  height: $header-height
+  line-height: $header-height
+.header .content .logotype .brand
+  width: $header-height
+  height: $header-height
+  background: url("../../../assets/logo.svg") no-repeat center
+  background-size: 32px
+.header .content .search
+  width: 500px
+  height: $header-height
+  line-height: $header-height
+.header .content .search input
+  margin: 10px auto
+  padding: 0 20px
+  width: calc(100% - 60px)
+  height: $header-height - 20px
+  line-height: $header-height
+  background: #e7ecee
+  font-size: 16px
+  border: 0
+  border-radius: 9px
+  outline: 0
+.header .content .search input:focus
+  background-color: #fff
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1)
+.header .content .search .find
+  position: absolute
+  margin: 10px 0 10px 450px
+  width: $header-height - 20px
+  height: $header-height - 20px
+  background: url("../../../assets/find.svg") no-repeat center
+  background-size: 16px
+  border-radius: $header-height / 2
+  cursor: pointer
+.header .content .account
+  width: 250px
+  height: $header-height
+  line-height: $header-height
+  justify-content: flex-end
