@@ -1,5 +1,5 @@
 # post-ui
-**v.1.0.0.SNAPSHOT**
+**v.0.0.1.RELEASE**
 
 Service for publications, tutorials and articles.
 
