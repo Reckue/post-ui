@@ -10,19 +10,32 @@ export class GatewayService {
   // TODO: In future, here will be only one a service for gateway to Reckue API.
   // private static gatewayService: string        = "https://api.reckue.com"
 
-  private static postService           = 'http://post-reckue.apps.us-east-1.starter.openshift-online.com';
-  private static authorizationService  = 'http://authorization-reckue.apps.us-east-1.starter.openshift-online.com';
-  private static accountService        = 'http://account-reckue.apps.us-east-1.starter.openshift-online.com';
+  private postService: string           = "http://post-reckue.apps.us-east-1.starter.openshift-online.com";
+  private authorizationService: string  = "http://authorization-reckue.apps.us-east-1.starter.openshift-online.com";
+  private accountService: string        = "http://account-reckue.apps.us-east-1.starter.openshift-online.com";
 
-  static getPostService(): string {
+  public getPostService(): string {
     return this.postService;
   }
 
-  static getAuthorizationService(): string {
+  // public getAllPosts(): string {
+  //   return this.postService.concat("/posts");
+  // }
+
+  public getAllPosts(): string {
+    return this.postService.concat("/posts");
+  }
+
+  public getPosts(limit: number, offset: number, sort: string, desc: string): string {
+    return this.postService.concat("/posts/?limit=" + limit + "&offset=" + offset + "&sort=" + sort + "&desc=" + desc);
+  }
+
+  public getAuthorizationService(): string {
     return this.authorizationService;
   }
 
-  static getAccountService(): string {
+  public getAccountService(): string {
     return this.accountService;
   }
+
 }
