@@ -45,3 +45,5 @@ Thumbs.db
 
 # project files
 /e2e
+package-lock.json
+*.iml
