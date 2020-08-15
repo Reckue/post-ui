@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {GatewayService} from '../gateway.service';
+import {Observable} from 'rxjs';
+import {Post} from '../../models/post';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +10,9 @@ import {GatewayService} from '../gateway.service';
 export class PostService {
 
   constructor(private http: HttpClient,
-              private gatewayService: GatewayService) { }
+              private gateway: GatewayService) { }
 
-  async getAll() {
-    this.http.get(this.gatewayService.getAllPosts())
-      .subscribe(() => console.log('Done'))
+  getAll(): Observable<Post> {
+    return this.http.get<Post>(this.gateway.getAllPosts());
   }
 }

@@ -1,20 +1,28 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {PopupNotificationComponent} from './components/popup-notification/popup-notification.component';
+import {Component, OnInit} from '@angular/core';
 import {PopupNotificationService} from './services/popup-notification.service';
+import {PostService} from './services/api/post.service';
+import {Post} from './models/post';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.pug',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
+  public posts: Post[] = [];
 
-  @ViewChild(PopupNotificationComponent) popup: PopupNotificationComponent;
+  ngOnInit(): void {
+    this.getPosts();
+  }
 
-  constructor(private popupNotificationService: PopupNotificationService) {}
+  constructor(private popupNotificationService: PopupNotificationService,
+              private postService: PostService) { }
 
-  ngAfterViewInit(): void {
-    this.popupNotificationService.setPopupComponent(this.popup);
-    this.popupNotificationService.displayMessage('Popup example');
+  getPosts() {
+    this.postService.getAll().subscribe(
+      data => { this.posts = data as any; },
+      err => console.error(err),
+      () => console.log('Done loading posts')
+    );
   }
 }

@@ -3,15 +3,9 @@
   .main
     .content
       .filter
-      .posts
-        .post
-        .post
-        .post
-        .post
-        .post
-        .post
-        .post
-        .post
-        .post
-        .post
+      .posts(
+        *ngFor="let post of posts; let num= index"
+      )
+        .post {{ post.title }}
+
 app-popup-notification()
