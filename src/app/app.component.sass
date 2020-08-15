@@ -42,11 +42,14 @@ $header-shadow: 0 1px 4px rgba(0,0,0,.1)
   width: calc(100% - 60px)
   height: $header-height - 20px
   line-height: $header-height
-  background: #f1f1f1
+  background: #e7ecee
   font-size: 16px
   border: 0
-  border-radius: 18px
+  border-radius: 9px
   outline: 0
+.header .content .search input:focus
+  background-color: #fff
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1)
 .header .content .search .find
   position: absolute
   margin: 0 0 0 440px
@@ -71,15 +74,14 @@ $main-width: 500px
   flex-direction: column
   margin: 0 auto
   width: $main-width
-  min-height: calc(100vh - 50px)
-  background-color: #f1f1f1
+  min-height: calc(100vh - 56px)
 .main .content
   flex-direction: column
 .main .content .filter
   margin: 10px
   width: $main-width - 20px
-  height: 100px
-  background-color: #eaeaea
+  height: 56px
+  background-color: #f8f8f8
   border-radius: 3px
 .main .content .posts
   flex-direction: column
@@ -89,5 +91,5 @@ $main-width: 500px
   margin: 5px 0
   width: $main-width - 20px
   height: 100px
-  background-color: #eaeaea
+  background-color: #f8f8f8
   border-radius: 3px
