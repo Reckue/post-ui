@@ -1,5 +1,0 @@
-<div *ngIf="isInput === false" class="text-node">{{text}}</div>
-<div *ngIf="isInput === true" class="text-node">
-  <app-input [value]="text" (change)="onChange($event, node)"></app-input>
-  <button (click)="onDelete(node)"></button>
-</div>

@@ -1,6 +1,0 @@
-<div class="content">
-  <div class="title" [routerLink]="['/posts/', post.id]"> {{post.title}} </div>
-  <div *ngFor="let node of post.nodes" class="node">
-    <app-node [node]="node"></app-node>
-  </div>
-</div>

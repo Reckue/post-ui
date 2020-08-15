@@ -1,8 +1,0 @@
-export enum PostStatusType {
-  DRAFT = 'DRAFT',
-  PUBLISHED = 'PUBLISHED',
-  PENDING = 'PENDING',
-  MODERATED = 'MODERATED',
-  DELETED = 'DELETED',
-  BANNED = 'BANNED'
-}
