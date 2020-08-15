@@ -15,6 +15,7 @@ $header-background: #fff
 $header-shadow: 0 1px 4px rgba(0,0,0,.1)
 
 .header
+  position: fixed
   width: 100%
   height: $header-height
   background-color: $header-background
@@ -52,11 +53,13 @@ $header-shadow: 0 1px 4px rgba(0,0,0,.1)
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1)
 .header .content .search .find
   position: absolute
-  margin: 0 0 0 440px
-  width: $header-height
-  height: $header-height
+  margin: 10px 0 10px 450px
+  width: $header-height - 20px
+  height: $header-height - 20px
   background: url("src/assets/find.svg") no-repeat center
   background-size: 16px
+  border-radius: $header-height / 2
+  cursor: pointer
 .header .content .account
   width: 250px
   height: $header-height
@@ -72,7 +75,7 @@ $main-width: 500px
 
 .main
   flex-direction: column
-  margin: 0 auto
+  margin: 56px auto 0 auto
   width: $main-width
   min-height: calc(100vh - 56px)
 .main .content
