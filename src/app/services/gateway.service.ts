@@ -30,6 +30,10 @@ export class GatewayService {
     return this.postService.concat("/posts/?limit=" + limit + "&offset=" + offset + "&sort=" + sort + "&desc=" + desc);
   }
 
+  public getPostById(id: string): string {
+    return this.postService.concat("/posts/" + id);
+  }
+
   public getAuthorizationService(): string {
     return this.authorizationService;
   }

@@ -2,10 +2,5 @@
   app-header()
   .main
     .content
-      .filter
-      .posts(
-        *ngFor="let post of posts; let num= index"
-      )
-        .post {{ post.title }}
-
+      router-outlet
 app-popup-notification()

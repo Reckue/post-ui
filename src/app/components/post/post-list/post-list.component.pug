@@ -1,0 +1,10 @@
+.filter
+.posts(
+  *ngFor="let post of posts; let num= index"
+)
+  .post
+    .title
+      h2
+        a(
+          routerLink="/posts/{{ post.id }}"
+        ) {{ post.title }}

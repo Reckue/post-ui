@@ -12,7 +12,11 @@ export class PostService {
   constructor(private http: HttpClient,
               private gateway: GatewayService) { }
 
-  getAll(): Observable<Post> {
-    return this.http.get<Post>(this.gateway.getAllPosts());
+  getAll(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.gateway.getAllPosts());
+  }
+
+  getById(id: string): Observable<Post> {
+    return this.http.get<Post>(this.gateway.getPostById(id));
   }
 }
