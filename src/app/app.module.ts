@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import {PopupNotificationComponent} from './components/popup-notification/popup-notification.component';
 import {HttpClientModule} from '@angular/common/http';
-import { PostDetailComponent } from './components/post/post-detail/post-detail.component';
-import { PostListComponent } from './components/post/post-list/post-list.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { PostListComponent } from './pages/post-list/post-list.component';
+import {PostLandingComponent} from './components/post/post-landing.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PostListComponent } from './components/post/post-list/post-list.compone
     HeaderComponent,
     PopupNotificationComponent,
     PostDetailComponent,
-    PostListComponent
+    PostListComponent,
+    PostLandingComponent
   ],
   imports: [
     HttpClientModule,
