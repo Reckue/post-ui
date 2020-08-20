@@ -1,4 +1,7 @@
 .post
-  .publish {{ publish }}
-  .title
-    a(routerLink="/posts/{{ post.id }}") {{ post.title }}
+  .header
+    .publish {{ publish }}
+    app-popup-menu
+      .menu-btn
+        .point
+  a(class='title' routerLink="/posts/{{ post.id }}") {{ post.title }}

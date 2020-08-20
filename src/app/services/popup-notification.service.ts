@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {PopupNotificationComponent} from '../components/popup-notification/popup-notification.component';
+import {PopupNotificationComponent} from '../components/popup/notification/popup-notification.component';
 
 @Injectable({
   providedIn: 'root',
