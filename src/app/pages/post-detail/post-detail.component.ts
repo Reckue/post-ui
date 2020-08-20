@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
-import {Post} from '../../../models/post';
-import {PostService} from '../../../services/api/post.service';
+import {Post} from '../../models/post';
+import {PostService} from '../../services/api/post.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {isSuccess} from '@angular/http/src/http_utils';
 
 @Component({
   selector: 'app-post-detail',
@@ -20,7 +19,7 @@ export class PostDetailComponent implements OnInit {
               private postService: PostService) { }
 
   ngOnInit(): void {
-    this.getPost()
+    this.getPost();
   }
 
   getPost() {

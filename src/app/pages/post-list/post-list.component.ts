@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Post} from '../../../models/post';
-import {PopupNotificationService} from '../../../services/popup-notification.service';
-import {PostService} from '../../../services/api/post.service';
+import {Post} from '../../models/post';
+import {PopupNotificationService} from '../../services/popup-notification.service';
+import {PostService} from '../../services/api/post.service';
 
 @Component({
   selector: 'app-post-list',
