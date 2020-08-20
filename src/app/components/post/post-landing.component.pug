@@ -2,6 +2,6 @@
   .header
     .publish {{ publish }}
     app-popup-menu
-      .menu-btn
+      .menu-btn((click)="onClickMenuButton()")(#menu)
         .point
   a(class='title' routerLink="/posts/{{ post.id }}") {{ post.title }}
