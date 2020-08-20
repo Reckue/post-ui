@@ -20,8 +20,39 @@
       align-items: center
       width: 30px
       height: 30px
-      border: #373737 1px solid
       overflow: hidden
+      .point
+        position: absolute
+        background: black
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        transition: all 0.4s ease
+      .point::after, .point::before
+        position: absolute
+        content: ''
+        background: black
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        transition: all 0.1s ease
+      .point::after
+        transform: translate(6px)
+      .point::before
+        transform: translate(-6px)
+    .menu-btn:hover
+      .point
+        background: rgba(0, 0, 0, 0)
+        width: 4px
+        height: 4px
+        border-radius: 50%
+      .point::before, .point::after
+        width: 10px
+        border-radius: 25%
+      .point::before
+        transform: translate(-4px) rotate(50deg)
+      .point::after
+        transform: translate(0px) rotate(-50deg)
   .title
     font-size: 20px
     line-height: 32px
