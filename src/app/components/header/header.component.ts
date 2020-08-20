@@ -17,15 +17,16 @@ export class HeaderComponent {
     this.track();
   }
 
-  track = () => {
-    const trackStyle = 'top:-' + this.calculatePadding() + 'px';
+  track = (headerPosition = this.headerPosition) => {
+    const trackStyle = 'top:-' + this.calculatePadding(headerPosition) + 'px';
     this.header.nativeElement.setAttribute('style', trackStyle);
   }
 
   @HostListener('window:mousemove', ['$event'])
   private onMouseMove = (event) => {
-    if (event.clientY < 60) {
-      this.headerPosition = window.pageYOffset;
+    if (event.clientY < 60 && event.clientY > 0) {
+      this.track(window.pageYOffset);
+    } else {
       this.track();
     }
   }
@@ -38,5 +39,5 @@ export class HeaderComponent {
     }
   }
 
-  private calculatePadding = () => window.pageYOffset - this.headerPosition;
+  private calculatePadding = (headerPosition = this.headerPosition) => window.pageYOffset - headerPosition;
 }
