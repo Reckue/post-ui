@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, Host, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,20 +9,34 @@ export class HeaderComponent {
   @ViewChild('header') header;
   private headerPosition = 0;
 
-  constructor() { }
+  constructor() {}
 
   @HostListener('window:scroll')
-  track() {
+  onScroll() {
     this.calculatePosition(window.pageYOffset);
-    const trackStyle = 'top:-' + (window.pageYOffset - this.headerPosition) + 'px';
+    this.track();
+  }
+
+  track = () => {
+    const trackStyle = 'top:-' + this.calculatePadding() + 'px';
     this.header.nativeElement.setAttribute('style', trackStyle);
   }
 
-  calculatePosition = (currentPosition) => {
-    if (currentPosition - this.headerPosition >= 60) {
-      this.headerPosition = currentPosition - 60;
-    } else if (currentPosition - this.headerPosition < 0) {
-      this.headerPosition = currentPosition;
+  @HostListener('window:mousemove', ['$event'])
+  private onMouseMove = (event) => {
+    if (event.clientY < 60) {
+      this.headerPosition = window.pageYOffset;
+      this.track();
     }
   }
+
+  private calculatePosition = (pagePosition) => {
+    if (this.calculatePadding() >= 60) {
+      this.headerPosition = pagePosition - 60;
+    } else if (this.calculatePadding() < 0) {
+      this.headerPosition = pagePosition;
+    }
+  }
+
+  private calculatePadding = () => window.pageYOffset - this.headerPosition;
 }
