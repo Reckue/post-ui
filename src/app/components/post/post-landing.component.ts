@@ -5,7 +5,7 @@ import {DateFormatService} from '../../services/date-format.service';
 @Component({
   selector: 'app-post-landing',
   templateUrl: './post-landing.component.pug',
-  styleUrls: ['./post-landing.component.sass']
+  styleUrls: ['./post-landing.component.sass', './popup-menu.sass']
 })
 export class PostLandingComponent implements OnInit {
   @ViewChild('menu') menuButton;

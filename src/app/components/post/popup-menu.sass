@@ -1,0 +1,53 @@
+.menu-btn
+  position: relative
+  justify-content: center
+  align-items: center
+  width: 30px
+  height: 30px
+  overflow: hidden
+  .point
+    position: absolute
+    background: black
+    width: 4px
+    height: 4px
+    border-radius: 50%
+    transition: all 0.4s ease
+    pointer-events: none
+  .point::after, .point::before
+    position: absolute
+    content: ''
+    background: black
+    width: 4px
+    height: 4px
+    border-radius: 50%
+    transition: all 0.1s ease
+  .point::after
+    transform: translate(6px)
+  .point::before
+    transform: translate(-6px)
+  &.open, &:hover.open
+    .point, .point::after, .point::before
+      background: #b95453
+    .point
+      background: rgba(0, 0, 0, 0)
+    .point::before, .point::after
+      width: 10px
+      border-radius: 25%
+    .point::before
+      transform: translate(-2px) rotate(45deg)
+    .point::after
+      transform: translate(-2px) rotate(-45deg)
+.menu-btn:hover
+  .point
+    background: rgba(0, 0, 0, 0)
+    width: 4px
+    height: 4px
+    border-radius: 50%
+  .point::before, .point::after
+    width: 8px
+    height: 2px
+    border-radius: 25%
+  .point::before
+    transform: translate(-4.5px) rotate(50deg)
+  .point::after
+    transform: translate(0.5px) rotate(-50deg)
