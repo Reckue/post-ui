@@ -2,6 +2,17 @@
   .header
     .publish {{ publish }}
     app-popup-menu
-      .menu-btn((click)="onClickMenuButton()")(#menu)([id]="post.id")
+      .menu-btn((click)="clickMenuButton()")(#menu)([id]="post.id")
         .point
-  a(class='title' routerLink="/posts/{{ post.id }}") {{ post.title }}
+  .content
+    .left
+      a(class='title' routerLink="/posts/{{ post.id }}") {{ post.title }}
+      .user
+        .image
+        .info
+          .user-name Some User
+          .additionally Junior QA
+    .right
+      .likes
+      .views
+      .comments

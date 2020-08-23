@@ -18,7 +18,7 @@ export class PostLandingComponent implements OnInit {
     this.publish = this.dateFormat.getTimeAfterPublish(this.post.createdDate);
   }
 
-  onClickMenuButton = () => {
+  clickMenuButton = () => {
     const menuVisible = this.menuButton.nativeElement.classList.contains('open');
     if (!menuVisible) {
       this.menuButton.nativeElement.classList.add('open');

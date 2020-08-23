@@ -2,7 +2,6 @@
   flex-direction: column
   padding: 5px 10px
   width: 100%
-  height: 100px
   background-color: #ffffff
   border: #eef3f5 1px solid
   border-radius: 6px
@@ -67,10 +66,32 @@
         transform: translate(-4.5px) rotate(50deg)
       .point::after
         transform: translate(0.5px) rotate(-50deg)
-  .title
-    font-size: 20px
-    line-height: 32px
-    font-weight: 500
-    color: #000
-  .title:hover
-    color: #2e6cb4
+  .content
+    flex-direction: row
+    .left
+      flex-direction: column
+      .title
+        font-size: 20px
+        line-height: 32px
+        font-weight: 500
+        color: #000
+      .title:hover
+        color: #2e6cb4
+      .user
+        margin: 10px 0
+        flex-direction: row
+        align-items: center
+        .image
+          width: 36px
+          height: 36px
+          background: #2b82b9
+          border-radius: 50%
+        .info
+          margin-top: 10px
+          margin-left: 10px
+          line-height: 18px
+          flex-direction: column
+          .user-name
+            font-size: 14px
+          .additionally
+            font-size: 12px
