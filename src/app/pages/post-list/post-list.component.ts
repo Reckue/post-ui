@@ -20,7 +20,7 @@ export class PostListComponent implements OnInit {
 
   getPosts() {
     this.postService.getAll().subscribe(
-      data => { this.posts = data as Post[]; },
+      data => this.posts = data as Post[],
       err => console.error(err),
       () => console.log(this.posts)
     );
