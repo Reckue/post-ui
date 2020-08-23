@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Host, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Post} from '../../models/post';
 import {DateFormatService} from '../../services/date-format.service';
 
@@ -23,6 +23,16 @@ export class PostLandingComponent implements OnInit {
     if (!menuVisible) {
       this.menuButton.nativeElement.classList.add('open');
     } else {
+      this.menuButton.nativeElement.classList.remove('open');
+    }
+  }
+
+  @HostListener('window:click', ['$event'])
+  closeMenu = (event) => {
+    const element = event.target;
+    const notMenuButton = !element.classList.contains('menu-btn');
+    const notThisPost = !(element.id === this.post.id);
+    if (notMenuButton || notThisPost) {
       this.menuButton.nativeElement.classList.remove('open');
     }
   }
