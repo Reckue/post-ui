@@ -1,4 +1,6 @@
 import {Component, Host, HostListener, ViewChild} from '@angular/core';
+import {HeaderContentTypes} from '../../models/HeaderContentTypes';
+import {PopupNotificationService} from '../../services/popup-notification.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +10,15 @@ import {Component, Host, HostListener, ViewChild} from '@angular/core';
 export class HeaderComponent {
   @ViewChild('header') header;
   private headerPosition = 0;
+  private contentType = HeaderContentTypes.EDIT;
 
-  constructor() {}
+  constructor(private popupNotificationService: PopupNotificationService) {}
 
   @HostListener('window:scroll')
   onScroll() {
     this.calculatePosition(window.pageYOffset);
     this.track();
+    this.popupNotificationService.displayMessage('Im Scrolling');
   }
 
   track = (headerPosition = this.headerPosition) => {
