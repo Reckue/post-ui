@@ -10,6 +10,7 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { PostListComponent } from './pages/post-list/post-list.component';
 import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
+import {PopupModalComponent} from './components/popup/modal/popup-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
     PostDetailComponent,
     PostListComponent,
     PostLandingComponent,
-    PopupMenuComponent
+    PopupMenuComponent,
+    PopupModalComponent
   ],
   imports: [
     HttpClientModule,
