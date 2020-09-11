@@ -1,6 +1,7 @@
 import {Component, ElementRef, Host, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Post} from '../../models/post';
 import {DateFormatService} from '../../services/date-format.service';
+import {PopupModalService} from '../../services/popup-modal.service';
 
 @Component({
   selector: 'app-post-landing',
@@ -12,7 +13,7 @@ export class PostLandingComponent implements OnInit {
   @Input() post: Post;
   publish: string;
 
-  constructor(private dateFormat: DateFormatService) {}
+  constructor(private dateFormat: DateFormatService, private popupModalService: PopupModalService) {}
 
   ngOnInit(): void {
     this.publish = this.dateFormat.getTimeAfterPublish(this.post.createdDate);
@@ -21,6 +22,7 @@ export class PostLandingComponent implements OnInit {
   clickMenuButton = () => {
     const menuVisible = this.menuButton.nativeElement.classList.contains('open');
     if (!menuVisible) {
+      this.popupModalService.display();
       this.menuButton.nativeElement.classList.add('open');
     } else {
       this.menuButton.nativeElement.classList.remove('open');

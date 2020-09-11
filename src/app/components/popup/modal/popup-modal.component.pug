@@ -1,1 +1,6 @@
-.popup-window
+.popup-window(*ngIf="isVisible")((click)="onClickBackground($event)")
+  .menu()
+    .title {{title}}
+    .message {{message}}
+    .buttons(*ngFor="let action of actions")
+      .button((click)="action.func()") {{action.message}}
