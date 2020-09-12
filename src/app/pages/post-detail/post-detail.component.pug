@@ -1,7 +1,8 @@
-div {{ post.title }}
-div {{ post.modificationDate }}
-div {{ post.status }}
+div(*ngIf="getPost()")
+  div {{ getPost().title }}
+  div {{ getPost().modificationDate }}
+  div {{ getPost().status }}
 
-div Nodes:
-div(*ngFor = "let node of post.nodes; let num = index")
-  div {{ node.id }}
+  div Nodes:
+  div(*ngFor = "let node of getPost().nodes; let num = index")
+    div {{ node.id }}
