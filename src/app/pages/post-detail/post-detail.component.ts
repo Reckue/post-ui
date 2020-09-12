@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {Post} from '../../models/post';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PostService} from '../../services/post.service';
+import {DateFormatService} from '../../services/date-format.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -13,7 +12,8 @@ export class PostDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private postService: PostService) {
+              private postService: PostService,
+              private dateFormatService: DateFormatService) {
   }
 
   ngOnInit(): void {

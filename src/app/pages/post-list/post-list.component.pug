@@ -1,3 +1,4 @@
 .filter
+app-simple-loading([condition] = 'getPosts()')
 .posts(*ngFor="let post of getPosts(); let num= index")
   app-post-landing([post]="post")

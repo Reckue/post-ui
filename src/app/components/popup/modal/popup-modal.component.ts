@@ -1,4 +1,4 @@
-import {AfterContentInit, AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ModalAction} from '../../../models/ModalAction';
 
 @Component({

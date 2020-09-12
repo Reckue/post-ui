@@ -1,4 +1,4 @@
-import {Component, ElementRef, Host, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 import {Post} from '../../models/post';
 import {DateFormatService} from '../../services/date-format.service';
 import {PopupModalService} from '../../services/popup-modal.service';

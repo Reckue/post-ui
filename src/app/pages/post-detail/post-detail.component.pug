@@ -1,8 +1,6 @@
-div(*ngIf="getPost()")
-  div {{ getPost().title }}
-  div {{ getPost().modificationDate }}
-  div {{ getPost().status }}
-
-  div Nodes:
-  div(*ngFor = "let node of getPost().nodes; let num = index")
-    div {{ node.id }}
+app-simple-loading([condition]="getPost()")
+.content(*ngIf="getPost()")
+  .title {{ getPost().title }}
+  .date {{ dateFormatService.getTimeAfterPublish(getPost().modificationDate) }}
+  .nodes(*ngFor = "let node of getPost().nodes; let num = index")
+    .node {{ node.id }}

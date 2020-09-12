@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PopupNotificationService} from '../../services/popup-notification.service';
 import {PostService} from '../../services/post.service';
 
@@ -13,8 +13,7 @@ export class PostListComponent implements OnInit {
     this.postService.subscribeAll();
   }
 
-  constructor(private popupNotificationService: PopupNotificationService,
-              private postService: PostService) {}
+  constructor(private postService: PostService) {}
 
   getPosts = () => this.postService.getAll();
 }

@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {PopupNotificationService} from './services/popup-notification.service';
-import {PopupModalComponent} from './components/popup/modal/popup-modal.component';
 import {PopupModalService} from './services/popup-modal.service';
 
 @Component({
