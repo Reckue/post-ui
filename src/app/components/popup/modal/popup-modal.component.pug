@@ -1,4 +1,4 @@
-.popup-window(*ngIf="isVisible")((click)="onClickBackground($event)")
+.popup-window(*ngIf="isVisible")((click)="onClickBackground($event)")(#background)
   .menu()
     .title {{title}}
     .message {{message}}
