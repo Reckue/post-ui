@@ -32,12 +32,14 @@ export class PopupModalComponent implements OnInit {
 
   close = () => {
     this.isVisible = false;
-    document.querySelector('body').style.overflow = 'visible';
+    const body = document.querySelector('body');
+    body.style.overflow = 'visible';
   }
 
   display = () => {
     this.isVisible = true;
-    document.querySelector('body').style.overflow = 'hidden';
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden';
   }
 
   public setTitle = (title: string) => this.title = title;

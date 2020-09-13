@@ -2,5 +2,5 @@ app-simple-loading([condition]="getPost()")
 .content(*ngIf="getPost()")
   .title {{ getPost().title }}
   .date {{ dateFormatService.getTimeAfterPublish(getPost().modificationDate) }}
-  .nodes(*ngFor = "let node of getPost().nodes; let num = index")
-    .node {{ node.id }}
+  .nodes
+    .node(*ngFor = "let node of getPost().nodes") {{ node.node.content }}
