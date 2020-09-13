@@ -1,0 +1,40 @@
+.search-menu
+  position: absolute
+  width: 220px
+  height: 200px
+  flex-direction: column
+  align-items: center
+  transform: translate(-120%, 10px)
+  background: none
+  border-radius: 10px
+  animation: show-search-menu 0.5s, increase-search-menu 0.5s 0.2s, hide-search-menu-bg 0.5s 0.5s
+
+@keyframes show-search-menu
+  from
+    background: #e7ecee
+    transform: translate(-120%, 400px)
+    height: 60px
+    opacity: 0
+  to
+    background: #e7ecee
+    transform: translate(-120%, 10px)
+    height: 60px
+    opacity: 1
+
+@keyframes increase-search-menu
+  from
+    background: #e7ecee
+    height: 40px
+  to
+    background: #e7ecee
+    height: 200px
+
+@keyframes hide-search-menu-bg
+  from
+    background: #e7ecee
+  to
+    background: rgba(255, 255, 255, 0)
+
+app-filter-input
+  animation: static-hide 0.6s, just-show 0.5s 0.6s
+

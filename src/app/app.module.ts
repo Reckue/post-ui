@@ -12,6 +12,8 @@ import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
 import {PopupModalComponent} from './components/popup/modal/popup-modal.component';
 import {SimpleLoadingComponent} from './components/loading/simple/simple-loading.component';
+import {SearchMenuComponent} from './components/search/menu/search-menu.component';
+import {FilterInputComponent} from './components/search/input/filter/filter-input.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {SimpleLoadingComponent} from './components/loading/simple/simple-loading
     PostLandingComponent,
     PopupMenuComponent,
     PopupModalComponent,
-    SimpleLoadingComponent
+    SimpleLoadingComponent,
+    SearchMenuComponent,
+    FilterInputComponent
   ],
   imports: [
     HttpClientModule,
