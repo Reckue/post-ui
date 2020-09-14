@@ -6,15 +6,17 @@ export class Post {
   title: string;
   nodes: Array<Node>;
   createdDate: number;
-  // modificationDate: number;
-  // status: string;
+  modificationDate: number;
+  status: string;
   // tags: Array<string>;
   // userId: string;
 
   constructor(id: string = null,
               title: string = '',
               nodes: Array<Node> = [],
-              createdDate: number = null) {
+              createdDate: number = null,
+              modificationDate: number = null,
+              status: string = '') {
 
     this.id = id;
     this.title = title;
