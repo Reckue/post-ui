@@ -1,0 +1,12 @@
+.post-title
+  input.title( (change)="editTitle($event)"
+                placeholder="Edit title..." contenteditable)
+  h3#Title.title( (keydown.enter) = "editTitle($event)",
+            (keydown.shift.enter) = "addNode($event)",
+            (focusout) = "editTitle($event)"
+            contenteditable
+            role = "text-block")
+  .nodes(*ngFor='let node of post.nodes')
+    app-text([node] = "node", [change] = "addNode")
+  .nodes
+    app-text([change] = "addNode")

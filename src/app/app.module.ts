@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import {PopupNotificationComponent} from './components/popup/notification/popup-notification.component';
 import {HttpClientModule} from '@angular/common/http';
-import { PostDetailComponent } from './pages/post-detail/post-detail.component';
-import { PostListComponent } from './pages/post-list/post-list.component';
+import { PostDetailComponent } from './pages/posts/post-detail/post-detail.component';
+import { PostListComponent } from './pages/posts/post-list/post-list.component';
 import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
-import { PostEditComponent } from './pages/post-edit/post-edit.component';
+import { PostEditComponent } from './pages/posts/post-edit/post-edit.component';
+import { PostsComponent } from './pages/posts/posts.component';
+import { TextComponent } from './components/text/text.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PostEditComponent } from './pages/post-edit/post-edit.component';
     PostListComponent,
     PostLandingComponent,
     PopupMenuComponent,
-    PostEditComponent
+    PostEditComponent,
+    PostsComponent,
+    TextComponent,
   ],
   imports: [
     HttpClientModule,
