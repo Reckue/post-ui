@@ -16,7 +16,7 @@ Service for publications, tutorials and articles.
 ## Requred
  - node packege manager
  - angular cli
- #
+
 Also if you use __windows__, you must have to put this utils in path variables.
 
 ## Install
