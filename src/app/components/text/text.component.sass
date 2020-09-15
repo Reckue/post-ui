@@ -1,0 +1,13 @@
+.text-input
+  display: block
+  overflow: hidden
+  line-height: 20px
+  font-size: 16px
+  resize: none
+  outline: none
+  border: 0
+
+  &:empty::before
+    content: "Write text"
+    color: gray
+
