@@ -13,7 +13,7 @@ export class PostDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router,
               private postService: PostService,
-              private dateFormatService: DateFormatService) {
+              public dateFormatService: DateFormatService) {
   }
 
   ngOnInit(): void {
