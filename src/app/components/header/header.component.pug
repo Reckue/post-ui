@@ -2,12 +2,76 @@
   .content
     .logotype
       .brand
-    .search
+    //-  .search(*ngif='getSearchVisible()')
+      .image
+      label
+        input(placeholder='Post or profile', type='search') 
+      .profile(*ngif='getUser().isAuth')
+        .user((click)='reverseMenuVisibility()')
+          app-user-image([username]='getUser().info.username')
+        .profile-background(*ngif='getMenuVisible()', (click)='hideMenu()')
+        .profile-menu(*ngif='getMenuVisible()')
+          ul
+            li.profile-menu-main
+              a(routerlink='/') Profile
+            li
+              a(routerlink='/') Your posts
+            li
+              a(routerlink='/') Your stars
+            li
+              a(routerlink='/') Your followings
+            li
+              a(routerlink='/') Feature preview
+            li
+              a(routerlink='/') Settings
+            li
+              a(routerlink='/') Security & Privacy
+            li
+              a(routerlink='/') Help
+            li
+              a(routerlink='/auth', (click)='unauthorize()') Sign out
+        a.add(routerlink='/posts/add') +
+      a.auth(routerlink='/auth', *ngif='!getUser().isAuth') Get auth   
+    .arrows
+      .arrow_left
+        a.arrow_left-img(href="#")
+      .arrows_rotations
+        .arrow_left-arrow_rotation
+          a.arrow_left-arrow_rotation-img(href="#")
+        .arrow_right-arrow_rotation
+          a.arrow_right-arrow_rotation-img(href="#")
+
+
+    //-.search
       input(
         type='input'
         name='find'
         placeholder='Search'
       )
       .find
+
     .account
-      div A
+      .publish_menu
+        span.publish_menu-text Publish
+        .publish_menu-checkIt
+          .publish_menu-checkIt_arrow
+          .publish_menu-list
+            ul
+              li.publish_menu-list_main
+                input(
+                  type='input'
+                  name='find'
+                  placeholder='Search'
+                )
+              li
+                a(routerlink='/') Preview
+              li
+                a(routerlink='/') Edit tags
+              li
+                a(routerlink='/') Costomize URL
+              li
+                a(routerlink='/') Add node
+              li
+                a(routerlink='/') Close edit mode
+
+      .jhh A

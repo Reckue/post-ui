@@ -58,4 +58,115 @@ $header-shadow: 0 1px 4px rgba(0,0,0,.1)
       width: 250px
       height: $header-height
       line-height: $header-height
-      justify-content: flex-end
+      justify-content: flex-start
+
+    //arrows  
+    .arrows
+      width: 462px
+      height: $header-height
+      line-height: $header-height  
+      display: flex
+      justify-content: space-between
+    .arrow_left
+      width: 10%
+      height: 54%
+      position: relative
+      top: 13px
+      left: 41px
+      .arrow_left-img
+        width: 100%
+        height: 100%
+        background: url("../../../assets/arrow_left.svg") no-repeat center  
+    .arrows_rotations
+      width: 14%
+      height: 100% 
+      display: flex
+      justify-content: space-between
+    .arrow_left-arrow_rotation
+      position: relative
+      bottom: 3px
+      width: 50%
+      .arrow_left-arrow_rotation-img
+        width: 100%
+        height: 100%
+        background: url("../../../assets/arrow_left_rotate.svg") no-repeat center   
+    .arrow_right-arrow_rotation
+      position: relative
+      bottom: 3px
+      width: 50%  
+      .arrow_right-arrow_rotation-img
+        width: 100%
+        height: 100%
+        background: url("../../../assets/arrow_right_rotate.svg") no-repeat center  
+
+    //publish menu
+    .publish_menu
+      width: 104px
+      height: 36px
+      background: #404040 
+      border-radius: 18px 
+      position: relative
+      top: 17%
+      left: 17%
+      display: flex
+      justify-content: center 
+      align-items: center
+      .publish_menu-text
+        width: 92%
+        color: #fff
+        font-size: 16px
+        text-align: center
+        position: relative
+        left: 3px        
+      .publish_menu-checkIt
+        width: 30%
+        height: 100%
+        border-radius: 0px 18px 18px 0px
+        background-color: #000000
+        .publish_menu-checkIt_arrow
+          position: relative
+          top: 35%
+          left: 22%
+          z-index: 1
+          outline: none                    
+        .publish_menu-checkIt_arrow::before  
+          content: ''
+          width: 6px
+          height: 6px
+          display: inline-block
+          display: inline-block
+          border: solid #FFFFFF
+          border-width: 0 1px 1px 0 
+          transform: rotate(45deg)
+        //menu list   
+        .publish_menu-list 
+          position: absolute
+          top: 47px
+          right: 3px
+          width: auto
+          max-width: 157px
+          min-width: 130px
+          background-color: #000000  
+          border-radius: 3px 3px 0px 0px
+        .publish_menu-list::before,.publish_menu-list::after 
+          content: ""
+          display: block
+          height: 0
+          left: 50%
+          position: absolute
+          width: 0
+          z-index: 1
+        .publish_menu-list::before
+          border-left: 12px solid transparent
+          border-right: 12px solid transparent
+          border-bottom: 14px solid #000000
+          margin-left: 50px
+          top: -14px
+          z-index: 4  
+        .publish_menu-list::after
+          border-left: 11px solid transparent
+          border-right: 11px solid transparent
+          border-bottom: 13px solid #000000
+          margin-left: 51px
+          top: -13px
+          z-index: 5  
