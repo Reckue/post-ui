@@ -1,5 +1,6 @@
 export class Node {
   id: string;
+  node: object;
   type: string;
   content: string;
   // postId: string;

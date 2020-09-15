@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {GatewayService} from '../gateway.service';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {GatewayService} from '../services/gateway.service';
 import {Observable} from 'rxjs';
-import {Post} from '../../models/post';
+import {Post} from '../models/post';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class PostApi {
 
   constructor(private http: HttpClient,
               private gateway: GatewayService) { }

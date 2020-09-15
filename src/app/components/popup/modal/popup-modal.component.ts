@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ModalAction} from '../../../models/ModalAction';
 
 @Component({
@@ -7,11 +7,12 @@ import {ModalAction} from '../../../models/ModalAction';
   styleUrls: ['./popup-modal.component.sass']
 })
 export class PopupModalComponent implements OnInit {
+  isVisible = false;
+  title = 'Default title';
+  message = 'This is default message!';
+  actions: ModalAction[];
 
-  protected isVisible = false;
-  protected title = 'Default title';
-  protected message = 'This is default message!';
-  protected actions: ModalAction[];
+  @ViewChild('background') background;
 
   constructor() {}
 
@@ -27,21 +28,23 @@ export class PopupModalComponent implements OnInit {
     this.initDefaultAction();
   }
 
-  protected onClickBackground = (event) =>  event.target.valueOf().className === 'popup-window' ? this.close() : undefined;
+  onClickBackground = (event) =>  event.target.valueOf().className === 'popup-window' ? this.close() : undefined;
 
   close = () => {
     this.isVisible = false;
-    document.querySelector('body').style.overflow = 'visible';
+    const body = document.querySelector('body');
+    body.style.overflow = 'visible';
   }
 
   display = () => {
     this.isVisible = true;
-    document.querySelector('body').style.overflow = 'hidden';
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden';
   }
 
-  private setTitle = (title: string) => this.title = title;
+  public setTitle = (title: string) => this.title = title;
 
-  private setMessage = (title: string) => this.title = title;
+  public setMessage = (title: string) => this.title = title;
 
-  private setActions = (title: string) => this.title = title;
+  public setActions = (title: string) => this.title = title;
 }
