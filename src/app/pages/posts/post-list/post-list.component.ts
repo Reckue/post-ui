@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Post} from '../../../models/post';
-import {PopupNotificationService} from '../../../services/popup-notification.service';
-import {PostService} from '../../../services/api/post.service';
+import {Component, OnInit} from '@angular/core';
+import {PostService} from '../../../services/post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -9,20 +7,12 @@ import {PostService} from '../../../services/api/post.service';
   styleUrls: ['./post-list.component.sass']
 })
 export class PostListComponent implements OnInit {
-  public posts: Post[] = [];
 
   ngOnInit(): void {
-    this.getPosts();
+    this.postService.subscribeAll();
   }
 
-  constructor(private popupNotificationService: PopupNotificationService,
-              private postService: PostService) { }
+  constructor(private postService: PostService) {}
 
-  getPosts() {
-    this.postService.getAll().subscribe(
-      data => this.posts = data as Post[],
-      err => console.error(err),
-      () => console.log(this.posts)
-    );
-  }
+  getPosts = () => this.postService.getAll();
 }
