@@ -13,6 +13,12 @@ Service for publications, tutorials and articles.
 - Docker
 - Redux
 
+## Requred
+ - node packege manager
+ - angular cli
+ #
+Also if you use __windows__, you must have to put this utils in path variables.
+
 ## Install
 Use `npm install`. If you have some problems wath our [introduction tutorial](https://github.com/Reckue/docs/blob/master/introduction/Frontend.md).
 
