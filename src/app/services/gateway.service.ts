@@ -5,7 +5,16 @@ import {Injectable} from '@angular/core';
 })
 export class GatewayService {
 
-  constructor() { }
+  constructor() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:3015/');
+    const status = xhr.status;
+    if (300 > status && status >= 200) {
+      this.postService = 'http://localhost:3015/';
+      this.authorizationService = 'http://localhost:3015/';
+      this.accountService = 'http://localhost:3015/';
+    }
+  }
 
   // TODO: In future, here will be only one a service for gateway to Reckue API.
   // private static gatewayService: string        = "https://api.reckue.com"
@@ -41,5 +50,4 @@ export class GatewayService {
   public getAccountService(): string {
     return this.accountService;
   }
-
 }
