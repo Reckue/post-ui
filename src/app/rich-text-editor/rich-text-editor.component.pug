@@ -1,0 +1,17 @@
+.editor
+  .toolbar
+    button.btn( onclick = "document.execCommand('bold', false, '');") Bold
+    button.btn( onclick = "document.execCommand('italic', false, '');") Italic
+    input.btn#file((change)='preview($event)' type="file" accept="image/*" style="display: none;")
+    label.btn(for="file") Image
+
+  .content
+
+
+    .text-editor(contenteditable, (keydown.enter) = 'addNode')
+      h3.h {{post.title}}
+      p( *ngFor = 'let node of post.nodes') {{node.node.content}}
+      img.img([src]="imgURL" , *ngIf="imgURL")
+      .pcont
+        p((keydown.enter) = 'addNode')
+

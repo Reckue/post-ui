@@ -22,6 +22,12 @@ export class PostDetailComponent implements OnInit {
     this.getPost();
   }
 
+  editCurPost() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.router.navigate(['posts', 'edit', id]).then();
+    console.log('1');
+  }
+
   getPost() {
     this.routeSub = this.route.params.subscribe(params => {
       this.postService.getById(params.id).subscribe(

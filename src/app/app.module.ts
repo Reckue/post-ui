@@ -12,7 +12,10 @@ import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
 import { PostEditComponent } from './pages/posts/post-edit/post-edit.component';
 import { PostsComponent } from './pages/posts/posts.component';
-import { TextComponent } from './components/text/text.component';
+import { InputComponent } from './components/input/input.component';
+import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
+import { NodeComponent } from './components/nodes/node.component';
+import {TextComponent} from './components/nodes/text/text.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { TextComponent } from './components/text/text.component';
     PopupMenuComponent,
     PostEditComponent,
     PostsComponent,
-    TextComponent,
+    InputComponent,
+    RichTextEditorComponent,
+    NodeComponent,
+    TextComponent
   ],
   imports: [
     HttpClientModule,

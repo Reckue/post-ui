@@ -5,9 +5,9 @@
   font-size: 16px
   resize: none
   outline: none
-  border: 0
-
-  &:empty::before
+  border: none
+  z-index: 1
+  &[contenteditable]:empty::before
     content: "Write text"
     color: gray
 
