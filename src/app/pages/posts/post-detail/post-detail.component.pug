@@ -1,6 +1,7 @@
-app-simple-loading([condition]="getPost()")
-.content(*ngIf="getPost()")
-  .title {{ getPost().title }}
-  .date {{ dateFormatService.getTimeAfterPublish(getPost().modificationDate) }}
-  .nodes
-    .node(*ngFor = "let node of getPost().nodes") {{ node.node.content }}
+.post-detail-wrapper
+  app-simple-loading([condition]="getPost()")
+  .content(*ngIf="getPost()")
+    .title {{ getPost().title }}
+    .date {{ dateFormatService.getTimeAfterPublish(getPost().modificationDate) }}
+    .nodes
+      .node(*ngFor = "let node of getPost().nodes") {{ node.node.content }}

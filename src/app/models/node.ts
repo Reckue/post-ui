@@ -1,6 +1,8 @@
+import {NodeContent} from './NodeContent';
+
 export class Node {
   id: string;
-  node: object;
+  node: NodeContent;
   type: string;
   content: string;
   // postId: string;

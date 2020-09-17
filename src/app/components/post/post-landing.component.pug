@@ -4,8 +4,8 @@
     .header
       .left
         a(class='title' routerLink="/{{ post.id }}") {{ post.title }}
-      app-popup-menu
-        .menu-btn((click)="clickMenuButton()")(#menu)([id]="post.id")
+      app-popup-menu([visible]="menuVisible", [fields]="menuFields")
+        .menu-btn((click)="clickMenuButton()", #menu, [id]="post.id")
           .point
     .content(*ngIf="post.nodes.length > 0") {{ post.nodes[0].node.content }}
   .user
