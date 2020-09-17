@@ -1,10 +1,30 @@
 [
   {
-    "id": "1",
-    "email": "user1@example.com"
+    "id": "4d6b368d3fc2306b8017bb5c653a4a0d",
+    "username": "durov",
+    "email": "egnaf5@yahoo.com",
+    "roles": [
+      {
+        "name": "ROLE_USER"
+      }
+    ],
+    "status": "ACTIVE",
+    "created": 1596810511888,
+    "updated": 1596810511888,
+    "lastVisit": 1596810511888
   },
   {
-    "id": "2",
-    "email": "user2@example.com"
+    "id": "47019ce8a4593c28b5b83cfba74c34a6",
+    "username": "BIGDAN",
+    "email": "DohovDO@mail.ru",
+    "roles": [
+      {
+        "name": "ROLE_USER"
+      }
+    ],
+    "status": "ACTIVE",
+    "created": 1596130943039,
+    "updated": 1596130943039,
+    "lastVisit": 1596731893182
   }
 ]

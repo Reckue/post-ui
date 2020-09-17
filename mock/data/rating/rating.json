@@ -1,0 +1,23 @@
+[
+    {
+        "createdDate": 0,
+        "id": "string",
+        "modificationDate": 0,
+        "postId": "string",
+        "userId": "string"
+    },
+    {
+        "createdDate": 0,
+        "id": "string",
+        "modificationDate": 0,
+        "postId": "string",
+        "userId": "string"
+    },
+    {
+        "createdDate": 0,
+        "id": "string",
+        "modificationDate": 0,
+        "postId": "string",
+        "userId": "string"
+    }
+]
