@@ -1,21 +1,16 @@
-.post
-  .header
-    .publish {{ publish }}
-    app-popup-menu
-      .menu-btn((click)="clickMenuButton()")(#menu)([id]="post.id")
-        .point
-  .content
-    .left
-      a(class='title' routerLink="/{{ post.id }}") {{ post.title }}
-      .user
-        .image
-        .info
-          .user-name Some User
-          .additionally Junior QA
-    .right
-      .statistic 21
-        .like-icon
-      .statistic 4
-        .view-icon
-      .statistic 70
-        .comment-icon
+.date {{publish}}
+.post-wrapper
+  .post
+    .header
+      .left
+        a(class='title' routerLink="/{{ post.id }}") {{ post.title }}
+      app-popup-menu
+        .menu-btn((click)="clickMenuButton()")(#menu)([id]="post.id")
+          .point
+    .content(*ngIf="post.nodes.length > 0") {{ post.nodes[0].node.content }}
+  .user
+    .image
+    .statistic 21
+      .like-icon
+    .statistic 70
+      .comment-icon

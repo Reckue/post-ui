@@ -1,85 +1,55 @@
-.post
-  flex-direction: column
-  padding: 5px 10px
-  width: 100%
-  background-color: #ffffff
-  border: #eef3f5 1px solid
-  border-radius: 6px
-  box-shadow: 0 0 6px #eeeeee
-  .header
-    flex-direction: row
-    justify-content: space-between
-    line-height: 32px
-    .publish
-      font-size: 14px
-      font-weight: 500
-  .content
-    flex-direction: row
-    justify-content: space-between
-    .left
-      flex-direction: column
-      .title
-        font-size: 20px
-        line-height: 32px
-        font-weight: 500
-        color: #000
-      .title:hover
-        color: #2e6cb4
-      .user
-        margin: 10px 0
-        flex-direction: row
-        align-items: center
-        .image
-          width: 36px
-          height: 36px
-          background: #2b82b9
-          border-radius: 50%
-        .info
-          margin-left: 10px
-          line-height: 18px
-          flex-direction: column
-          .user-name
-            font-size: 14px
-          .additionally
-            font-size: 12px
-    .right
-      flex-direction: column
-      justify-content: flex-end
-      font-size: 12px
-      margin-bottom: 10px
-      .statistic
-        flex-direction: row
-        justify-content: flex-end
-        margin-top: 4px
-        cursor: pointer
-        .like-icon
-          width: 12px
-          height: 12px
-          border: 1px solid black
-          margin-left: 6px
-          transition: all 0.2s ease
-          border-radius: 4px
-        .view-icon
-          width: 12px
-          height: 12px
-          border: 1px solid black
-          border-radius: 50%
-          margin-left: 4px
-          transition: all 0.2s ease
-        .comment-icon
-          width: 12px
-          height: 12px
-          border: 1px solid black
-          margin-left: 4px
-          transition: all 0.2s ease
-          transform: rotate(20deg)
-        &:hover
-          .comment-icon, .view-icon, .like-icon
-            background: #2b82b9
-            transform: rotate(-405deg)
-          .view-icon
-            border-radius: 0
-            transform: rotate(360deg)
-          .like-icon
-            border-radius: 50%
-            transform: rotate(360deg)
+.date
+  padding: 2px 8px
+  font-size: 12px
+.post-wrapper
+  .user
+    margin: 0 10px
+    flex-direction: column
+    align-items: center
+    .image
+      width: 36px
+      height: 36px
+      background: #2b82b9
+      border-radius: 50%
+    .statistic
+      padding: 2px 0
+      align-items: center
+      justify-content: center
+      div
+        margin: 0 4px
+        width: 12px
+        height: 12px
+        filter: invert(1) brightness(0.2)
+      .like-icon
+        background: url("../../../assets/like.png") center
+        background-size: cover
+      .comment-icon
+        background: url("../../../assets/comment.png") center
+        background-size: cover
+  .post
+    flex-direction: column
+    padding: 5px 10px
+    width: 500px
+    background-color: #ffffff
+    border: #eef3f5 1px solid
+    border-radius: 6px
+    box-shadow: 0 0 6px #eeeeee
+    .header
+      flex-direction: row
+      justify-content: space-between
+      line-height: 32px
+      .left
+        flex-direction: column
+        .title
+          font-size: 19px
+          line-height: 32px
+          font-weight: 500
+          color: #000
+        .title:hover
+          color: #2e6cb4
+        .publish
+          font-size: 14px
+          font-weight: 500
+    .content
+      padding: 8px 0
+      font-size: 16px
