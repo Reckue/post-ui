@@ -22,7 +22,6 @@ export class PostLandingComponent implements OnInit {
   clickMenuButton = () => {
     const menuVisible = this.menuButton.nativeElement.classList.contains('open');
     if (!menuVisible) {
-      this.popupModalService.display();
       this.menuButton.nativeElement.classList.add('open');
     } else {
       this.menuButton.nativeElement.classList.remove('open');

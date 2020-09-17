@@ -11,7 +11,6 @@ import {PostListComponent} from './pages/posts/post-list/post-list.component';
 import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
 import { PostEditComponent } from './pages/posts/post-edit/post-edit.component';
-import { PostsComponent } from './pages/posts/posts.component';
 import { TextComponent } from './components/text/text.component';
 import {PopupModalComponent} from './components/popup/modal/popup-modal.component';
 import {SimpleLoadingComponent} from './components/loading/simple/simple-loading.component';
@@ -28,7 +27,6 @@ import {FilterInputComponent} from './components/search/input/filter/filter-inpu
     PostLandingComponent,
     PopupMenuComponent,
     PostEditComponent,
-    PostsComponent,
     TextComponent,
     PopupMenuComponent,
     PopupModalComponent,

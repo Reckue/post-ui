@@ -3,16 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {PostDetailComponent} from './pages/posts/post-detail/post-detail.component';
 import {PostListComponent} from './pages/posts/post-list/post-list.component';
 import {PostEditComponent} from './pages/posts/post-edit/post-edit.component';
-import {PostsComponent} from "./pages/posts/posts.component";
 
 
 const routes: Routes = [
-  {path: 'posts', component: PostsComponent, children: [
-      {path: '', component: PostListComponent},
-      {path: ':id', component: PostDetailComponent, children: [
-          {path: 'edit', component: PostEditComponent},
-        ]},
-    ]
+  {path: '', component: PostListComponent},
+  {path: ':id', component: PostDetailComponent,
+    children: [{path: 'edit', component: PostEditComponent}]
   },
   {path: 'new-post', component: PostEditComponent}
 ];

@@ -2,5 +2,5 @@
   .menu()
     .title {{title}}
     .message {{message}}
-    .buttons(*ngFor="let action of actions")
-      .button((click)="action.func()") {{action.message}}
+    .buttons(*ngFor = "let action of actions")
+      .button((click) = "action.func()") {{ action.message }}
