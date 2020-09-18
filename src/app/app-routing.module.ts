@@ -8,9 +8,8 @@ import {RichTextEditorComponent} from './rich-text-editor/rich-text-editor.compo
 
 const routes: Routes = [
   {path: '', component: PostListComponent},
-  {path: ':id', component: PostDetailComponent,
-    children: [{path: 'edit', component: PostEditComponent}]
-  },
+  {path: ':id/edit', component: PostEditComponent},
+  {path: ':id', component: PostDetailComponent},
   {path: 'txt', component: RichTextEditorComponent},
 ];
 

@@ -11,7 +11,6 @@ import {PostListComponent} from './pages/posts/post-list/post-list.component';
 import {PostLandingComponent} from './components/post/post-landing.component';
 import {PopupMenuComponent} from './components/popup/menu/popup-menu.component';
 import { PostEditComponent } from './pages/posts/post-edit/post-edit.component';
-import { TextComponent } from './components/text/text.component';
 import {PopupModalComponent} from './components/popup/modal/popup-modal.component';
 import {SimpleLoadingComponent} from './components/loading/simple/simple-loading.component';
 import {SearchMenuComponent} from './components/search/menu/search-menu.component';
@@ -36,11 +35,10 @@ import {TextComponent} from './components/nodes/text/text.component';
     PopupModalComponent,
     SimpleLoadingComponent,
     SearchMenuComponent,
-    FilterInputComponent
+    FilterInputComponent,
     InputComponent,
     RichTextEditorComponent,
-    NodeComponent,
-    TextComponent
+    NodeComponent
   ],
   imports: [
     HttpClientModule,

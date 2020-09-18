@@ -1,10 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Post} from '../../../models/post';
-import {PostService} from '../../../services/post.service';
+import {PostApi} from '../../../api/post.api';
 import {ActivatedRoute} from '@angular/router';
 import {Node} from '../../../models/node';
 import {TextNode} from '../../../models/TextNode';
-import {InputComponent} from '../../../components/input/input.component';
 import {NodeType} from '../../../models/NodeTypes';
 
 @Component({
@@ -15,12 +14,12 @@ import {NodeType} from '../../../models/NodeTypes';
 export class PostEditComponent implements OnInit {
 
   public post: Post = new Post();
-  constructor(private postService: PostService,
+  constructor(private postApi: PostApi,
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.postService.getById(id).subscribe(
+    this.postApi.getById(id).subscribe(
       data => this.post = data as Post,
       err => console.error(err),
       () => console.log(this.post.nodes)

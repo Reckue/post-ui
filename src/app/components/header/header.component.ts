@@ -1,4 +1,7 @@
 import {Component, Host, HostListener, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
+import {Post} from '../../models/post';
+import {PostApi} from '../../api/post.api';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +13,14 @@ export class HeaderComponent {
   private headerPosition = 0;
   private post: Post = new Post();
 
-  constructor(private postService: PostService,
+  constructor(private postApi: PostApi,
               private route: Router) {}
 
   addPost() {
-    this.postService.createPost(this.post).subscribe(
+    this.postApi.createPost(this.post).subscribe(
       data => {
         this.post = data;
-        this.route.navigate(['posts', 'edit', this.post.id]).then();
+        this.route.navigate([this.post.id, 'edit']).then();
       },
       error => console.error(error),
       () => console.log(this.post)

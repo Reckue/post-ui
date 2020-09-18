@@ -2,7 +2,7 @@ import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 import {Post} from '../models/post';
 import {TextNode} from '../models/TextNode';
 import {Node} from '../models/node';
-import {NodeType} from "../models/NodeTypes";
+import {NodeType} from '../models/NodeTypes';
 
 @Component({
   selector: 'app-rich-text-editor',

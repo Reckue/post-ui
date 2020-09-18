@@ -1,6 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Node} from '../../models/node';
-import {Post} from "../../models/post";
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -17,6 +15,4 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
 }

@@ -10,8 +10,7 @@ import {Post} from '../models/post';
 export class PostApi {
 
   constructor(private http: HttpClient,
-              private gateway: GatewayService,
-              private route: ActivatedRoute) { }
+              private gateway: GatewayService) {}
 
   getAll(): Observable<Post[]> {
     return this.http.get<Post[]>(this.gateway.getAllPosts());
