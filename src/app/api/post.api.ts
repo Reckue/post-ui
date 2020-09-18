@@ -23,7 +23,8 @@ export class PostApi {
         filters.limit,
         filters.offset,
         filters.sort,
-        filters.desc)
+        filters.desc
+      )
     );
   }
 

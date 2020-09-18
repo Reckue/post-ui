@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {PostService} from '../../../services/post.service';
 
 @Component({
@@ -15,4 +15,11 @@ export class PostListComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   getPosts = () => this.postService.getAll();
+
+  @HostListener('window:scroll')
+  onScroll() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      this.postService.loadPosts();
+    }
+  }
 }

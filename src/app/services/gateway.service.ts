@@ -36,7 +36,11 @@ export class GatewayService {
   }
 
   public getPosts(limit: number, offset: number, sort: string, desc: string): string {
-    return this.postService.concat('/posts/?limit=' + limit + '&offset=' + offset + '&sort=' + sort + '&desc=' + desc);
+    let url = this.postService.concat('/posts');
+    url += '?limit=' + limit + '&offset=' + offset;
+    sort && (url += '&sort=' + sort);
+    desc && (url += '&desc=' + desc);
+    return url;
   }
 
   public getPostById(id: string): string {

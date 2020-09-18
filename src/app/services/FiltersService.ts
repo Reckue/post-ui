@@ -14,7 +14,7 @@ export class FiltersService {
 
   buildLimitOffsetFiltersByCounter = (counter) => {
     const offset = counter * 10;
-    const limit = counter + 10;
+    const limit = offset + 10;
     return  this.buildLimitOffsetFilters(limit, offset);
   }
 
