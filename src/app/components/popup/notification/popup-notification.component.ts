@@ -20,9 +20,12 @@ export class PopupNotificationComponent implements OnInit {
     this.fields.splice(0, 1);
   }
 
+  closeById = (id) => {
+    this.fields.splice(id, 1);
+  }
+
   addNotification = (field: Field) => {
-    field.onClick = this.closeNotification;
+    field.onClick = this.closeById;
     this.fields.push(field);
-    return this.fields.length - 1;
   }
 }

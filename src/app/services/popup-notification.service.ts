@@ -14,11 +14,11 @@ export class PopupNotificationService {
   setPopupComponent = (popup: PopupNotificationComponent) => this.popup = popup;
 
   displayMessage = (message: string) => {
-    const id = this.popup.addNotification(new Field(message, '', '', null));
-    this.closePopup(4000, id);
+    this.popup.addNotification(new Field(message, '', '', null));
+    this.closePopup(4000);
   }
 
-  closePopup = (ms: number = 0, id: number) => setTimeout(() => this.close(id), ms);
+  closePopup = (ms: number = 0) => setTimeout(() => this.close(), ms);
 
-  close = (id) => this.popup.closeNotification(id);
+  close = () => this.popup.closeNotification();
 }
