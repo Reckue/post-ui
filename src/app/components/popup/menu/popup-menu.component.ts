@@ -1,4 +1,5 @@
 import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {Field} from '../../../models/Field';
 
 @Component({
   selector: 'app-popup-menu',
@@ -7,7 +8,7 @@ import {Component, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 })
 export class PopupMenuComponent implements OnInit {
   @ViewChild('menu') menuButton;
-  @Input() fields: string[];
+  @Input() fields: Field[];
   @Input() visible: boolean;
 
   ngOnInit(): void {

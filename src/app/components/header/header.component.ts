@@ -1,6 +1,7 @@
-import {Component, HostListener, ViewChild} from '@angular/core';
-import {HeaderContentTypes} from '../../models/HeaderContentTypes';
-import {PopupNotificationService} from '../../services/popup-notification.service';
+import {Component, Host, HostListener, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
+import {Post} from '../../models/post';
+import {PostApi} from '../../api/post.api';
 
 @Component({
   selector: 'app-header',
@@ -10,9 +11,21 @@ import {PopupNotificationService} from '../../services/popup-notification.servic
 export class HeaderComponent {
   @ViewChild('header') header;
   private headerPosition = 0;
-  private contentType = HeaderContentTypes.EDIT;
+  private post: Post = new Post();
 
-  constructor() {}
+  constructor(private postApi: PostApi,
+              private route: Router) {}
+
+  addPost() {
+    this.postApi.createPost(this.post).subscribe(
+      data => {
+        this.post = data;
+        this.route.navigate([this.post.id, 'edit']).then();
+      },
+      error => console.error(error),
+      () => console.log(this.post)
+    );
+  }
 
   @HostListener('window:scroll')
   onScroll() {

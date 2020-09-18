@@ -1,0 +1,3 @@
+.text-node(*ngIf="isInput === true")
+  app-input([value]="text", (change)="onChange($event, node)")
+  button((click)="onDelete(node)")

@@ -10,7 +10,7 @@ import {Post} from '../models/post';
 export class PostApi {
 
   constructor(private http: HttpClient,
-              private gateway: GatewayService) { }
+              private gateway: GatewayService) {}
 
   getAll(): Observable<Post[]> {
     return this.http.get<Post[]>(this.gateway.getAllPosts());
@@ -18,5 +18,9 @@ export class PostApi {
 
   getById(id: string): Observable<Post> {
     return this.http.get<Post>(this.gateway.getPostById(id));
+  }
+
+  createPost(post: Post): Observable<Post> {
+    return  this.http.post<Post>(this.gateway.getAllPosts(), post);
   }
 }

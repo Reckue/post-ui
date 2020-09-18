@@ -1,3 +1,5 @@
 ng-content
 .popup-menu(*ngIf="visible")
-  .field(*ngFor = "let field of fields") {{ field }}
+  .field(
+    *ngFor = "let field of fields",
+    (click) = "field.onClick()") {{ field.value }}

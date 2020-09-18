@@ -8,12 +8,14 @@ $header-background: #fff
 $header-shadow: 0 1px 4px rgba(0,0,0,.1)
 
 .header
+  display: flex
   position: fixed
   width: 100%
   height: $header-height
   background-color: $header-background
   box-shadow: $header-shadow
   transition: all 0.5s ease
+  z-index: 1000
   .content
     margin: 0 auto
     width: 1000px
@@ -55,7 +57,15 @@ $header-shadow: 0 1px 4px rgba(0,0,0,.1)
       border-radius: $header-height / 2
       cursor: pointer
     .account
+      display: flex
       width: 250px
       height: $header-height
       line-height: $header-height
-      justify-content: flex-end
+      justify-content: space-evenly
+    .btn
+      align-self: center
+      height: 30px
+      width: 30px
+      border-radius: 50%
+      border: 1px solid grey
+      outline: none
