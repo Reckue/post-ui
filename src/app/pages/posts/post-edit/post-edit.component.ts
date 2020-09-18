@@ -18,7 +18,7 @@ export class PostEditComponent implements OnInit {
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    console.log(this.route.params.subscribe(params => this.postService.subscribeById(params.id)));
+    this.route.params.subscribe(params => this.postService.subscribeById(params.id));
   }
 
   editPost = () => this.postService.getById();

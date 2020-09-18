@@ -18,7 +18,6 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => this.postService.subscribeById(params.id));
-    console.log(this.route.params.subscribe(params => this.postService.subscribeById(params.id)));
   }
 
   getPost = () => this.postService.getById();
