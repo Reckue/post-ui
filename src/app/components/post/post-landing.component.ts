@@ -23,14 +23,17 @@ export class PostLandingComponent implements OnInit {
     this.menuVisible = false;
     this.publish = this.dateFormat.getTimeAfterPublish(this.post.createdDate);
     this.menuFields = [];
-    this.menuFields.push(new Field('report', '', 'red', () => {}));
-    this.menuFields.push(new Field('edit', '', 'black', () => this.goEdit()));
     this.menuFields.push(new Field('favorites', '', 'black', () => {}));
+    this.menuFields.push(new Field('edit', '', 'black', () => this.goEdit()));
+    this.menuFields.push(new Field('report', '', 'red', () => {}));
+    this.menuFields.push(new Field('remove', '', 'red', () => this.removePost()));
   }
 
   goEdit = () => {
     this.route.navigate([this.post.id, 'edit']).then(ignore => {});
   }
+
+  removePost = () => {};
 
   clickMenuButton = () => {
     this.menuVisible = !this.menuButton.nativeElement.classList.contains('open');
