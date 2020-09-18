@@ -3,11 +3,12 @@
   flex: 1 1 100%
   flex-direction: column
   justify-content: stretch
-
+  border: none
+  outline: none
   .title
     font-size: 20px
     outline: none
-    border: 0
+    border: none
     display: block
     &[contenteditable]:empty::before
       content: "Write text"
@@ -16,3 +17,9 @@
     display: flex
     flex: 1 1 100%
     flex-direction: column
+    border: none
+  p
+    border: none
+    outline: none
+  .btn
+    align-self: start

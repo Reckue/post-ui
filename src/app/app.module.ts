@@ -16,6 +16,10 @@ import {PopupModalComponent} from './components/popup/modal/popup-modal.componen
 import {SimpleLoadingComponent} from './components/loading/simple/simple-loading.component';
 import {SearchMenuComponent} from './components/search/menu/search-menu.component';
 import {FilterInputComponent} from './components/search/input/filter/filter-input.component';
+import { InputComponent } from './components/input/input.component';
+import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
+import { NodeComponent } from './components/nodes/node.component';
+import {TextComponent} from './components/nodes/text/text.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import {FilterInputComponent} from './components/search/input/filter/filter-inpu
     SimpleLoadingComponent,
     SearchMenuComponent,
     FilterInputComponent
+    InputComponent,
+    RichTextEditorComponent,
+    NodeComponent,
+    TextComponent
   ],
   imports: [
     HttpClientModule,

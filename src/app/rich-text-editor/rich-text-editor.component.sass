@@ -1,0 +1,40 @@
+.editor
+  display: block
+  width: 100%
+  min-height: 18rem
+  font-family: 'Helvetica Neue', 'Helvetica', arial, sans-serif
+  background-color: darkseagreen
+  .toolbar
+    display: flex
+    background-color: floralwhite
+    align-items: center
+    justify-content: start
+    .btn
+      height: 30px
+      width: auto
+      margin: auto
+      background-color: deepskyblue
+  .content
+    line-height: 1.5
+    background-color: red
+    .pcont
+      display: flex
+      flex-direction: column
+      flex: 1 1 100%
+      p
+        width: 100%
+      p:empty::before
+        content: "Write text"
+        color: gray
+    .text-editor, .text-editor2
+      display: block
+      padding: 15px 12px
+      width: 100%
+      height: auto
+      background-color: papayawhip
+      .img
+       width: 100%
+      h3:empty::before
+        content: "Write text"
+        color: gray
+
