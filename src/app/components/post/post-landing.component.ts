@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-post-landing',
   templateUrl: './post-landing.component.pug',
-  styleUrls: ['./post-landing.component.sass', './popup-menu.sass']
+  styleUrls: ['./post-landing.component.sass', './post-landing.popup-menu.sass']
 })
 export class PostLandingComponent implements OnInit {
   @Input() post: Post;

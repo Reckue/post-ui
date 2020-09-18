@@ -9,7 +9,7 @@ import {PostService} from '../../../services/post.service';
 export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
-    this.postService.subscribeAll();
+    this.postService.subscribePosts();
   }
 
   constructor(private postService: PostService) {}
