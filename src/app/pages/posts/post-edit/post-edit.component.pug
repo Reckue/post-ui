@@ -3,8 +3,8 @@
             (keydown.shift.enter) = "addTitle($event)",
             (focusout) = "editTitle($event)"
             contenteditable
-            role = "input-block") {{post.title}}
-.nodes(*ngFor = 'let node of post.nodes')
+            role = "input-block") {{editPost().title}}
+.nodes(*ngFor = 'let node of editPost().nodes')
   app-node([node] = "node", [isInput] = "true", [onChange]="editNode", [onDelete]="deleteNode")
 .nodes
   app-input([change]= 'addNode')

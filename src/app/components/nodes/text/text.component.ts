@@ -19,8 +19,6 @@ export class TextComponent implements OnInit {
 
   ngOnInit(): void {
     this.text = this.content.content;
-    console.log(this.node);
-    console.log(this.text);
   }
 
 }

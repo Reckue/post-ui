@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Node} from '../../../models/node';
 import {TextNode} from '../../../models/TextNode';
 import {NodeType} from '../../../models/NodeTypes';
+import {PostService} from "../../../services/post.service";
 
 @Component({
   selector: 'app-post-edit',
@@ -13,60 +14,51 @@ import {NodeType} from '../../../models/NodeTypes';
 })
 export class PostEditComponent implements OnInit {
 
-  public post: Post = new Post();
-  constructor(private postApi: PostApi,
+  constructor(private postService: PostService,
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.postApi.getById(id).subscribe(
-      data => this.post = data as Post,
-      err => console.error(err),
-      () => console.log(this.post.nodes)
-    );
+    console.log(this.route.params.subscribe(params => this.postService.subscribeById(params.id)));
   }
+
+  editPost = () => this.postService.getById();
 
   editTitle(event) {
     event.preventDefault();
-    this.post.title = event.target.innerText;
-    console.log(this.post.title);
+    this.editPost().title = event.target.innerText;
   }
 
   addTitle(event) {
     event.preventDefault();
     if (event.target.innerText !== '') {
-      this.post.title = event.target.innerText;
+      this.editPost().title = event.target.innerText;
       const txt = new TextNode('');
       const node = new Node(null, NodeType.TEXT, txt);
-      this.post.nodes.push(node);
+      this.editPost().nodes.push(node);
     }
     // this.post.title = event.target.value;
     // event.target.value = '';
   }
   addNode = (event) => {
-    console.log('1234');
     event.preventDefault();
     if (event.target.innerText !== '') {
       const content = new TextNode(event.target.innerText);
       const node = new Node(null, NodeType.TEXT, content);
-      console.log(node);
-      console.log(this.post.nodes);
-      this.post.nodes.push(node);
+      this.editPost().nodes.push(node);
       event.target.innerText = '';
     }
   }
   editNode = (event, node): void => {
-    const id = this.post.nodes.indexOf(node);
+    const id = this.editPost().nodes.indexOf(node);
     if (event.target.innerText !== '') {
       const textContent = new TextNode(event.target.innerText);
-      this.post.nodes[id] = new Node(null, NodeType.TEXT, textContent, null, '1');
+      this.editPost().nodes[id] = new Node(null, NodeType.TEXT, textContent, null, '1');
     } else {
-      this.post.nodes.splice(id, 1);
+      this.editPost().nodes.splice(id, 1);
     }
-    console.log('asdf');
   }
   deleteNode = (node): void => {
-    const id = this.post.nodes.indexOf(node);
-    this.post.nodes.splice(id, 1);
+    const id = this.editPost().nodes.indexOf(node);
+    this.editPost().nodes.splice(id, 1);
   }
 }
