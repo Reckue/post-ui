@@ -41,7 +41,7 @@ export class PostService {
     );
   }
 
-  afterLoad = () => {
+  private afterLoad = () => {
     this.popupNotificationService.displayMessage(this.posts[this.counterOfLoads].length + ' posts were loaded!');
     this.counterOfLoads++;
   }
@@ -51,6 +51,7 @@ export class PostService {
     this.postApi.getById(id).subscribe(
       data => this.postById = data,
       error => this.popupNotificationService.displayMessage(error),
-      () => this.popupNotificationService.displayMessage('Post was loaded!'));
+      () => this.popupNotificationService.displayMessage('Post was loaded!')
+    );
   }
 }

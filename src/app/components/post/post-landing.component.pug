@@ -1,16 +1,17 @@
-.date {{publish}}
+.post-wrapper
+  .header
+    .date {{publish}}
+    app-popup-menu([visible]="menuVisible", [fields]="menuFields")
+      .menu-btn((click)="clickMenuButton()", #menu, [id]="post.id")
+        .point
 .post-wrapper
   .post
-    .header
-      .left
-        a(class='title' routerLink="/{{ post.id }}") {{ post.title }}
-      app-popup-menu([visible]="menuVisible", [fields]="menuFields")
-        .menu-btn((click)="clickMenuButton()", #menu, [id]="post.id")
-          .point
+    a(class='title' routerLink="/{{ post.id }}") {{ post.title }}
     .content(*ngIf="post.nodes.length > 0") {{ post.nodes[0].node.content }}
   .user
     .image
-    .statistic 21
-      .like-icon
-    .statistic 70
-      .comment-icon
+    .bottom
+      .statistic 21
+        .like-icon
+      .statistic 70
+        .comment-icon

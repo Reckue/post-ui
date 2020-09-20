@@ -1,59 +1,58 @@
-.date
-  margin-top: 12px
-  padding: 4px 16px
-  font-size: 12px
 .post-wrapper
+  border: 1px solid #ebebeb
+  border-bottom: none
   width: 500px
+  padding: 8px
+  .header
+    flex-direction: row
+    flex-grow: 1
+    justify-content: space-between
+    align-items: center
+    .date
+      font-size: 12px
   .user
-    margin: 0 10px
     flex-direction: column
     align-items: center
+    justify-content: space-between
     .image
       width: 36px
       height: 36px
       background: #2b82b9
       border-radius: 50%
-    .statistic
-      padding: 2px 0
+    .bottom
+      flex-direction: column
       align-items: center
-      justify-content: center
-      div
-        margin: 0 4px
-        width: 12px
-        height: 12px
-        filter: invert(1) brightness(0.2)
-      .like-icon
-        background: url("../../../assets/like.png") center
-        background-size: cover
-      .comment-icon
-        background: url("../../../assets/comment.png") center
-        background-size: cover
+      .statistic
+        padding: 4px 0
+        width: 100%
+        align-items: center
+        justify-content: space-between
+        font-size: 12px
+        div
+          margin: 0 4px
+          width: 12px
+          height: 12px
+        .like-icon
+          background: url("../../../assets/like.png") center
+          background-size: cover
+        .comment-icon
+          background: url("../../../assets/comment.png") center
+          background-size: cover
   .post
-    margin-left: 10px
+    margin: 0 10px
     width: 100%
     flex-direction: column
     padding: 5px 10px
-    background-color: #ffffff
-    border: #eef3f5 1px solid
-    border-radius: 6px
-    box-shadow: 0 0 6px #eeeeee
+    border-right: #eef3f5 1px solid
     overflow-wrap: anywhere
-    .header
-      flex-direction: row
-      justify-content: space-between
+    .title
+      margin-right: auto
+      font-size: 19px
       line-height: 32px
-      .left
-        flex-direction: column
-        .title
-          font-size: 19px
-          line-height: 32px
-          font-weight: 500
-          color: #000
-        .title:hover
-          color: #2e6cb4
-        .publish
-          font-size: 14px
-          font-weight: 500
+      font-weight: 500
+      color: #000
+    .title:hover
+      color: #2e6cb4
     .content
       padding: 8px 0
       font-size: 16px

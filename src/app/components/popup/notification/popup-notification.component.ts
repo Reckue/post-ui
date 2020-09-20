@@ -16,13 +16,9 @@ export class PopupNotificationComponent implements OnInit {
     this.fields = [];
   }
 
-  closeNotification = () => {
-    this.fields.splice(0, 1);
-  }
+  closeNotification = () => this.fields.splice(0, 1);
 
-  closeById = (id) => {
-    this.fields.splice(id, 1);
-  }
+  closeById = (id) => this.fields.splice(id, 1);
 
   addNotification = (field: Field) => {
     field.onClick = this.closeById;
