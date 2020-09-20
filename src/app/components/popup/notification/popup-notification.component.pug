@@ -1,2 +1,5 @@
-.popup-window(*ngIf="isVisible")
-  .message((click)="close()") {{message}}
+.popup-window
+  .message(
+    *ngFor = "let notification of fields; let id = index",
+    (click)="notification.onClick(id)"
+    ) {{notification.message}}

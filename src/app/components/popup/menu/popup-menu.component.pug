@@ -2,4 +2,4 @@ ng-content
 .popup-menu(*ngIf="visible")
   .field(
     *ngFor = "let field of fields",
-    (click) = "field.onClick()") {{ field.value }}
+    (click) = "field.onClick()") {{ field.message }}
