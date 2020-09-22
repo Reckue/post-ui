@@ -1,11 +1,21 @@
 [
   {
-    "id": "1",
-    "title": "Post 1"
-  },
-  {
-    "id": "2",
-    "userId": "1",
-    "email": "Post 2"
+    "createdDate": 0,
+    "id": "post1",
+    "modificationDate": 0,
+    "nodesId": [
+      "text1",
+      "image1",
+      "code1"
+    ],
+    "source": "string",
+    "status": "DRAFT",
+    "tagsId": [
+      "tag1",
+      "tag2",
+      "tag3"
+    ],
+    "title": "Welcome to my blog!",
+    "userId": "4d6b368d3fc2306b8017bb5c653a4a0d"
   }
 ]

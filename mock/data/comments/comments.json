@@ -1,0 +1,43 @@
+[
+    {
+        "commentId": "comment1",
+        "createdDate": 1600346023892,
+        "id": "string",
+        "modificationDate": 1600346031718,
+        "nodes": [
+            "text2"
+        ],
+        "postId": "post1",
+        "userId": "47019ce8a4593c28b5b83cfba74c34a6"
+    },
+    {
+        "commentId": "comment2",
+        "createdDate": 1600346950757,
+        "id": "string",
+        "modificationDate": 1600346959112,
+        "nodes": [
+          {
+            "commentId": "string",
+            "createdDate": 0,
+            "id": "string",
+            "modificationDate": 0,
+            "node": {},
+            "source": "string",
+            "type": "TEXT"
+          }
+        ],
+        "postId": "string",
+        "userId": "string"
+    },
+    {
+        "commentId": "string",
+        "createdDate": 0,
+        "id": "string",
+        "modificationDate": 0,
+        "nodes": [
+            "code2"
+        ],
+        "postId": "post1",
+        "userId": "4d6b368d3fc2306b8017bb5c653a4a0d"
+    }
+]

@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-post-landing',
   templateUrl: './post-landing.component.pug',
-  styleUrls: ['./post-landing.component.sass', './popup-menu.sass']
+  styleUrls: ['./post-landing.component.sass', './post-landing.popup-menu.sass']
 })
 export class PostLandingComponent implements OnInit {
   @Input() post: Post;
@@ -23,10 +23,10 @@ export class PostLandingComponent implements OnInit {
     this.menuVisible = false;
     this.publish = this.dateFormat.getTimeAfterPublish(this.post.createdDate);
     this.menuFields = [];
-    this.menuFields.push(new Field('favorites', '', 'black', () => {}));
-    this.menuFields.push(new Field('edit', '', 'black', () => this.goEdit()));
-    this.menuFields.push(new Field('report', '', 'red', () => {}));
-    this.menuFields.push(new Field('remove', '', 'red', () => this.removePost()));
+    this.menuFields.push(new Field('Add to favorites', '', 'black', () => {}));
+    this.menuFields.push(new Field('Report', '', 'red', () => {}));
+    this.menuFields.push(new Field('Edit', '', 'black', () => this.goEdit()));
+    this.menuFields.push(new Field('Remove', '', 'red', () => this.removePost()));
   }
 
   goEdit = () => {

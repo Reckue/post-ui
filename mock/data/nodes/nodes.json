@@ -1,0 +1,70 @@
+[
+    {
+        "createdDate": 1600343920844,
+        "id": "text1",
+        "modificationDate": 1600343956484,
+        "entry": {
+            "content": "string"
+        },
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "TEXT",
+        "userId": "string"
+    },
+    {
+        "createdDate": 1600343933086,
+        "id": "image1",
+        "modificationDate": 1600343980871,
+        "entry": {},
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "IMAGE",
+        "userId": "string"
+    },
+    {
+        "createdDate": 1600343946682,
+        "id": "code1",
+        "modificationDate": 1600343988948,
+        "node": {},
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "CODE",
+        "userId": "string"
+    },
+    {
+        "createdDate": 1600346542857,
+        "id": "text2",
+        "modificationDate": 1600346556316,
+        "node": {},
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "TEXT",
+        "userId": "string"
+    },
+    {
+        "createdDate": 1600346570457,
+        "id": "image2",
+        "modificationDate": 1600346581826,
+        "node": {},
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "IMAGE",
+        "userId": "string"
+    },
+    {
+        "createdDate": 1600347105463,
+        "id": "code2",
+        "modificationDate": 1600347113544,
+        "node": {},
+        "postId": "string",
+        "source": "string",
+        "status": "ACTIVE",
+        "type": "CODE",
+        "userId": "string"
+    }
+]

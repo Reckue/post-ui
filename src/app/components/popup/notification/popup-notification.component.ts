@@ -1,21 +1,27 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Field} from '../../../models/Field';
 
 @Component({
   selector: 'app-popup-notification',
   templateUrl: './popup-notification.component.pug',
   styleUrls: ['./popup-notification.component.sass']
 })
-export class PopupNotificationComponent {
+export class PopupNotificationComponent implements OnInit {
 
-  message = 'default message...';
-  isVisible = false;
+  fields: Field[];
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
+    this.fields = [];
   }
 
-  close = () => this.isVisible = false;
+  closeNotification = () => this.fields.splice(0, 1);
 
-  display = () => this.isVisible = true;
+  closeById = (id) => this.fields.splice(id, 1);
 
-  changeMessage = (message: string) => this.message = message;
+  addNotification = (field: Field) => {
+    field.onClick = this.closeById;
+    this.fields.push(field);
+  }
 }
