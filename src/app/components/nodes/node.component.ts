@@ -19,9 +19,6 @@ export class NodeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.node);
-    console.log(this.node.type);
-    console.log(this.node.node);
   }
 
 }

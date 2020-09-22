@@ -2,6 +2,7 @@ import {Component, Host, HostListener, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {Post} from '../../models/post';
 import {PostApi} from '../../api/post.api';
+import {PostService} from '../../services/post.service';
 
 @Component({
   selector: 'app-header',
@@ -11,21 +12,10 @@ import {PostApi} from '../../api/post.api';
 export class HeaderComponent {
   @ViewChild('header') header;
   private headerPosition = 0;
-  private post: Post = new Post();
 
-  constructor(private postApi: PostApi,
-              private route: Router) {}
+  constructor(private postService: PostService) {}
 
-  addPost() {
-    this.postApi.createPost(this.post).subscribe(
-      data => {
-        this.post = data;
-        this.route.navigate([this.post.id, 'edit']).then();
-      },
-      error => console.error(error),
-      () => console.log(this.post)
-    );
-  }
+  addPost = () => this.postService.createPostAndRedirect();
 
   @HostListener('window:scroll')
   onScroll() {
