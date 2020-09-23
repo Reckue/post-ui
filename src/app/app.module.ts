@@ -19,6 +19,7 @@ import { InputComponent } from './components/input/input.component';
 import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
 import { NodeComponent } from './components/nodes/node.component';
 import {TextComponent} from './components/nodes/text/text.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {TextComponent} from './components/nodes/text/text.component';
     FilterInputComponent,
     InputComponent,
     RichTextEditorComponent,
-    NodeComponent
+    NodeComponent,
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
