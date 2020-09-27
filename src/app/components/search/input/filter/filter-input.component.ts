@@ -35,6 +35,17 @@ export class FilterInputComponent {
 
   }
 
+  @HostListener('window: click', ['$event'])
+  closeFilter(event) {
+   const elem = event.target;
+   const sortMenu = elem.classList.contains('filterInput');
+   const btn = elem.classList.contains('btn');
+   if (!btn && !sortMenu) {
+     this.visible = false;
+     console.log('1');
+   }
+  }
+
   autoComplete = (event) => {
     this.sortList = [];
     console.log(this.inputWord.length);
@@ -86,7 +97,6 @@ export class FilterInputComponent {
     if (event.key === 'Enter') {
       event.preventDefault();
       const activeLi = this.elemRef.nativeElement.getElementsByClassName('autocomplete-active')[0];
-      console.log(activeLi);
       this.name = activeLi.textContent;
       this.inputWord = activeLi.textContent;
       this.visibleMenu();

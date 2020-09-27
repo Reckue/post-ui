@@ -2,8 +2,8 @@
   .btn((click)='visibleMenu()')
 .sort-menu(*ngIf='visible')
   .sort-content
-    input([(ngModel)] = 'inputWord', (keyup) = 'autoComplete($event)', (keydown) = 'arrowsNavigation($event)', )
+    input.filterInput([(ngModel)] = 'inputWord', (keyup) = 'autoComplete($event)', (keydown) = 'arrowsNavigation($event)')
     ul
-      li(*ngFor='let li of List', (click)='acceptFilter($event)',
+      li(*ngFor='let li of sortList', (click)='acceptFilter($event)',
         (mousemove) = 'addMouseHighlight($event)',
         (mouseleave)='removeMouseHighlight()') {{li}}
