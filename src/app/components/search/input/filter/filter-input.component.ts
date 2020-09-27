@@ -26,14 +26,15 @@ export class FilterInputComponent {
 
   visibleMenu() {
     this.current = -1;
+    if (!this.visible) {
+      setTimeout(() => {
+        this.elemRef.nativeElement.getElementsByTagName('input')[0].focus();
+      }, 0);
+    }
     this.visible = !this.visible;
     this. sortList = this.List;
     this.inputWord = '';
-    setTimeout(() => {
-      this.elemRef.nativeElement.getElementsByTagName('input')[0].focus();
-    }, 0);
-
-  }
+    }
 
   @HostListener('window: click', ['$event'])
   closeFilter(event) {
@@ -42,13 +43,11 @@ export class FilterInputComponent {
    const btn = elem.classList.contains('btn');
    if (!btn && !sortMenu) {
      this.visible = false;
-     console.log('1');
    }
   }
 
   autoComplete = (event) => {
     this.sortList = [];
-    console.log(this.inputWord.length);
     if (this.inputWord.length !== 0) {
       for (let i = 0; i < this.inputWord.length; i++) {
         for (let cat = 0; cat < this.List.length; cat++) {
