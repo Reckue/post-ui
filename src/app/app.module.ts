@@ -19,6 +19,7 @@ import { InputComponent } from './components/input/input.component';
 import { RichTextEditorComponent } from './rich-text-editor/rich-text-editor.component';
 import { NodeComponent } from './components/nodes/node.component';
 import {TextComponent} from './components/nodes/text/text.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {TextComponent} from './components/nodes/text/text.component';
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@ import {Component, HostListener} from '@angular/core';
   styleUrls: ['./search-menu.component.sass']
 })
 export class SearchMenuComponent {
+  Categories = ['Game', 'Buisness', 'Info', 'LoL', 'Front', 'Back', 'QA', 'Engenering', 'Gan'];
+  Authors = ['Yra', 'Peta', 'Vasa', 'Egor', 'Max', 'Basya', 'Elena', 'Nastya', 'Alina'];
 
   constructor() {}
 }
